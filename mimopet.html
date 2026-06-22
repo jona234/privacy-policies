@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — MimoPet</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f7f5f2;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #1e1e1e;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      font-size: 28px;
+    }
+
+    .logo-text {
+      color: #f4a94e;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f4a94e;
+      display: inline-block;
+    }
+
+    .intro-card {
+      background: #fff8ee;
+      border-left: 4px solid #f4a94e;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong {
+      color: #1e1e1e;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #f4a94e;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      margin: 8px 0 0 20px;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card ul li strong {
+      color: #1e1e1e;
+    }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: #f4a94e;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: #1e1e1e;
+    }
+
+    a { color: #f4a94e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">🐾</div>
+  <div>
+    <div class="logo-text">MIMOPET</div>
+    <div class="logo-sub" id="header-sub">Política de Privacidad</div>
+  </div>
+</header>
+
+<div class="container" id="content"></div>
+
+<footer id="footer-text">© 2026 MimoPet · Jonatan Ortega González · España</footer>
+
+<script>
+const translations = {
+  "es": {
+    "headerSub": "Política de Privacidad",
+    "title": "Política de Privacidad",
+    "updated": "Última actualización: junio de 2026",
+    "footer": "© 2026 MimoPet · Jonatan Ortega González · España",
+    "contactLabel": "¿Tienes alguna duda?",
+    "intro": "MimoPet es una aplicación de cuidado de mascotas que funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.",
+    "sections": [
+      {
+        "title": "Datos que recopilamos",
+        "type": "none",
+        "noneLabel": "Ninguno",
+        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Toda la información que introduces — mascotas, comidas, medicación, vacunas, collares, desparasitación, citas veterinarias, peluquería, peso, fotos y notas — se almacena <strong>únicamente en tu dispositivo</strong>.",
+        "note": "Si exportas una copia de seguridad, el archivo JSON se guarda donde tú decidas y solo se comparte si tú lo compartes."
+      },
+      {
+        "title": "Permisos que utiliza la app",
+        "type": "permissions",
+        "permissions": [
+          { "icon": "🔔", "name": "Notificaciones / alarmas exactas", "desc": "Para enviarte los recordatorios programados." },
+          { "icon": "📷", "name": "Fotos / cámara", "desc": "Solo si eliges una foto para una mascota. La imagen se copia a la app y permanece en tu dispositivo." },
+          { "icon": "💾", "name": "Almacenamiento", "desc": "Para crear o leer los archivos de copia de seguridad que tú generes o importes." }
+        ],
+        "noTrack": "No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No hay anuncios. No compartimos datos con terceros porque no los recopilamos."
+      },
+      {
+        "title": "Menores",
+        "type": "simple",
+        "body": "La app no recopila datos de ningún usuario, incluidos menores de edad."
+      },
+      {
+        "title": "Eliminación de tus datos",
+        "type": "simple",
+        "body": "Puedes borrar cualquier registro dentro de la app o desinstalarla para eliminar todos los datos de tu dispositivo de forma permanente."
+      },
+      {
+        "title": "Cambios en esta política",
+        "type": "simple",
+        "body": "Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta misma URL."
+      }
+    ]
+  },
+  "en": {
+    "headerSub": "Privacy Policy",
+    "title": "Privacy Policy",
+    "updated": "Last updated: June 2026",
+    "footer": "© 2026 MimoPet · Jonatan Ortega González · Spain",
+    "contactLabel": "Do you have any questions?",
+    "intro": "MimoPet is a pet care app that works <strong>100% locally</strong> on your device. We do not collect, transmit or store your data on any server.",
+    "sections": [
+      {
+        "title": "Data we collect",
+        "type": "none",
+        "noneLabel": "None",
+        "body": "The app does not require registration or an account and does not need an internet connection to work. All the information you enter — pets, meals, medication, vaccines, collars, deworming, vet appointments, grooming, weight, photos and notes — is stored <strong>only on your device</strong>.",
+        "note": "If you export a backup, the JSON file is saved wherever you choose and is only shared if you share it."
+      },
+      {
+        "title": "Permissions the app uses",
+        "type": "permissions",
+        "permissions": [
+          { "icon": "🔔", "name": "Notifications / exact alarms", "desc": "To send you the scheduled reminders." },
+          { "icon": "📷", "name": "Photos / camera", "desc": "Only if you choose a photo for a pet. The image is copied to the app and stays on your device." },
+          { "icon": "💾", "name": "Storage", "desc": "To create or read the backup files you generate or import." }
+        ],
+        "noTrack": "No advertising identifiers or analytics and tracking tools are used. There are no ads. We do not share data with third parties because we do not collect it."
+      },
+      {
+        "title": "Minors",
+        "type": "simple",
+        "body": "The app does not collect data from any user, including minors."
+      },
+      {
+        "title": "Deleting your data",
+        "type": "simple",
+        "body": "You can delete any record within the app or uninstall it to permanently remove all data from your device."
+      },
+      {
+        "title": "Changes to this policy",
+        "type": "simple",
+        "body": "We may update this policy at any time. We will publish the current version at this same URL."
+      }
+    ]
+  },
+  "de": {
+    "headerSub": "Datenschutzrichtlinie",
+    "title": "Datenschutzrichtlinie",
+    "updated": "Letzte Aktualisierung: Juni 2026",
+    "footer": "© 2026 MimoPet · Jonatan Ortega González · Spanien",
+    "contactLabel": "Hast du Fragen?",
+    "intro": "MimoPet ist eine Haustierpflege-App, die <strong>100% lokal</strong> auf deinem Gerät funktioniert. Wir erfassen, übertragen oder speichern deine Daten nicht auf Servern.",
+    "sections": [
+      {
+        "title": "Erfasste Daten",
+        "type": "none",
+        "noneLabel": "Keine",
+        "body": "Die App erfordert keine Registrierung oder ein Konto und benötigt keine Internetverbindung. Alle von dir eingegebenen Informationen — Haustiere, Mahlzeiten, Medikamente, Impfungen, Halsbänder, Entwurmung, Tierarzttermine, Pflege, Gewicht, Fotos und Notizen — werden <strong>ausschließlich auf deinem Gerät</strong> gespeichert.",
+        "note": "Wenn du ein Backup exportierst, wird die JSON-Datei dort gespeichert, wo du es entscheidest, und nur geteilt, wenn du sie teilst."
+      },
+      {
+        "title": "Von der App verwendete Berechtigungen",
+        "type": "permissions",
+        "permissions": [
+          { "icon": "🔔", "name": "Benachrichtigungen / genaue Alarme", "desc": "Um dir die geplanten Erinnerungen zu senden." },
+          { "icon": "📷", "name": "Fotos / Kamera", "desc": "Nur wenn du ein Foto für ein Haustier auswählst. Das Bild wird in die App kopiert und bleibt auf deinem Gerät." },
+          { "icon": "💾", "name": "Speicher", "desc": "Um die von dir erstellten oder importierten Backup-Dateien zu erstellen oder zu lesen." }
+        ],
+        "noTrack": "Es werden keine Werbekennungen oder Analyse- und Tracking-Tools verwendet. Es gibt keine Werbung. Wir teilen keine Daten mit Dritten, da wir keine erfassen."
+      },
+      {
+        "title": "Minderjährige",
+        "type": "simple",
+        "body": "Die App erfasst keine Daten von Nutzern, einschließlich Minderjähriger."
+      },
+      {
+        "title": "Löschen deiner Daten",
+        "type": "simple",
+        "body": "Du kannst jeden Eintrag in der App löschen oder sie deinstallieren, um alle Daten dauerhaft von deinem Gerät zu entfernen."
+      },
+      {
+        "title": "Änderungen dieser Richtlinie",
+        "type": "simple",
+        "body": "Wir können diese Richtlinie jederzeit aktualisieren. Wir veröffentlichen die aktuelle Version unter dieser URL."
+      }
+    ]
+  },
+  "zh": {
+    "headerSub": "隐私政策",
+    "title": "隐私政策",
+    "updated": "最后更新：2026年6月",
+    "footer": "© 2026 MimoPet · Jonatan Ortega González · 西班牙",
+    "contactLabel": "有任何疑问？",
+    "intro": "MimoPet是一款宠物护理应用，<strong>100%在本地</strong>运行于您的设备上。我们不会在服务器上收集、传输或存储您的数据。",
+    "sections": [
+      {
+        "title": "我们收集的数据",
+        "type": "none",
+        "noneLabel": "无",
+        "body": "该应用无需注册或账户，无需互联网连接即可运行。您输入的所有信息——宠物、喂食、药物、疫苗、项圈、驱虫、兽医预约、美容、体重、照片和备注——<strong>仅存储在您的设备上</strong>。",
+        "note": "如果您导出备份，JSON文件将保存在您选择的位置，只有您主动分享时才会被共享。"
+      },
+      {
+        "title": "应用使用的权限",
+        "type": "permissions",
+        "permissions": [
+          { "icon": "🔔", "name": "通知 / 精确闹钟", "desc": "用于向您发送预定提醒。" },
+          { "icon": "📷", "name": "照片 / 相机", "desc": "仅在您为宠物选择照片时使用。图片会复制到应用中并保留在您的设备上。" },
+          { "icon": "💾", "name": "存储", "desc": "用于创建或读取您生成或导入的备份文件。" }
+        ],
+        "noTrack": "不使用任何广告标识符或分析和跟踪工具。没有广告。我们不与第三方共享数据，因为我们不收集数据。"
+      },
+      {
+        "title": "未成年人",
+        "type": "simple",
+        "body": "该应用不收集任何用户的数据，包括未成年人。"
+      },
+      {
+        "title": "删除您的数据",
+        "type": "simple",
+        "body": "您可以在应用内删除任何记录，或卸载应用以永久删除设备上的所有数据。"
+      },
+      {
+        "title": "政策变更",
+        "type": "simple",
+        "body": "我们可能随时更新本政策。我们将在此URL发布当前版本。"
+      }
+    ]
+  }
+};
+
+function render(lang) {
+  const t = translations[lang] || translations['es'];
+  document.getElementById('header-sub').textContent = t.headerSub;
+  document.getElementById('footer-text').textContent = t.footer;
+  document.title = t.headerSub + ' — MimoPet';
+
+  let html = `<h1 class="page-title">${t.title}</h1>
+<span class="updated">${t.updated}</span>
+<div class="intro-card">${t.intro}</div>`;
+
+  t.sections.forEach(s => {
+    html += `<section><h2>${s.title}</h2><div class="card">`;
+
+    if (s.type === 'none') {
+      html += `<span class="badge-none">${s.noneLabel}</span><p>${s.body}</p>`;
+      if (s.note) html += `<p style="color:#888;font-size:13px;margin-top:8px">ℹ️ ${s.note}</p>`;
+    } else if (s.type === 'permissions') {
+      s.permissions.forEach(p => {
+        html += `<div class="permission-item">
+          <div class="permission-icon">${p.icon}</div>
+          <div class="permission-text"><strong>${p.name}</strong><span>${p.desc}</span></div>
+        </div>`;
+      });
+      html += `<div class="no-track">✅ ${s.noTrack}</div>`;
+    } else {
+      html += `<p>${s.body}</p>`;
+    }
+
+    html += `</div></section>`;
+  });
+
+  html += `<div class="contact-box"><p>${t.contactLabel}</p><a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a></div>`;
+  document.getElementById('content').innerHTML = html;
+}
+
+const lang = new URLSearchParams(window.location.search).get('lang') || 'es';
+render(['es','en','de','zh'].includes(lang) ? lang : 'es');
+</script>
+</body>
+</html>
