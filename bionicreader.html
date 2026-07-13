@@ -3,19 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidad - Bionic Reader</title>
+  <title>Política de Privacidad — Bionic Reader</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #1e88e5;
+      --accent-light: #64b5f6;
+      --header-bg: #121c2e;
+      --bg: #f3f6fb;
+      --intro-bg: #eaf2fd;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      font-size: 28px;
+    }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong {
+      color: #1e1e1e;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card p strong { color: #1e1e1e; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child {
+      padding-top: 0;
+    }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; max-width: 800px; margin: 40px auto; line-height: 1.6; padding: 20px;">
-  <h1>Política de Privacidad – Bionic Reader</h1>
-  <p>Última actualización: 18/06/2026</p>
-  <p>Bionic Reader no recopila, almacena ni comparte datos personales de los usuarios.</p>
-  <p>La aplicación está diseñada para ayudar al usuario a leer documentos de manera bionica. Toda la información permanece localmente en el dispositivo del usuario.</p>
-  <ul>
-    <li>No requiere registro.</li>
-    <li>No comparte información con terceros.</li>
-    <li>No utiliza servicios de análisis ni publicidad.</li>
-    <li>No recopila ubicación, contactos ni datos sensibles.</li>
-  </ul>
-  <p>Contacto: devlicius.online@gmail.com</p>
+<body>
+
+<header>
+  <div class="logo-icon">📖</div>
+  <div>
+    <div class="logo-text">BIONIC READER</div>
+    <div class="logo-sub">Política de Privacidad</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Política de Privacidad</h1>
+  <span class="updated">Última actualización: julio de 2026</span>
+
+  <div class="intro-card">Bionic Reader es una app que te ayuda a leer documentos de manera biónica y funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.</div>
+
+  <section>
+    <h2>Datos que recopilamos</h2>
+    <div class="card">
+      <span class="badge-none">Ninguno</span>
+      <p>La app no requiere registro ni cuenta. Los documentos que abres y tus preferencias de lectura permanecen <strong>únicamente en tu dispositivo</strong>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>En resumen</h2>
+    <div class="card">
+      <div class="permission-item">
+        <div class="permission-icon">📝</div>
+        <div class="permission-text"><strong>Sin registro</strong><span>No necesitas crear ninguna cuenta para usar la app.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">📢</div>
+        <div class="permission-text"><strong>Sin publicidad ni analítica</strong><span>No hay anuncios ni servicios de análisis o seguimiento.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">🤝</div>
+        <div class="permission-text"><strong>Sin terceros</strong><span>No se comparte información con nadie.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">📍</div>
+        <div class="permission-text"><strong>Sin datos sensibles</strong><span>No se recopila ubicación, contactos ni ningún otro dato sensible.</span></div>
+      </div>
+      <div class="no-track">✅ No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No compartimos datos con terceros porque no los recopilamos.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Menores</h2>
+    <div class="card">
+      <p>La app no recopila datos de ningún usuario, incluidos menores de edad.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eliminación de tus datos</h2>
+    <div class="card">
+      <p>Como toda la información se guarda únicamente en tu dispositivo, basta con desinstalar la app para eliminar todos los datos de forma permanente.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cambios en esta política</h2>
+    <div class="card">
+      <p>Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta misma URL.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>¿Tienes alguna duda?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 Bionic Reader · Jonatan Ortega González · España</footer>
+
 </body>
 </html>
