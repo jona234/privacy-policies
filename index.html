@@ -1,39 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Políticas de Privacidad</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f7f5f2;
+      color: #2c2c2c;
       line-height: 1.6;
     }
 
-    h1 {
-      color: #333;
+    header {
+      background: #1e1e1e;
+      padding: 48px 32px 44px;
+      text-align: center;
     }
 
-    a {
-      display: block;
-      margin: 10px 0;
-      color: #0066cc;
+    header .shield {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .app-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--accent);
       text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    }
+
+    .app-icon {
+      font-size: 30px;
+      flex-shrink: 0;
+    }
+
+    .app-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e1e1e;
+    }
+
+    .app-desc {
+      font-size: 13px;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: #1e1e1e;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 28px 16px 60px; }
+      header { padding: 36px 20px 32px; }
     }
   </style>
 </head>
 <body>
-  <h1>Políticas de Privacidad</h1>
 
-  <a href="cuandoletoca.html">CuandoLeToca</a>
-  <a href="cuandometoca.html">CuandoMeToca</a>
-  <a href="cuandotetoca.html">CuandoTeToca</a>
-  <a href="survivalworkout.html">Survival Workout</a>
-  <a href="bionicreader.html">Bionic Reader</a>
-  <a href="mimopet.html">MimoPet</a>
+<header>
+  <div class="shield">🛡️</div>
+  <h1>Políticas de Privacidad</h1>
+  <p>Todas nuestras apps funcionan 100% en local: sin cuentas, sin anuncios y sin recopilar datos.</p>
+</header>
+
+<div class="container">
+  <div class="grid">
+
+    <a class="app-card" href="ecokids.html" style="--accent:#43a047">
+      <div class="app-icon">🐼</div>
+      <div>
+        <div class="app-name">EcoKids</div>
+        <div class="app-desc">Ecología para niños</div>
+      </div>
+    </a>
+
+    <a class="app-card" href="mimopet.html" style="--accent:#f4a94e">
+      <div class="app-icon">🐾</div>
+      <div>
+        <div class="app-name">MimoPet</div>
+        <div class="app-desc">Cuidado de mascotas</div>
+      </div>
+    </a>
+
+    <a class="app-card" href="cuandoletoca.html" style="--accent:#d81b60">
+      <div class="app-icon">🍼</div>
+      <div>
+        <div class="app-name">CuandoLeToca</div>
+        <div class="app-desc">Cuidado del bebé</div>
+      </div>
+    </a>
+
+    <a class="app-card" href="cuandometoca.html" style="--accent:#00897b">
+      <div class="app-icon">⏰</div>
+      <div>
+        <div class="app-name">CuandoMeToca</div>
+        <div class="app-desc">Rutinas personales</div>
+      </div>
+    </a>
+
+    <a class="app-card" href="cuandotetoca.html" style="--accent:#7e57c2">
+      <div class="app-icon">🧸</div>
+      <div>
+        <div class="app-name">CuandoTeToca</div>
+        <div class="app-desc">Rutinas de los peques</div>
+      </div>
+    </a>
+
+    <a class="app-card" href="survivalworkout.html" style="--accent:#e53935">
+      <div class="app-icon">💪</div>
+      <div>
+        <div class="app-name">Survival Workout</div>
+        <div class="app-desc">Juego de fiestas</div>
+      </div>
+    </a>
+
+    <a class="app-card" href="bionicreader.html" style="--accent:#1e88e5">
+      <div class="app-icon">📖</div>
+      <div>
+        <div class="app-name">Bionic Reader</div>
+        <div class="app-desc">Lectura biónica</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>© 2026 Jonatan Ortega González · España · devlicius.online@gmail.com</footer>
 
 </body>
 </html>

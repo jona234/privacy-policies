@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — EcoKids</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #43a047;
+      --accent-light: #81c784;
+      --header-bg: #17301c;
+      --bg: #f2f7f2;
+      --intro-bg: #e9f4e9;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      font-size: 28px;
+    }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong {
+      color: #1e1e1e;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      margin: 8px 0 0 20px;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card ul li:last-child { margin-bottom: 0; }
+
+    .card ul li strong,
+    .card p strong {
+      color: #1e1e1e;
+    }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">🐼</div>
+  <div>
+    <div class="logo-text">ECOKIDS</div>
+    <div class="logo-sub" id="header-sub">Política de Privacidad</div>
+  </div>
+</header>
+
+<div class="container" id="content"></div>
+
+<footer id="footer-text">© 2026 EcoKids · Jonatan Ortega González · España</footer>
+
+<script>
+const translations = {
+  "es": {
+    "headerSub": "Política de Privacidad",
+    "title": "Política de Privacidad",
+    "updated": "Última actualización: julio de 2026",
+    "footer": "© 2026 EcoKids · Jonatan Ortega González · España",
+    "contactLabel": "¿Tienes alguna duda?",
+    "intro": "EcoKids es una app educativa para niños de 5 a 10 años que, de la mano de Bambú el panda, enseña a cuidar el medio ambiente jugando. Funciona de forma <strong>100% local</strong> en tu dispositivo: no recopilamos, transmitimos ni almacenamos ningún dato en servidores.",
+    "sections": [
+      {
+        "title": "Datos que recopilamos",
+        "type": "none",
+        "noneLabel": "Ninguno",
+        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Todo el progreso — lecciones completadas, puntuaciones de los minijuegos, misiones diarias, rachas, medallas, avatares y el bosque virtual — se almacena <strong>únicamente en tu dispositivo</strong>.",
+        "note": "Si desinstalas la app, todo el progreso se elimina con ella."
+      },
+      {
+        "title": "Permisos que utiliza la app",
+        "type": "permissions",
+        "permissions": [
+          { "icon": "🔔", "name": "Notificaciones", "desc": "Solo si los padres activan el recordatorio diario opcional. Se puede desactivar en cualquier momento desde los ajustes." }
+        ],
+        "noTrack": "No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No hay anuncios ni compras dentro de la app. No compartimos datos con terceros porque no los recopilamos."
+      },
+      {
+        "title": "Menores y familias",
+        "type": "simple",
+        "body": "EcoKids está diseñada para niños de 5 a 10 años y por eso la privacidad es lo primero: <strong>no se recopila ningún dato de ningún usuario</strong>, incluidos los menores. No hay registro, ni anuncios, ni compras, ni chat, ni contenido generado por otros usuarios. El único ajuste con impacto fuera de la app — el recordatorio diario — es opcional y lo configuran los padres."
+      },
+      {
+        "title": "Eliminación de tus datos",
+        "type": "simple",
+        "body": "Puedes reiniciar el progreso desde la propia app o desinstalarla para eliminar todos los datos de tu dispositivo de forma permanente. No hay nada que borrar en servidores porque nunca sale nada del dispositivo."
+      },
+      {
+        "title": "Cambios en esta política",
+        "type": "simple",
+        "body": "Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta misma URL."
+      }
+    ]
+  },
+  "en": {
+    "headerSub": "Privacy Policy",
+    "title": "Privacy Policy",
+    "updated": "Last updated: July 2026",
+    "footer": "© 2026 EcoKids · Jonatan Ortega González · Spain",
+    "contactLabel": "Do you have any questions?",
+    "intro": "EcoKids is an educational app for children aged 5 to 10 that, together with Bamboo the panda, teaches them to care for the environment through play. It works <strong>100% locally</strong> on your device: we do not collect, transmit or store any data on servers.",
+    "sections": [
+      {
+        "title": "Data we collect",
+        "type": "none",
+        "noneLabel": "None",
+        "body": "The app does not require registration or an account and does not need an internet connection to work. All progress — completed lessons, minigame scores, daily missions, streaks, medals, avatars and the virtual forest — is stored <strong>only on your device</strong>.",
+        "note": "If you uninstall the app, all progress is deleted with it."
+      },
+      {
+        "title": "Permissions the app uses",
+        "type": "permissions",
+        "permissions": [
+          { "icon": "🔔", "name": "Notifications", "desc": "Only if parents enable the optional daily reminder. It can be turned off at any time from the settings." }
+        ],
+        "noTrack": "No advertising identifiers or analytics and tracking tools are used. There are no ads or in-app purchases. We do not share data with third parties because we do not collect it."
+      },
+      {
+        "title": "Children and families",
+        "type": "simple",
+        "body": "EcoKids is designed for children aged 5 to 10, so privacy comes first: <strong>no data is collected from any user</strong>, including minors. There is no registration, no ads, no purchases, no chat and no user-generated content. The only setting with any effect outside the app — the daily reminder — is optional and configured by parents."
+      },
+      {
+        "title": "Deleting your data",
+        "type": "simple",
+        "body": "You can reset the progress within the app or uninstall it to permanently remove all data from your device. There is nothing to delete on servers because nothing ever leaves the device."
+      },
+      {
+        "title": "Changes to this policy",
+        "type": "simple",
+        "body": "We may update this policy at any time. We will publish the current version at this same URL."
+      }
+    ]
+  }
+};
+
+function render(lang) {
+  const t = translations[lang] || translations['es'];
+  document.getElementById('header-sub').textContent = t.headerSub;
+  document.getElementById('footer-text').textContent = t.footer;
+  document.title = t.headerSub + ' — EcoKids';
+
+  let html = `<h1 class="page-title">${t.title}</h1>
+<span class="updated">${t.updated}</span>
+<div class="intro-card">${t.intro}</div>`;
+
+  t.sections.forEach(s => {
+    html += `<section><h2>${s.title}</h2><div class="card">`;
+
+    if (s.type === 'none') {
+      html += `<span class="badge-none">${s.noneLabel}</span><p>${s.body}</p>`;
+      if (s.note) html += `<p style="color:#888;font-size:13px;margin-top:8px">ℹ️ ${s.note}</p>`;
+    } else if (s.type === 'permissions') {
+      s.permissions.forEach(p => {
+        html += `<div class="permission-item">
+          <div class="permission-icon">${p.icon}</div>
+          <div class="permission-text"><strong>${p.name}</strong><span>${p.desc}</span></div>
+        </div>`;
+      });
+      html += `<div class="no-track">✅ ${s.noTrack}</div>`;
+    } else {
+      html += `<p>${s.body}</p>`;
+    }
+
+    html += `</div></section>`;
+  });
+
+  html += `<div class="contact-box"><p>${t.contactLabel}</p><a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a></div>`;
+  document.getElementById('content').innerHTML = html;
+}
+
+const lang = new URLSearchParams(window.location.search).get('lang') || 'es';
+render(['es','en'].includes(lang) ? lang : 'es');
+</script>
+</body>
+</html>
