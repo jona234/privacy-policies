@@ -221,21 +221,21 @@
 
 <div class="container">
   <h1 class="page-title">Política de Privacidad</h1>
-  <span class="updated">Última actualización: agosto de 2026</span>
+  <span class="updated">Última actualización: septiembre de 2026</span>
 
-  <div class="intro-card">CuandoLeToca es una app para registrar los eventos del cuidado del bebé que funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.</div>
+  <div class="intro-card">CuandoLeToca registra los eventos del cuidado del bebé <strong>siempre en tu dispositivo</strong> — nunca en un servidor. Si decides crear una cuenta para quitar anuncios o compartir el seguimiento con tu pareja/familia, esa parte sí implica algunos datos y servicios de terceros, explicados abajo con detalle.</div>
 
   <section>
-    <h2>Datos que recopilamos</h2>
+    <h2>Datos del bebé — siempre en tu dispositivo</h2>
     <div class="card">
-      <span class="badge-none">Ninguno en nuestros servidores</span>
-      <p>La app no requiere registro ni cuenta. Toda la información que introduces se almacena <strong>únicamente en tu dispositivo</strong>, incluyendo:</p>
+      <span class="badge-none">Nunca sale de tu teléfono</span>
+      <p>Toda la información sobre el cuidado del bebé se almacena <strong>únicamente en tu dispositivo</strong>, tanto si usas la app sin cuenta como si tienes una suscripción activa:</p>
       <ul style="margin: 8px 0 10px 20px; padding: 0;">
         <li>Tomas de comida, cambios de pañal, medicinas y sueño del bebé.</li>
         <li><strong>Peso y talla del bebé</strong> (dato de salud de un menor): guardado solo en tu dispositivo para mostrar la evolución de crecimiento.</li>
-        <li><strong>Recordatorios de citas y vacunas</strong>: el título o nota que escribas puede incluir información de salud (por ejemplo, el motivo de una cita médica); se guarda solo en tu dispositivo para programar la notificación local.</li>
+        <li><strong>Recordatorios de citas y vacunas</strong>: el título o nota que escribas puede incluir información de salud; se guarda solo en tu dispositivo para programar la notificación local.</li>
       </ul>
-      <p>Ninguno de estos datos sale de tu teléfono salvo que tú decidas exportarlo (ver más abajo).</p>
+      <p>Ninguno de estos datos sale de tu teléfono salvo que tú decidas exportarlo (ver más abajo). Esto no cambia aunque tengas cuenta o grupo compartido: por ahora, la sincronización entre los dispositivos de un grupo no está implementada — cada persona ve los datos que ella misma ha introducido en su propio teléfono.</p>
     </div>
   </section>
 
@@ -247,39 +247,66 @@
   </section>
 
   <section>
+    <h2>Cuenta y suscripción (opcional)</h2>
+    <div class="card">
+      <p>Crear una cuenta es opcional — solo hace falta si quieres quitar anuncios o compartir el acceso con tu pareja/familia. Si creas una cuenta, recopilamos y almacenamos en nuestros servidores:</p>
+      <ul style="margin: 8px 0 10px 20px; padding: 0;">
+        <li><strong>Email</strong> (si te registras con email/contraseña, Google o Apple) y un identificador de cuenta interno.</li>
+        <li><strong>Estado de tu suscripción</strong> (qué plan tienes, si está activa) y, si compartes cuenta, <strong>quién forma parte de tu grupo</strong> (identificador y nombre de cada miembro) — no el historial del bebé de cada uno, ver arriba.</li>
+      </ul>
+      <p>Usamos estos servicios de terceros para gestionar la cuenta y los pagos:</p>
+      <ul style="margin: 8px 0 10px 20px; padding: 0;">
+        <li><strong>Firebase Authentication</strong> (Google) — gestiona el inicio de sesión.</li>
+        <li><strong>RevenueCat</strong> — procesa el estado de la suscripción junto con Apple/Google; no recibe tu email ni contraseña.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anuncios (solo si no tienes suscripción activa)</h2>
+    <div class="card">
+      <p>Si no tienes una suscripción activa, mostramos anuncios banner a través de <strong>Google AdMob</strong>. AdMob puede usar el identificador de publicidad de tu dispositivo para personalizar los anuncios. En iOS te pedimos permiso explícito (App Tracking Transparency) antes de usarlo — puedes denegarlo y seguir usando la app con anuncios no personalizados. En cuanto tu suscripción está activa, los anuncios dejan de mostrarse.</p>
+    </div>
+  </section>
+
+  <section>
     <h2>En resumen</h2>
     <div class="card">
       <div class="permission-item">
+        <div class="permission-icon">👶</div>
+        <div class="permission-text"><strong>Los datos del bebé, siempre locales</strong><span>Tomas, pañales, medicinas, peso/talla y recordatorios nunca salen de tu dispositivo.</span></div>
+      </div>
+      <div class="permission-item">
         <div class="permission-icon">📝</div>
-        <div class="permission-text"><strong>Sin registro</strong><span>No necesitas crear ninguna cuenta para usar la app.</span></div>
+        <div class="permission-text"><strong>Cuenta opcional</strong><span>Solo hace falta para quitar anuncios o compartir acceso — no para usar la app.</span></div>
       </div>
       <div class="permission-item">
         <div class="permission-icon">📢</div>
-        <div class="permission-text"><strong>Sin publicidad ni analítica</strong><span>No hay anuncios ni servicios de análisis o seguimiento.</span></div>
+        <div class="permission-text"><strong>Anuncios solo sin suscripción</strong><span>Vía Google AdMob, con permiso explícito en iOS.</span></div>
       </div>
       <div class="permission-item">
         <div class="permission-icon">🤝</div>
-        <div class="permission-text"><strong>Sin terceros</strong><span>No se comparte información con nadie.</span></div>
+        <div class="permission-text"><strong>Terceros usados</strong><span>Firebase (Google), RevenueCat y Google AdMob — solo si tienes cuenta o ves anuncios.</span></div>
       </div>
       <div class="permission-item">
         <div class="permission-icon">📍</div>
-        <div class="permission-text"><strong>Sin datos sensibles</strong><span>No se recopila ubicación, contactos ni ningún otro dato sensible.</span></div>
+        <div class="permission-text"><strong>Sin otros datos sensibles</strong><span>No se recopila ubicación, contactos ni nada parecido.</span></div>
       </div>
-      <div class="no-track">✅ No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No compartimos datos con terceros porque no los recopilamos.</div>
     </div>
   </section>
 
   <section>
     <h2>Menores</h2>
     <div class="card">
-      <p>La app no recopila datos de ningún usuario, incluidos menores de edad.</p>
+      <p>La cuenta la crea el adulto responsable, no el menor. Los datos sobre el bebé (peso, talla, tomas, etc.) son datos de salud de un menor y, como se explica arriba, se quedan siempre en el dispositivo del adulto que los introduce — no se suben a ningún servidor.</p>
     </div>
   </section>
 
   <section>
     <h2>Eliminación de tus datos</h2>
     <div class="card">
-      <p>Como toda la información se guarda únicamente en tu dispositivo, puedes borrar cualquier registro dentro de la app o desinstalarla para eliminar todos los datos de forma permanente.</p>
+      <p>Los datos del bebé: como se guardan solo en tu dispositivo, puedes borrar cualquier registro dentro de la app o desinstalarla para eliminarlos de forma permanente.</p>
+      <p>Los datos de tu cuenta (email, estado de suscripción, membresía de grupo): escríbenos a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a> pidiendo la baja y eliminaremos tu cuenta y sus datos asociados de nuestros servidores.</p>
     </div>
   </section>
 
