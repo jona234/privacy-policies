@@ -69,6 +69,25 @@
       display: inline-block;
     }
 
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
     .intro-card {
       background: var(--intro-bg);
       border-left: 4px solid var(--accent);
@@ -222,6 +241,11 @@
 <div class="container">
   <h1 class="page-title">Política de Privacidad</h1>
   <span class="updated">Última actualización: septiembre de 2026</span>
+  <div class="lang-switch">
+    <span class="current">Español</span>
+    <a href="cuandoletoca-it.html">Italiano</a>
+    <a href="cuandoletoca-fr.html">Français</a>
+  </div>
 
   <div class="intro-card">CuandoLeToca registra los eventos del cuidado del bebé <strong>siempre en tu dispositivo</strong> mientras uses la app sin cuenta o con la suscripción Individual — nunca en un servidor. Si compartes el diario con tu pareja o familia (planes Pareja/Familiar), esos datos del bebé sí se guardan también en nuestros servidores para que todo el grupo los vea, como se explica abajo con detalle.</div>
 

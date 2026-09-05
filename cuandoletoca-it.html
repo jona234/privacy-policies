@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informativa sulla Privacy — CuandoLeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #d81b60;
+      --accent-light: #f48fb1;
+      --header-bg: #331420;
+      --bg: #faf4f6;
+      --intro-bg: #fdeef4;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      font-size: 28px;
+    }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong {
+      color: #1e1e1e;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card p strong { color: #1e1e1e; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child {
+      padding-top: 0;
+    }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">🍼</div>
+  <div>
+    <div class="logo-text">CUANDOLETOCA</div>
+    <div class="logo-sub">Informativa sulla Privacy</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Informativa sulla Privacy</h1>
+  <span class="updated">Ultimo aggiornamento: settembre 2026</span>
+  <div class="lang-switch">
+    <a href="cuandoletoca.html">Español</a>
+    <span class="current">Italiano</span>
+    <a href="cuandoletoca-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card">CuandoLeToca registra gli eventi di cura del bebè <strong>sempre sul tuo dispositivo</strong> quando usi l'app senza account o con l'abbonamento Individuale — mai su un server. Se condividi il diario con il tuo partner o la tua famiglia (piani Coppia/Famiglia), quei dati del bebè vengono salvati anche sui nostri server affinché tutto il gruppo li possa vedere, come spiegato in dettaglio più sotto.</div>
+
+  <section>
+    <h2>Dati del bebè — uso individuale</h2>
+    <div class="card">
+      <span class="badge-none">Non lascia mai il tuo telefono</span>
+      <p>Tutte le informazioni sulla cura del bebè vengono memorizzate <strong>esclusivamente sul tuo dispositivo</strong> quando usi l'app senza account o con l'abbonamento Individuale (che non consente la condivisione):</p>
+      <ul style="margin: 8px 0 10px 20px; padding: 0;">
+        <li>Pappe, cambi di pannolino, farmaci e sonno del bebè.</li>
+        <li><strong>Peso e altezza del bebè</strong> (dato sanitario di un minore): salvato solo sul tuo dispositivo per mostrare l'andamento della crescita.</li>
+        <li><strong>Promemoria di appuntamenti e vaccini</strong>: il titolo o la nota che scrivi possono includere informazioni sanitarie; vengono salvati solo sul tuo dispositivo per programmare la notifica locale.</li>
+      </ul>
+      <p>Nessuno di questi dati lascia il tuo telefono a meno che tu non decida di esportarlo (vedi più sotto) o di unirti a un gruppo condiviso — vedi la sezione successiva.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Diario condiviso (piani Coppia e Famiglia)</h2>
+    <div class="card">
+      <p>Se tu o la persona che ti invita avete un abbonamento Coppia o Famiglia, il diario del bebè (pappe, pannolini, farmaci, sonno, peso/altezza e promemoria) <strong>viene sincronizzato anche sui nostri server</strong> affinché tutti i membri del gruppo possano vedere e modificare le stesse informazioni.</p>
+      <ul style="margin: 8px 0 10px 20px; padding: 0;">
+        <li>Solo i membri del tuo stesso gruppo possono vedere questi dati — non vengono mai condivisi con nessun altro né usati a fini pubblicitari.</li>
+        <li>Quando ti unisci a un gruppo con un codice di invito, la tua cronologia precedente su quel dispositivo viene sostituita da quella del gruppo (non viene unita alla tua).</li>
+        <li>Uscendo dal gruppo o eliminando il tuo account, smetti di sincronizzarti e mantieni l'ultima copia che avevi, tornando a funzionare solo sul tuo dispositivo.</li>
+        <li>Puoi cancellare tutta la tua cronologia in qualsiasi momento dal menu dell'app ("Cancella tutti i dati"); se hai un gruppo attivo, quella cancellazione si applica a tutto il gruppo, non solo al tuo dispositivo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Esportare le tue informazioni</h2>
+    <div class="card">
+      <p>Puoi generare un referto (JSON, CSV o PDF) della cronologia del bebè, ad esempio per portarlo dal pediatra. Quel file viene creato sul tuo dispositivo e <strong>sei tu a decidere quando e con chi condividerlo</strong> (via email, messaggistica, stampa, ecc.). L'app non lo invia da nessuna parte per conto proprio.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Account e abbonamento (facoltativo)</h2>
+    <div class="card">
+      <p>Creare un account è facoltativo — serve solo se vuoi rimuovere gli annunci o condividere l'accesso con il tuo partner/famiglia. Se crei un account, raccogliamo e memorizziamo sui nostri server:</p>
+      <ul style="margin: 8px 0 10px 20px; padding: 0;">
+        <li><strong>Email</strong> (se ti registri con email/password, Google o Apple) e un identificativo interno dell'account.</li>
+        <li><strong>Lo stato del tuo abbonamento</strong> (quale piano hai, se è attivo) e, se condividi l'account, <strong>chi fa parte del tuo gruppo</strong> (identificativo e nome di ciascun membro).</li>
+        <li>Se hai un piano Coppia o Famiglia, anche il <strong>diario del bebè del gruppo</strong> — vedi la sezione "Diario condiviso" più sopra.</li>
+      </ul>
+      <p>Utilizziamo questi servizi di terze parti per gestire l'account e i pagamenti:</p>
+      <ul style="margin: 8px 0 10px 20px; padding: 0;">
+        <li><strong>Firebase Authentication</strong> (Google) — gestisce l'accesso.</li>
+        <li><strong>RevenueCat</strong> — elabora lo stato dell'abbonamento insieme ad Apple/Google; non riceve la tua email né la password.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Annunci (solo se non hai un abbonamento attivo)</h2>
+    <div class="card">
+      <p>Se non hai un abbonamento attivo, mostriamo annunci banner tramite <strong>Google AdMob</strong>. AdMob può utilizzare l'identificativo pubblicitario del tuo dispositivo per personalizzare gli annunci. Su iOS ti chiediamo un permesso esplicito (App Tracking Transparency) prima di usarlo — puoi negarlo e continuare a usare l'app con annunci non personalizzati. Non appena il tuo abbonamento è attivo, gli annunci smettono di essere mostrati.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>In sintesi</h2>
+    <div class="card">
+      <div class="permission-item">
+        <div class="permission-icon">👶</div>
+        <div class="permission-text"><strong>I dati del bebè, locali salvo gruppo condiviso</strong><span>Pappe, pannolini, farmaci, peso/altezza e promemoria restano sul tuo dispositivo; vengono sincronizzati sui nostri server solo se condividi un piano Coppia o Famiglia.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">📝</div>
+        <div class="permission-text"><strong>Account facoltativo</strong><span>Serve solo per rimuovere gli annunci o condividere l'accesso — non per usare l'app.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">📢</div>
+        <div class="permission-text"><strong>Annunci solo senza abbonamento</strong><span>Tramite Google AdMob, con permesso esplicito su iOS.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">🤝</div>
+        <div class="permission-text"><strong>Terze parti utilizzate</strong><span>Firebase (Google), RevenueCat e Google AdMob — solo se hai un account o vedi annunci.</span></div>
+      </div>
+      <div class="permission-item">
+        <div class="permission-icon">📍</div>
+        <div class="permission-text"><strong>Nessun altro dato sensibile</strong><span>Non raccogliamo posizione, contatti o simili.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Minori</h2>
+    <div class="card">
+      <p>L'account viene creato dall'adulto responsabile, non dal minore. I dati sul bebè (peso, altezza, pappe, ecc.) sono dati sanitari di un minore e, come spiegato sopra, restano sempre sul dispositivo dell'adulto che li inserisce, a meno che quell'adulto non decida di condividerli con il proprio partner o famiglia tramite un piano Coppia/Famiglia, nel qual caso vengono sincronizzati anche sui nostri server solo per i membri di quello stesso gruppo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eliminazione dei tuoi dati</h2>
+    <div class="card">
+      <p>I dati del bebè: dato che vengono salvati solo sul tuo dispositivo, puoi cancellare qualsiasi registrazione dall'interno dell'app o disinstallarla per eliminarli in modo permanente.</p>
+      <p>I dati del tuo account (email, stato dell'abbonamento, appartenenza al gruppo): puoi eliminarli tu stesso in qualsiasi momento da <strong>Menu → Account → Elimina account</strong>, direttamente nell'app — l'eliminazione è immediata. Se non riesci ad accedere all'app, puoi richiederlo via email. Dettagli completi, cosa viene eliminato e cosa no, nella nostra <a href="cuandoletoca-eliminar-cuenta-it.html">pagina di eliminazione dell'account</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modifiche a questa informativa</h2>
+    <div class="card">
+      <p>Possiamo aggiornare questa informativa in qualsiasi momento. Pubblicheremo la versione in vigore a questo stesso indirizzo.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Hai qualche dubbio?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoLeToca · Jonatan Ortega González · Spagna</footer>
+
+</body>
+</html>
