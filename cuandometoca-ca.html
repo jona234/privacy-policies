@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacitat — CuandoMeToca</title>
+  <title>Política de privacitat — CuandoMeToca</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -222,6 +222,19 @@
       .page-title { font-size: 22px; }
       header { padding: 16px 20px; }
     }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
   </style>
 </head>
 <body>
@@ -230,13 +243,13 @@
   <div class="logo-icon">⏰</div>
   <div>
     <div class="logo-text">CUANDOMETOCA</div>
-    <div class="logo-sub">Política de Privacitat</div>
+    <div class="logo-sub">Política de privacitat</div>
   </div>
 </header>
 
 <div class="container">
-  <h1 class="page-title">Política de Privacitat</h1>
-  <span class="updated">Última actualització: setembre de 2026</span>
+  <h1 class="page-title">Política de privacitat</h1>
+  <span class="updated">Última actualització: octubre de 2026</span>
   <div class="lang-switch">
     <a href="cuandometoca.html">Español</a>
     <a href="cuandometoca-en.html">English</a>
@@ -248,126 +261,176 @@
     <a href="cuandometoca-fr.html">Français</a>
   </div>
 
-  <div class="intro-card">CuandoMeToca desa les teves medicacions i les teves preses <strong>sempre al teu dispositiu</strong>. No hi ha compte, no hi ha servidor i no hi ha anuncis: l'app no accedeix a internet, així que les teves dades no poden sortir del telèfon llevat que decideixis exportar-les.</div>
+  <div class="intro-card">CuandoMeToca desa les teves medicacions i preses <strong>al teu dispositiu</strong>. La pots fer servir sense compte. Si crees un compte (gratuït) i contractes un pla Premium, les teves dades també es copien al nostre núvol perquè no les perdis i, si vols, perquè una persona de confiança pugui veure si t'has pres la medicació. Sense pla, l'app mostra anuncis.</div>
 
   <section>
-    <h2>Dades que recollim</h2>
+    <h2>Responsable</h2>
     <div class="card">
-      <span class="badge-none">Cap</span>
-      <p>L'app no requereix registre ni compte. Tot el que introdueixes es desa <strong>únicament al teu dispositiu</strong>, en una base de dades local:</p>
-      <ul>
-        <li>Nom, dosi, notes i color de cada medicació.</li>
-        <li>Horaris, intervals i unitats disponibles (estoc).</li>
-        <li>L'historial de preses que vas registrant i les dates de tractament per a les estadístiques d'adherència.</li>
-      </ul>
-      <p>Res d'això es transmet a cap servidor, ni nostre ni de tercers. No tenim cap manera de veure-ho.</p>
+<p>El responsable del tractament és <strong>Jonatan Ortega González</strong> (devlicius), amb domicili a Espanya. Per a qualsevol qüestió sobre les teves dades, escriu a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sense compte: tot al teu mòbil</h2>
+    <div class="card">
+<span class="badge-none">No surt del telèfon</span>
+<p>Si no inicies sessió, tot el que introdueixes es desa <strong>només al teu dispositiu</strong>, en una base de dades local:</p>
+<ul>
+<li>Medicacions: nom, dosi, notes, color, horaris o interval, unitats disponibles i dates de tractament.</li>
+<li>L'historial de preses.</li>
+<li>Cites i recordatoris, i els registres de pes.</li>
+</ul>
+<p>Són dades relatives a la teva salut. Mentre no tinguis un pla Premium no s'envien a cap servidor; només surten del telèfon si tu n'exportes una còpia i decideixes compartir-la.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Compte (opcional i gratuït)</h2>
+    <div class="card">
+<p>Pots crear un compte amb el teu correu i contrasenya, amb Google o amb Apple. Desem:</p>
+<ul>
+<li>El teu <strong>correu</strong>, un identificador intern de compte i el mètode d'accés. Amb Google o Apple, també el <strong>nom</strong> que et faciliten.</li>
+<li>La teva <strong>zona horària</strong> (per exemple, Europe/Madrid), perquè els teus horaris s'interpretin a la teva hora.</li>
+</ul>
+<p>L'inici de sessió el gestiona <strong>Firebase Authentication</strong> (Google). Tenir compte no puja les teves medicacions: això només passa amb un pla Premium.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Còpia al núvol (plans Premium)</h2>
+    <div class="card">
+<p>Amb un pla <strong>Premium</strong> o <strong>Premium Cuidador</strong> actiu, l'app puja al nostre núvol les teves medicacions, preses, cites i registres de pes, i els manté sincronitzats entre els teus dispositius. Es desen a <strong>Cloud Firestore</strong> (Google Cloud), en servidors de la Unió Europea (Bèlgica), i només tu els pots llegir amb el teu compte.</p>
+<ul>
+<li>Si el pla s'acaba, l'app deixa de pujar dades, però pots continuar descarregant o esborrant el que hi hagi al núvol.</li>
+<li><strong>12 mesos després que s'acabi el teu darrer pla</strong>, la còpia al núvol s'esborra automàticament. L'app t'avisa un mes abans. El que tens al mòbil no es toca.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mode cuidador (pla Premium Cuidador)</h2>
+    <div class="card">
+<p>Amb Premium Cuidador pots generar un codi d'invitació (caduca en 48 hores) i donar-lo a qui vulguis que vegi la teva medicació. Qui el bescanvia, amb el seu propi compte gratuït, passa a ser el teu cuidador:</p>
+<ul>
+<li>El teu cuidador veu <strong>les teves medicacions i preses</strong>. <strong>No veu</strong> les teves cites ni el teu pes, i no pot modificar res.</li>
+<li>Cadascú veu el <strong>nom o el correu</strong> del compte de l'altre, per saber amb qui està vinculat.</li>
+<li>Podeu desfer el vincle en qualsevol moment, des de qualsevol dels dos costats. Si el teu pla s'acaba, l'accés es talla automàticament.</li>
+<li><strong>Avisos al cuidador:</strong> si una presa porta 30 minuts sense marcar, el nostre servidor envia una notificació als teus cuidadors amb el teu nom, el del medicament i l'hora. Per a això desem l'identificador de notificacions (Firebase Cloud Messaging) i l'idioma del mòbil del cuidador. El registre dels avisos enviats s'esborra al cap de 2 dies.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Subscripcions i pagaments</h2>
+    <div class="card">
+<p>Els pagaments els cobren <strong>Apple (App Store)</strong> o <strong>Google (Google Play)</strong>; mai no veiem la teva targeta. Fem servir <strong>RevenueCat</strong> per saber quin pla tens: rep el teu identificador intern de compte i els justificants de compra de la botiga, però no el teu correu ni les teves dades de salut. Desem quin pla tens i fins quan.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anuncis (només sense pla)</h2>
+    <div class="card">
+<p>Si no tens un pla Premium, l'app mostra un bàner de <strong>Google AdMob</strong>. A l'Espai Econòmic Europeu, el Regne Unit i Suïssa, abans de demanar cap anunci l'app et mostra el formulari de consentiment de Google, on tries si acceptes anuncis personalitzats. Pots canviar la teva elecció quan vulguis a <strong>⋮ → Privacitat dels anuncis</strong>.</p>
+<ul>
+<li>A Android, AdMob pot fer servir l'identificador de publicitat del dispositiu segons el que hagis acceptat.</li>
+<li>A iOS no demanem permís de seguiment (App Tracking Transparency), de manera que no es fa servir l'identificador de publicitat d'Apple.</li>
+<li>Mai no es passa a AdMob informació sobre la teva medicació ni les teves preses.</li>
+</ul>
+<p>Amb un pla actiu no es mostren anuncis ni es carrega l'SDK d'anuncis.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seguretat</h2>
+    <div class="card">
+<p>Les comunicacions van xifrades (HTTPS). Les regles de la nostra base de dades impedeixen que ningú llegeixi les teves dades excepte tu i, en el mode cuidador, les persones que hagis vinculat. L'app fa servir <strong>Firebase App Check</strong> (Play Integrity a Android, DeviceCheck a iOS), que envia a Google una prova que la petició ve de l'app autèntica, sense dades personals addicionals.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Base jurídica</h2>
+    <div class="card">
+<ul>
+<li><strong>El teu consentiment explícit</strong> (art. 9.2.a RGPD) per tractar les teves dades de salut al núvol i compartir-les amb els teus cuidadors: el dones en contractar el pla i activar aquestes funcions, i el pots retirar esborrant les dades o el compte.</li>
+<li><strong>L'execució del contracte</strong> (art. 6.1.b) per al compte i les subscripcions.</li>
+<li><strong>El teu consentiment</strong> (art. 6.1.a) per als anuncis personalitzats.</li>
+<li><strong>El nostre interès legítim</strong> (art. 6.1.f) a protegir el servei d'abusos (App Check).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proveïdors i transferències</h2>
+    <div class="card">
+<p>Fem servir aquests proveïdors, que tracten les dades per compte nostre:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, App Check i AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: estat de les subscripcions.</li>
+</ul>
+<p>Apple i Google, com a botigues, tracten els pagaments com a responsables independents. Alguns d'aquests proveïdors poden tractar dades fora de l'Espai Econòmic Europeu (per exemple, als Estats Units). En aquest cas, la transferència s'empara en el Marc de Privacitat de Dades UE-EUA o en les clàusules contractuals tipus de la Comissió Europea.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quant de temps les conservem</h2>
+    <div class="card">
+<ul>
+<li>Dades del mòbil: fins que les esborris o desinstal·lis l'app.</li>
+<li>Compte: fins que l'eliminis.</li>
+<li>Còpia al núvol: mentre tinguis un pla i fins a 12 mesos després que s'acabi.</li>
+<li>Codis d'invitació: 48 hores com a màxim. Registre d'avisos enviats: 2 dies.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Els teus drets</h2>
+    <div class="card">
+<p>Pots accedir a les teves dades, rectificar-les, esborrar-les, oposar-te al tractament, limitar-lo, demanar-ne la portabilitat i retirar el consentiment quan vulguis. La majoria els pots exercir des de la mateixa app (<strong>⋮ → Exportar dades</strong> et dona una còpia completa). Per a la resta, escriu-nos a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. Si creus que no hem atès bé la teva sol·licitud, pots reclamar davant l'Agència Espanyola de Protecció de Dades (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Còpia de seguretat i informes</h2>
+    <div class="card">
+<p>Pots exportar totes les teves dades a un fitxer JSON o generar un informe en PDF. Es creen al teu dispositiu i <strong>tu decideixes amb qui els comparteixes</strong>. En importar una còpia, les seves dades substitueixen les de l'app (i, amb pla, les del núvol).</p>
     </div>
   </section>
 
   <section>
     <h2>Permisos que fa servir l'app</h2>
     <div class="card">
-      <div class="permission-item">
-        <div class="permission-icon">🔔</div>
-        <div class="permission-text"><strong>Notificacions</strong><span>Per avisar-te a l'hora de cada presa i amb els recordatoris de +30 i +60 minuts.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">⏰</div>
-        <div class="permission-text"><strong>Alarmes exactes</strong><span>A Android 12 i posteriors, perquè l'avís arribi a la seva hora i no quan el sistema decideixi.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">🔋</div>
-        <div class="permission-text"><strong>Optimització de bateria</strong><span>Opcional. Només se sol·licita si tu l'actives des de l'avís de l'app, perquè el sistema no endarrereixi els recordatoris.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">🔄</div>
-        <div class="permission-text"><strong>Inici del dispositiu</strong><span>Per tornar a programar els teus recordatoris després de reiniciar el telèfon.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📂</div>
-        <div class="permission-text"><strong>Selecció de fitxers</strong><span>Només s'utilitza en el moment en què tries un fitxer per importar una còpia de seguretat.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">🌐</div>
-        <div class="permission-text"><strong>Sense accés a internet</strong><span>A Android l'app ni tan sols declara el permís d'internet. Les tipografies van incloses dins l'app, no es descarrega res.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Còpia de seguretat</h2>
-    <div class="card">
-      <p>Pots exportar totes les teves dades a un fitxer JSON. Aquest fitxer es genera al teu dispositiu i <strong>tu decideixes quan i amb qui compartir-lo</strong> (correu, missatgeria, emmagatzematge al núvol…). L'app no l'envia enlloc pel seu compte.</p>
-      <p>En importar un fitxer, les seves dades substitueixen les que tinguis a l'app. L'operació passa sencera al teu dispositiu.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Widget de pantalla d'inici (Android)</h2>
-    <div class="card">
-      <p>El widget mostra les preses que tens pendents avui. Llegeix aquesta llista de l'emmagatzematge local del telèfon; no consulta cap servidor.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Anuncis i analítica</h2>
-    <div class="card">
-      <p>CuandoMeToca <strong>no mostra anuncis</strong> i no inclou cap eina d'analítica, mesurament o seguiment. No s'utilitza l'identificador de publicitat del dispositiu ni cap altre identificador.</p>
-      <div class="no-track">✅ No hi ha SDK de tercers que recullin dades. No compartim informació amb ningú perquè no la recollim.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>En resum</h2>
-    <div class="card">
-      <div class="permission-item">
-        <div class="permission-icon">📱</div>
-        <div class="permission-text"><strong>Tot local</strong><span>Medicacions, horaris i historial de preses es queden al teu dispositiu.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📝</div>
-        <div class="permission-text"><strong>Sense registre</strong><span>No necessites crear cap compte per fer servir l'app.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📢</div>
-        <div class="permission-text"><strong>Sense publicitat ni analítica</strong><span>No hi ha anuncis ni serveis d'anàlisi o seguiment.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">🤝</div>
-        <div class="permission-text"><strong>Sense tercers</strong><span>No es comparteix informació amb ningú.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📍</div>
-        <div class="permission-text"><strong>Sense altres dades sensibles</strong><span>No es recull ubicació, contactes, càmera ni fotos.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Dades de salut</h2>
-    <div class="card">
-      <p>Els noms de medicaments, dosis i preses que registres són dades relatives a la teva salut. Precisament per això l'app està dissenyada perquè no surtin del dispositiu: no se sincronitzen, no es copien a cap servidor i no es comparteixen amb tercers. L'única manera que surtin del telèfon és que tu generis una còpia de seguretat i decideixis compartir-la.</p>
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notificacions</strong><span>Per avisar-te de cada presa i de les teves cites i, si ets cuidador, de les preses sense marcar de qui cuides.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Alarmes exactes</strong><span>A Android 12 i posteriors, perquè l'avís arribi a la seva hora.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Optimització de bateria</strong><span>Opcional; només si l'actives tu, perquè el sistema no endarrereixi els avisos.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Inici del dispositiu</strong><span>Per tornar a programar els avisos després de reiniciar el telèfon.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Selecció de fitxers</strong><span>Només quan tries un fitxer per importar una còpia.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Per al compte, la còpia al núvol, el mode cuidador, les subscripcions i els anuncis. Sense compte ni pla, les teves dades de salut no s'envien.</span></div></div>
     </div>
   </section>
 
   <section>
     <h2>Menors</h2>
     <div class="card">
-      <p>L'app no recull dades de cap usuari, inclosos els menors d'edat.</p>
+<p>L'app no està adreçada a menors de 14 anys, que no han de crear cap compte. Si ets pare, mare o tutor i creus que un menor ens ha facilitat dades, escriu-nos i les esborrarem.</p>
     </div>
   </section>
 
   <section>
     <h2>Eliminació de les teves dades</h2>
     <div class="card">
-      <p>Com que tota la informació es desa únicament al teu dispositiu, pots esborrar qualsevol registre dins l'app o desinstal·lar-la per eliminar totes les dades de manera permanent. No cal que ens ho demanis: no en tenim cap còpia.</p>
+<ul>
+<li><strong>Eliminar el compte:</strong> a <strong>⋮ → Compte → Elimina el compte</strong>. S'esborren al moment el teu compte, la teva còpia al núvol i els teus vincles de cuidador. Les dades del mòbil es conserven.</li>
+<li><strong>Esborrar només les dades:</strong> <strong>⋮ → Esborrar totes les dades</strong> esborra les del mòbil i, si has iniciat sessió, també la còpia al núvol.</li>
+</ul>
+<p>Més detalls a la <a href="cuandometoca-eliminar-cuenta-ca.html">pàgina d'eliminació del compte</a>.</p>
     </div>
   </section>
 
   <section>
     <h2>Canvis en aquesta política</h2>
     <div class="card">
-      <p>Podem actualitzar aquesta política en qualsevol moment. Publicarem la versió vigent en aquesta mateixa URL.</p>
+<p>Podem actualitzar aquesta política. Publicarem la versió vigent en aquesta mateixa adreça i, si el canvi és important, t'ho indicarem a l'app.</p>
     </div>
   </section>
 
@@ -377,7 +440,7 @@
   </div>
 </div>
 
-<footer>© 2026 CuandoMeToca · Jonatan Ortega González · Espanya</footer>
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
 
 </body>
 </html>
