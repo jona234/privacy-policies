@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informativa sulla privacy — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">Informativa sulla privacy</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Informativa sulla privacy</h1>
+  <span class="updated">Ultimo aggiornamento: ottobre 2026</span>
+  <div class="lang-switch">
+    <a href="cuandometoca.html">Español</a>
+    <a href="cuandometoca-en.html">English</a>
+    <a href="cuandometoca-de.html">Deutsch</a>
+    <a href="cuandometoca-zh.html">简体中文</a>
+    <a href="cuandometoca-ca.html">Català</a>
+    <a href="cuandometoca-eu.html">Euskara</a>
+    <span class="current">Italiano</span>
+    <a href="cuandometoca-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card">CuandoMeToca conserva i tuoi farmaci e le tue assunzioni <strong>sul tuo dispositivo</strong>. Puoi usarla senza account. Se crei un account (gratuito) e sottoscrivi un piano Premium, i tuoi dati vengono copiati anche nel nostro cloud, così non li perdi e, se vuoi, una persona di fiducia può vedere se hai preso i farmaci. Senza piano, l'app mostra annunci.</div>
+
+  <section>
+    <h2>Titolare del trattamento</h2>
+    <div class="card">
+<p>Il titolare del trattamento è <strong>Jonatan Ortega González</strong> (devlicius), con sede in Spagna. Per qualsiasi domanda sui tuoi dati scrivi a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Senza account: tutto sul tuo telefono</h2>
+    <div class="card">
+<span class="badge-none">Non lascia il telefono</span>
+<p>Se non accedi, tutto ciò che inserisci viene salvato <strong>solo sul tuo dispositivo</strong>, in un database locale:</p>
+<ul>
+<li>Farmaci: nome, dose, note, colore, orari o intervallo, unità disponibili e date del trattamento.</li>
+<li>Lo storico delle assunzioni.</li>
+<li>Appuntamenti e promemoria, e le misurazioni del peso.</li>
+</ul>
+<p>Sono dati relativi alla salute. Finché non hai un piano Premium non vengono inviati a nessun server; lasciano il telefono solo se esporti una copia e decidi di condividerla.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Account (facoltativo e gratuito)</h2>
+    <div class="card">
+<p>Puoi creare un account con email e password, con Google o con Apple. Conserviamo:</p>
+<ul>
+<li>La tua <strong>email</strong>, un identificativo interno dell'account e il metodo di accesso. Con Google o Apple, anche il <strong>nome</strong> che forniscono.</li>
+<li>Il tuo <strong>fuso orario</strong> (ad esempio Europe/Rome), perché i tuoi orari siano interpretati nella tua ora locale.</li>
+</ul>
+<p>L'accesso è gestito da <strong>Firebase Authentication</strong> (Google). Avere un account non carica i tuoi farmaci: questo avviene solo con un piano Premium.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Copia nel cloud (piani Premium)</h2>
+    <div class="card">
+<p>Con un piano <strong>Premium</strong> o <strong>Premium Assistente</strong> attivo, l'app carica nel nostro cloud farmaci, assunzioni, appuntamenti e misurazioni del peso, e li mantiene sincronizzati tra i tuoi dispositivi. Sono conservati in <strong>Cloud Firestore</strong> (Google Cloud), su server nell'Unione Europea (Belgio), e solo tu puoi leggerli con il tuo account.</p>
+<ul>
+<li>Se il piano termina, l'app smette di caricare dati, ma puoi continuare a scaricare o eliminare ciò che è nel cloud.</li>
+<li><strong>12 mesi dopo la fine del tuo ultimo piano</strong>, la copia nel cloud viene eliminata automaticamente. L'app ti avvisa un mese prima. Ciò che è sul telefono resta.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modalità assistente (piano Premium Assistente)</h2>
+    <div class="card">
+<p>Con Premium Assistente puoi generare un codice di invito (valido 48 ore) e darlo a chi vuoi che veda i tuoi farmaci. Chi lo riscatta, con il proprio account gratuito, diventa il tuo assistente:</p>
+<ul>
+<li>Il tuo assistente vede <strong>i tuoi farmaci e le tue assunzioni</strong>. <strong>Non vede</strong> appuntamenti né peso, e non può modificare nulla.</li>
+<li>Ciascuno vede il <strong>nome o l'email</strong> dell'account dell'altro, per sapere a chi è collegato.</li>
+<li>Potete interrompere il collegamento in qualsiasi momento, da entrambe le parti. Se il tuo piano termina, l'accesso si interrompe automaticamente.</li>
+<li><strong>Avvisi all'assistente:</strong> se un'assunzione resta non segnata per 30 minuti, il nostro server invia ai tuoi assistenti una notifica con il tuo nome, il farmaco e l'orario. Per farlo conserviamo l'identificativo per le notifiche (Firebase Cloud Messaging) e la lingua del telefono dell'assistente. Il registro degli avvisi inviati viene eliminato dopo 2 giorni.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Abbonamenti e pagamenti</h2>
+    <div class="card">
+<p>I pagamenti sono gestiti da <strong>Apple (App Store)</strong> o <strong>Google (Google Play)</strong>; non vediamo mai la tua carta. Usiamo <strong>RevenueCat</strong> per sapere quale piano hai: riceve il tuo identificativo interno dell'account e le ricevute d'acquisto dello store, ma non la tua email né i tuoi dati sanitari. Conserviamo quale piano hai e fino a quando.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Annunci (solo senza piano)</h2>
+    <div class="card">
+<p>Se non hai un piano Premium, l'app mostra un banner di <strong>Google AdMob</strong>. Nello Spazio economico europeo, nel Regno Unito e in Svizzera, prima di richiedere qualsiasi annuncio l'app mostra il modulo di consenso di Google, dove scegli se accettare annunci personalizzati. Puoi cambiare la tua scelta quando vuoi in <strong>⋮ → Privacy degli annunci</strong>.</p>
+<ul>
+<li>Su Android, AdMob può usare l'identificativo pubblicitario del dispositivo secondo quanto hai accettato.</li>
+<li>Su iOS non chiediamo il permesso di tracciamento (App Tracking Transparency), quindi l'identificativo pubblicitario di Apple non viene usato.</li>
+<li>Le informazioni sui tuoi farmaci o sulle tue assunzioni <strong>non</strong> vengono <strong>mai</strong> passate ad AdMob.</li>
+</ul>
+<p>Con un piano attivo non vengono mostrati annunci e l'SDK pubblicitario non viene avviato.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sicurezza</h2>
+    <div class="card">
+<p>Le comunicazioni sono cifrate (HTTPS). Le regole del nostro database impediscono a chiunque di leggere i tuoi dati, tranne a te e, nella modalità assistente, alle persone che hai collegato. L'app usa <strong>Firebase App Check</strong> (Play Integrity su Android, DeviceCheck su iOS), che invia a Google una prova che la richiesta proviene dall'app autentica, senza ulteriori dati personali.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Base giuridica</h2>
+    <div class="card">
+<ul>
+<li><strong>Il tuo consenso esplicito</strong> (art. 9.2.a GDPR) per trattare i tuoi dati sanitari nel cloud e condividerli con i tuoi assistenti: lo dai sottoscrivendo il piano e attivando queste funzioni, e puoi revocarlo eliminando i dati o l'account.</li>
+<li><strong>L'esecuzione del contratto</strong> (art. 6.1.b) per l'account e gli abbonamenti.</li>
+<li><strong>Il tuo consenso</strong> (art. 6.1.a) per gli annunci personalizzati.</li>
+<li><strong>Il nostro legittimo interesse</strong> (art. 6.1.f) a proteggere il servizio dagli abusi (App Check).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fornitori e trasferimenti</h2>
+    <div class="card">
+<p>Usiamo questi fornitori, che trattano i dati per nostro conto:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, App Check e AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: stato degli abbonamenti.</li>
+</ul>
+<p>Apple e Google, in quanto store, trattano i pagamenti come titolari autonomi. Alcuni di questi fornitori possono trattare dati al di fuori dello Spazio economico europeo (ad esempio negli Stati Uniti). In tal caso il trasferimento si basa sul Data Privacy Framework UE-USA o sulle clausole contrattuali tipo della Commissione europea.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Per quanto tempo li conserviamo</h2>
+    <div class="card">
+<ul>
+<li>Dati sul telefono: finché non li elimini o disinstalli l'app.</li>
+<li>Account: finché non lo elimini.</li>
+<li>Copia nel cloud: finché hai un piano e fino a 12 mesi dopo la sua fine.</li>
+<li>Codici di invito: al massimo 48 ore. Registro degli avvisi inviati: 2 giorni.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>I tuoi diritti</h2>
+    <div class="card">
+<p>Puoi accedere ai tuoi dati, rettificarli, cancellarli, opporti al trattamento, limitarlo, chiederne la portabilità e revocare il consenso in qualsiasi momento. Puoi fare quasi tutto dall'app stessa (<strong>⋮ → Esporta dati</strong> ti dà una copia completa). Per il resto, scrivi a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. Se ritieni che non abbiamo gestito correttamente la tua richiesta, puoi presentare reclamo all'Agenzia spagnola per la protezione dei dati (<a href="https://www.aepd.es">www.aepd.es</a>) o al Garante per la protezione dei dati personali.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Backup e report</h2>
+    <div class="card">
+<p>Puoi esportare tutti i tuoi dati in un file JSON o creare un report PDF. Vengono creati sul tuo dispositivo e <strong>decidi tu con chi condividerli</strong>. Importando un backup, i suoi dati sostituiscono quelli dell'app (e, con un piano, quelli nel cloud).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Autorizzazioni usate dall'app</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notifiche</strong><span>Per ricordarti ogni assunzione e i tuoi appuntamenti e, se sei assistente, le assunzioni non segnate della persona che assisti.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Sveglie esatte</strong><span>Da Android 12 in poi, perché l'avviso arrivi in orario.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Ottimizzazione batteria</strong><span>Facoltativa; solo se la attivi tu, perché il sistema non ritardi gli avvisi.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Avvio del dispositivo</strong><span>Per riprogrammare gli avvisi dopo il riavvio del telefono.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Selezione file</strong><span>Solo quando scegli un file per importare un backup.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Per account, copia nel cloud, modalità assistente, abbonamenti e annunci. Senza account né piano, i tuoi dati sanitari non vengono inviati.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Minori</h2>
+    <div class="card">
+<p>L'app non è rivolta ai minori di 14 anni, che non devono creare un account. Se sei un genitore o tutore e ritieni che un minore ci abbia fornito dati, scrivici e li elimineremo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eliminazione dei tuoi dati</h2>
+    <div class="card">
+<ul>
+<li><strong>Eliminare l'account:</strong> in <strong>⋮ → Account → Elimina account</strong>. Il tuo account, la copia nel cloud e i collegamenti con gli assistenti vengono eliminati subito. I dati sul telefono restano.</li>
+<li><strong>Eliminare solo i dati:</strong> <strong>⋮ → Elimina tutti i dati</strong> elimina quelli sul telefono e, se hai effettuato l'accesso, anche la copia nel cloud.</li>
+</ul>
+<p>Maggiori dettagli nella <a href="cuandometoca-eliminar-cuenta-it.html">pagina di eliminazione dell'account</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modifiche a questa informativa</h2>
+    <div class="card">
+<p>Possiamo aggiornare questa informativa. La versione in vigore sarà sempre pubblicata a questo indirizzo e, se la modifica è importante, te lo segnaleremo nell'app.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Hai qualche domanda?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

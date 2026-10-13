@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私政策 — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">隐私政策</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">隐私政策</h1>
+  <span class="updated">最后更新：2026 年 10 月</span>
+  <div class="lang-switch">
+    <a href="cuandometoca.html">Español</a>
+    <a href="cuandometoca-en.html">English</a>
+    <a href="cuandometoca-de.html">Deutsch</a>
+    <span class="current">简体中文</span>
+    <a href="cuandometoca-ca.html">Català</a>
+    <a href="cuandometoca-eu.html">Euskara</a>
+    <a href="cuandometoca-it.html">Italiano</a>
+    <a href="cuandometoca-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card">CuandoMeToca 将你的药物和服药记录保存<strong>在你的设备上</strong>。你可以不注册账户直接使用。如果你创建账户（免费）并订阅 Premium 方案，你的数据还会复制到我们的云端，以免丢失；如果你愿意，也可以让你信任的人查看你是否按时服药。未订阅方案时，应用会显示广告。</div>
+
+  <section>
+    <h2>数据控制者</h2>
+    <div class="card">
+<p>数据控制者为 <strong>Jonatan Ortega González</strong>（devlicius），位于西班牙。如对你的数据有任何疑问，请发送邮件至 <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>不登录：一切都在你的手机上</h2>
+    <div class="card">
+<span class="badge-none">不会离开手机</span>
+<p>如果你不登录，你输入的所有内容都<strong>只保存在你的设备上</strong>的本地数据库中：</p>
+<ul>
+<li>药物：名称、剂量、备注、颜色、服药时间或间隔、库存数量和疗程日期。</li>
+<li>服药记录。</li>
+<li>预约和提醒，以及体重记录。</li>
+</ul>
+<p>这些属于健康数据。在没有 Premium 方案时，它们不会发送到任何服务器；只有当你导出副本并选择分享时，它们才会离开手机。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>账户（可选，免费）</h2>
+    <div class="card">
+<p>你可以使用邮箱和密码、Google 或 Apple 创建账户。我们会保存：</p>
+<ul>
+<li>你的<strong>邮箱</strong>、内部账户标识和登录方式。使用 Google 或 Apple 登录时，还包括它们提供的<strong>姓名</strong>。</li>
+<li>你的<strong>时区</strong>（例如 Asia/Shanghai），以便按你的当地时间理解你的服药时间。</li>
+</ul>
+<p>登录由 <strong>Firebase Authentication</strong>（Google）处理。仅有账户不会上传你的药物数据：只有订阅 Premium 方案后才会上传。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>云端副本（Premium 方案）</h2>
+    <div class="card">
+<p>在 <strong>Premium</strong> 或 <strong>Premium 照护版</strong>方案有效期间，应用会将你的药物、服药记录、预约和体重记录上传到我们的云端，并在你的设备之间保持同步。数据保存在 <strong>Cloud Firestore</strong>（Google Cloud）位于欧盟（比利时）的服务器上，只有你能用自己的账户读取。</p>
+<ul>
+<li>方案结束后，应用会停止上传，但你仍可以下载或删除云端的数据。</li>
+<li><strong>在你最后一个方案结束 12 个月后</strong>，云端副本会被自动删除。应用会提前一个月提醒你。手机上的数据不受影响。</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>照护模式（Premium 照护版）</h2>
+    <div class="card">
+<p>订阅 Premium 照护版后，你可以生成邀请码（48 小时内有效），交给你希望查看你用药情况的人。对方使用自己的免费账户兑换后，即成为你的照护者：</p>
+<ul>
+<li>照护者可以看到<strong>你的药物和服药记录</strong>，<strong>看不到</strong>你的预约和体重，也不能修改任何内容。</li>
+<li>双方都能看到对方账户的<strong>姓名或邮箱</strong>，以便知道与谁关联。</li>
+<li>任何一方都可以随时解除关联。如果你的方案结束，访问权限会自动终止。</li>
+<li><strong>照护提醒：</strong>如果某次服药超过 30 分钟仍未记录，我们的服务器会向你的照护者发送通知，其中包含你的姓名、药物名称和时间。为此，我们会保存照护者手机的通知标识（Firebase Cloud Messaging）和语言。已发送提醒的记录会在 2 天后删除。</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>订阅与付款</h2>
+    <div class="card">
+<p>付款由 <strong>Apple（App Store）</strong>或 <strong>Google（Google Play）</strong>收取，我们永远看不到你的银行卡。我们使用 <strong>RevenueCat</strong> 了解你的方案：它会收到你的内部账户标识和商店的购买凭证，但不会收到你的邮箱或健康数据。我们会保存你的方案及其有效期。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>广告（仅限未订阅时）</h2>
+    <div class="card">
+<p>如果你没有 Premium 方案，应用会显示 <strong>Google AdMob</strong> 横幅广告。在欧洲经济区、英国和瑞士，应用在请求任何广告之前会显示 Google 的同意表单，由你选择是否接受个性化广告。你可以随时在 <strong>⋮ → 广告隐私设置</strong>中更改选择。</p>
+<ul>
+<li>在 Android 上，AdMob 可能会根据你的同意使用设备的广告标识符。</li>
+<li>在 iOS 上，我们不会请求跟踪权限（App Tracking Transparency），因此不会使用 Apple 的广告标识符。</li>
+<li>有关你的药物或服药记录的信息<strong>绝不会</strong>传给 AdMob。</li>
+</ul>
+<p>方案有效期间不会显示广告，也不会启动广告 SDK。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>安全</h2>
+    <div class="card">
+<p>所有通信均经过加密（HTTPS）。我们的数据库规则确保除你本人以及在照护模式下你所关联的人之外，任何人都无法读取你的数据。应用使用 <strong>Firebase App Check</strong>（Android 上为 Play Integrity，iOS 上为 DeviceCheck），向 Google 发送请求来自正版应用的证明，不包含额外的个人数据。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>法律依据</h2>
+    <div class="card">
+<ul>
+<li><strong>你的明确同意</strong>（GDPR 第 9 条第 2 款 a 项）：用于在云端处理你的健康数据并与照护者共享。你在订阅方案并启用这些功能时给予同意，并可通过删除数据或账户来撤回。</li>
+<li><strong>履行合同</strong>（第 6 条第 1 款 b 项）：用于账户和订阅。</li>
+<li><strong>你的同意</strong>（第 6 条第 1 款 a 项）：用于个性化广告。</li>
+<li><strong>我们的正当利益</strong>（第 6 条第 1 款 f 项）：保护服务免遭滥用（App Check）。</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>服务提供商与数据传输</h2>
+    <div class="card">
+<p>我们使用以下代表我们处理数据的服务提供商：</p>
+<ul>
+<li><strong>Google</strong>：Firebase Authentication、Cloud Firestore、Cloud Functions、Firebase Cloud Messaging、App Check 和 AdMob。</li>
+<li><strong>RevenueCat, Inc.</strong>：订阅状态。</li>
+</ul>
+<p>Apple 和 Google 作为应用商店，以独立控制者身份处理付款。部分服务提供商可能在欧洲经济区以外（例如美国）处理数据。此时，数据传输以欧盟—美国数据隐私框架或欧盟委员会标准合同条款为依据。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>保存期限</h2>
+    <div class="card">
+<ul>
+<li>手机上的数据：直到你删除或卸载应用。</li>
+<li>账户：直到你删除账户。</li>
+<li>云端副本：方案有效期间，以及方案结束后最多 12 个月。</li>
+<li>邀请码：最多 48 小时。已发送提醒的记录：2 天。</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>你的权利</h2>
+    <div class="card">
+<p>你可以随时访问、更正、删除你的数据，反对或限制其处理，要求数据可携带，并撤回同意。大部分操作可在应用内完成（<strong>⋮ → 导出数据</strong>可获得完整副本）。其他请求请发送邮件至 <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>。如果你认为我们未妥善处理你的请求，可以向西班牙数据保护局（<a href="https://www.aepd.es">www.aepd.es</a>）或你所在国家的监管机构投诉。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>备份与报告</h2>
+    <div class="card">
+<p>你可以将所有数据导出为 JSON 文件，或生成 PDF 报告。文件在你的设备上生成，<strong>由你决定与谁分享</strong>。导入备份时，其中的数据会替换应用中的数据（如有方案，也会替换云端数据）。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>应用使用的权限</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>通知</strong><span>提醒你每次服药和预约；如果你是照护者，还会提醒你所照护的人未记录的服药。</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>精确闹钟</strong><span>在 Android 12 及以上版本中，确保提醒准时送达。</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>电池优化</strong><span>可选；仅在你开启时使用，避免系统延迟提醒。</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>设备启动</strong><span>手机重启后重新安排提醒。</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>文件选择</strong><span>仅在你选择文件导入备份时使用。</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>网络</strong><span>用于账户、云端副本、照护模式、订阅和广告。没有账户或方案时，你的健康数据不会被发送。</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>未成年人</h2>
+    <div class="card">
+<p>本应用不面向 14 岁以下的儿童，他们不应创建账户。如果你是父母或监护人，并认为有儿童向我们提供了数据，请联系我们，我们会将其删除。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>删除你的数据</h2>
+    <div class="card">
+<ul>
+<li><strong>删除账户：</strong>在 <strong>⋮ → 账户 → 删除账户</strong>中操作。你的账户、云端副本和照护关联会立即删除。手机上的数据会保留。</li>
+<li><strong>仅删除数据：</strong><strong>⋮ → 删除所有数据</strong>会删除手机上的数据；如果你已登录，也会删除云端副本。</li>
+</ul>
+<p>详情请见<a href="cuandometoca-eliminar-cuenta-zh.html">账户删除页面</a>。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>本政策的变更</h2>
+    <div class="card">
+<p>我们可能会更新本政策。现行版本将始终发布在此地址；如有重大变更，我们会在应用中告知你。</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>有任何疑问？</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

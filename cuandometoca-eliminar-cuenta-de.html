@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Löschung von Konto und Daten — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">Löschung von Konto und Daten</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">So löschst du dein CuandoMeToca-Konto</h1>
+  <span class="updated">Zuletzt aktualisiert: Oktober 2026</span>
+  <div class="lang-switch">
+    <a href="cuandometoca-eliminar-cuenta.html">Español</a>
+    <a href="cuandometoca-eliminar-cuenta-en.html">English</a>
+    <span class="current">Deutsch</span>
+    <a href="cuandometoca-eliminar-cuenta-zh.html">简体中文</a>
+    <a href="cuandometoca-eliminar-cuenta-ca.html">Català</a>
+    <a href="cuandometoca-eliminar-cuenta-eu.html">Euskara</a>
+    <a href="cuandometoca-eliminar-cuenta-it.html">Italiano</a>
+    <a href="cuandometoca-eliminar-cuenta-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card"><strong>CuandoMeToca</strong> ist eine App zur Medikamentenerinnerung, entwickelt von Jonatan Ortega González (devlicius). Das Konto ist optional. Wenn du eines hast, kannst du es jederzeit selbst in der App löschen, ohne uns zu schreiben.</div>
+
+  <section>
+    <h2>Konto in der App löschen (empfohlen)</h2>
+    <div class="card">
+<ol>
+<li>Öffne die App und tippe oben in der Ecke auf das Menü <strong>⋮</strong>.</li>
+<li>Gehe zu <strong>Konto</strong>.</li>
+<li>Tippe auf <strong>Konto löschen</strong>.</li>
+<li>Bestätige, dass du es bist (mit Google, mit Apple oder mit deinem Passwort), und stimme zu.</li>
+</ol>
+<p>Die Löschung erfolgt sofort.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kein Zugriff auf die App?</h2>
+    <div class="card">
+<p>Schreib von der E-Mail-Adresse deines Kontos an <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a> mit dem Betreff „CuandoMeToca-Konto löschen“. Wir prüfen die Anfrage und löschen das Konto innerhalb von höchstens 30 Tagen.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Was gelöscht wird</h2>
+    <div class="card">
+<span class="badge-instant">Sofort und endgültig</span>
+<ul>
+<li>Dein Anmeldekonto (E-Mail, Name und Anmeldemethode). Bei Apple wird außerdem der Zugriff der App auf deine Apple-ID widerrufen.</li>
+<li>Deine gesamte <strong>Cloud-Kopie</strong>: Medikamente, Einnahmen, Termine und Gewicht.</li>
+<li>Deine <strong>Betreuungsverbindungen</strong> in beide Richtungen und offene Einladungscodes. Wer dich betreut hat, sieht deine Medikamente nicht mehr.</li>
+<li>Die Benachrichtigungs-IDs deiner Geräte und deine Zeitzone.</li>
+<li>Dein Abostatus in unserer Datenbank und dein Kundendatensatz bei RevenueCat.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Was nicht betroffen ist</h2>
+    <div class="card">
+<p><strong>Die Daten auf deinem Handy</strong> bleiben, damit du die App ohne Konto weiter nutzen kannst. Um auch sie zu löschen, nutze <strong>⋮ → Alle Daten löschen</strong> oder deinstalliere die App.</p>
+<p><strong>Dein Abo wird nicht gekündigt</strong>: Die Abrechnung läuft über Apple oder Google. Kündige es in den Abo-Einstellungen deines Stores.</p>
+<p>Apple, Google und RevenueCat können eigene Aufzeichnungen über Käufe gemäß ihren Richtlinien und gesetzlichen Pflichten aufbewahren.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Daten löschen, Konto behalten</h2>
+    <div class="card">
+<p><strong>⋮ → Alle Daten löschen</strong> löscht die Daten auf dem Handy und, wenn du angemeldet bist, auch die Cloud-Kopie, behält aber dein Konto. Außerdem wird die Cloud-Kopie 12 Monate nach Ende deines letzten Plans von selbst gelöscht.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Fragen zur Kontolöschung?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

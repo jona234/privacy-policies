@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">Privacy Policy</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Privacy Policy</h1>
+  <span class="updated">Last updated: October 2026</span>
+  <div class="lang-switch">
+    <a href="cuandometoca.html">Español</a>
+    <span class="current">English</span>
+    <a href="cuandometoca-de.html">Deutsch</a>
+    <a href="cuandometoca-zh.html">简体中文</a>
+    <a href="cuandometoca-ca.html">Català</a>
+    <a href="cuandometoca-eu.html">Euskara</a>
+    <a href="cuandometoca-it.html">Italiano</a>
+    <a href="cuandometoca-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card">CuandoMeToca keeps your medications and doses <strong>on your device</strong>. You can use it without an account. If you create an account (free) and take out a Premium plan, your data is also copied to our cloud so you don't lose it and, if you wish, so that someone you trust can see whether you took your medication. Without a plan, the app shows ads.</div>
+
+  <section>
+    <h2>Data controller</h2>
+    <div class="card">
+<p>The data controller is <strong>Jonatan Ortega González</strong> (devlicius), based in Spain. For any question about your data, write to <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Without an account: everything on your phone</h2>
+    <div class="card">
+<span class="badge-none">Never leaves the phone</span>
+<p>If you don't sign in, everything you enter is stored <strong>only on your device</strong>, in a local database:</p>
+<ul>
+<li>Medications: name, dose, notes, colour, times or interval, units in stock and treatment dates.</li>
+<li>Your dose history.</li>
+<li>Appointments and reminders, and weight entries.</li>
+</ul>
+<p>This is health data. Unless you have a Premium plan it is not sent to any server; the only way it leaves the phone is if you export a copy and choose to share it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Account (optional and free)</h2>
+    <div class="card">
+<p>You can create an account with your email and password, with Google or with Apple. We store:</p>
+<ul>
+<li>Your <strong>email</strong>, an internal account ID and the sign-in method. With Google or Apple, also the <strong>name</strong> they provide.</li>
+<li>Your <strong>time zone</strong> (for example, Europe/London), so your schedules are read in your local time.</li>
+</ul>
+<p>Sign-in is handled by <strong>Firebase Authentication</strong> (Google). Having an account does not upload your medications: that only happens with a Premium plan.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cloud copy (Premium plans)</h2>
+    <div class="card">
+<p>With an active <strong>Premium</strong> or <strong>Premium Caregiver</strong> plan, the app uploads your medications, doses, appointments and weight entries to our cloud and keeps them in sync across your devices. They are stored in <strong>Cloud Firestore</strong> (Google Cloud), on servers in the European Union (Belgium), and only you can read them with your account.</p>
+<ul>
+<li>If the plan ends, the app stops uploading, but you can still download or delete what is in the cloud.</li>
+<li><strong>12 months after your last plan ends</strong>, the cloud copy is deleted automatically. The app warns you a month before. What is on your phone is not touched.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Caregiver mode (Premium Caregiver plan)</h2>
+    <div class="card">
+<p>With Premium Caregiver you can create an invitation code (valid for 48 hours) and give it to whoever you want to see your medication. Whoever redeems it, with their own free account, becomes your caregiver:</p>
+<ul>
+<li>Your caregiver sees <strong>your medications and your doses</strong>. They <strong>do not see</strong> your appointments or your weight, and cannot change anything.</li>
+<li>Each of you sees the <strong>name or email</strong> of the other's account, so you know who you are linked to.</li>
+<li>Either of you can end the link at any time. If your plan ends, access stops automatically.</li>
+<li><strong>Caregiver alerts:</strong> if a dose goes unmarked for 30 minutes, our server sends your caregivers a notification with your name, the medication and the time. For this we store the notification ID (Firebase Cloud Messaging) and the language of the caregiver's phone. The record of which alerts were sent is deleted after 2 days.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Subscriptions and payments</h2>
+    <div class="card">
+<p>Payments are taken by <strong>Apple (App Store)</strong> or <strong>Google (Google Play)</strong>; we never see your card. We use <strong>RevenueCat</strong> to know which plan you have: it receives your internal account ID and the store's purchase receipts, but not your email or your health data. We store which plan you have and until when.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ads (only without a plan)</h2>
+    <div class="card">
+<p>If you don't have a Premium plan, the app shows a <strong>Google AdMob</strong> banner. In the European Economic Area, the United Kingdom and Switzerland, before requesting any ad the app shows Google's consent form, where you choose whether to accept personalised ads. You can change your choice at any time in <strong>⋮ → Ad privacy</strong>.</p>
+<ul>
+<li>On Android, AdMob may use the device's advertising ID according to what you accepted.</li>
+<li>On iOS we don't ask for tracking permission (App Tracking Transparency), so Apple's advertising identifier is not used.</li>
+<li>Information about your medication or doses is <strong>never</strong> passed to AdMob.</li>
+</ul>
+<p>With an active plan no ads are shown and the ads SDK is not started.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Security</h2>
+    <div class="card">
+<p>Communications are encrypted (HTTPS). Our database rules stop anyone from reading your data except you and, in caregiver mode, the people you have linked. The app uses <strong>Firebase App Check</strong> (Play Integrity on Android, DeviceCheck on iOS), which sends Google proof that the request comes from the genuine app, with no additional personal data.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Legal basis</h2>
+    <div class="card">
+<ul>
+<li><strong>Your explicit consent</strong> (Art. 9(2)(a) GDPR) to process your health data in the cloud and share it with your caregivers: you give it when you take out the plan and turn these features on, and you can withdraw it by deleting the data or the account.</li>
+<li><strong>Performance of the contract</strong> (Art. 6(1)(b)) for the account and subscriptions.</li>
+<li><strong>Your consent</strong> (Art. 6(1)(a)) for personalised ads.</li>
+<li><strong>Our legitimate interest</strong> (Art. 6(1)(f)) in protecting the service against abuse (App Check).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Providers and transfers</h2>
+    <div class="card">
+<p>We use these providers, who process data on our behalf:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, App Check and AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: subscription status.</li>
+</ul>
+<p>Apple and Google, as app stores, process payments as independent controllers. Some of these providers may process data outside the European Economic Area (for example, in the United States). In that case the transfer relies on the EU-US Data Privacy Framework or on the European Commission's standard contractual clauses.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How long we keep it</h2>
+    <div class="card">
+<ul>
+<li>Data on the phone: until you delete it or uninstall the app.</li>
+<li>Account: until you delete it.</li>
+<li>Cloud copy: while you have a plan and up to 12 months after it ends.</li>
+<li>Invitation codes: 48 hours at most. Record of alerts sent: 2 days.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Your rights</h2>
+    <div class="card">
+<p>You can access, rectify and erase your data, object to or restrict its processing, request portability and withdraw your consent at any time. You can do most of this in the app itself (<strong>⋮ → Export data</strong> gives you a full copy). For anything else, write to <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. If you believe we have not handled your request properly, you can complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es">www.aepd.es</a>) or to the authority in your country.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Backups and reports</h2>
+    <div class="card">
+<p>You can export all your data to a JSON file or create a PDF report. They are created on your device and <strong>you decide who to share them with</strong>. When you import a backup, its data replaces the data in the app (and, with a plan, in the cloud).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Permissions the app uses</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notifications</strong><span>To remind you of each dose and your appointments and, if you are a caregiver, of unmarked doses of the person you look after.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Exact alarms</strong><span>On Android 12 and later, so the reminder arrives on time.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Battery optimisation</strong><span>Optional; only if you turn it on, so the system does not delay reminders.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Device start-up</strong><span>To reschedule reminders after the phone restarts.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>File selection</strong><span>Only when you choose a file to import a backup.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>For the account, the cloud copy, caregiver mode, subscriptions and ads. Without an account or plan, your health data is not sent.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <div class="card">
+<p>The app is not aimed at children under 14, who should not create an account. If you are a parent or guardian and believe a child has given us data, write to us and we will delete it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Deleting your data</h2>
+    <div class="card">
+<ul>
+<li><strong>Delete the account:</strong> in <strong>⋮ → Account → Delete account</strong>. Your account, your cloud copy and your caregiver links are deleted immediately. The data on the phone is kept.</li>
+<li><strong>Delete only the data:</strong> <strong>⋮ → Delete all data</strong> deletes the data on the phone and, if you are signed in, the cloud copy too.</li>
+</ul>
+<p>More details on the <a href="cuandometoca-eliminar-cuenta-en.html">account deletion page</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <div class="card">
+<p>We may update this policy. The current version will always be published at this address and, if the change is significant, we will tell you in the app.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Any questions?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

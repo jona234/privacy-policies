@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pribatutasun politika — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">Pribatutasun politika</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Pribatutasun politika</h1>
+  <span class="updated">Azken eguneraketa: 2026ko urria</span>
+  <div class="lang-switch">
+    <a href="cuandometoca.html">Español</a>
+    <a href="cuandometoca-en.html">English</a>
+    <a href="cuandometoca-de.html">Deutsch</a>
+    <a href="cuandometoca-zh.html">简体中文</a>
+    <a href="cuandometoca-ca.html">Català</a>
+    <span class="current">Euskara</span>
+    <a href="cuandometoca-it.html">Italiano</a>
+    <a href="cuandometoca-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card">CuandoMeToca-k zure botikak eta hartualdiak <strong>zure gailuan</strong> gordetzen ditu. Konturik gabe erabil dezakezu. Kontu bat sortzen baduzu (doakoa) eta Premium plan bat kontratatzen baduzu, zure datuak gure hodeian ere kopiatzen dira, gal ez ditzazun eta, nahi baduzu, konfiantzazko pertsona batek ikus dezan botika hartu duzun. Planik gabe, aplikazioak iragarkiak erakusten ditu.</div>
+
+  <section>
+    <h2>Arduraduna</h2>
+    <div class="card">
+<p>Tratamenduaren arduraduna <strong>Jonatan Ortega González</strong> (devlicius) da, Espainian egoitza duena. Zure datuei buruzko edozein galderatarako, idatzi <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a> helbidera.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Konturik gabe: dena zure mugikorrean</h2>
+    <div class="card">
+<span class="badge-none">Ez da telefonotik ateratzen</span>
+<p>Saioa hasten ez baduzu, sartzen duzun guztia <strong>zure gailuan bakarrik</strong> gordetzen da, datu-base lokal batean:</p>
+<ul>
+<li>Botikak: izena, dosia, oharrak, kolorea, ordutegiak edo tartea, eskuragarri dauden unitateak eta tratamendu-datak.</li>
+<li>Hartualdien historia.</li>
+<li>Hitzorduak eta oroigarriak, eta pisu-erregistroak.</li>
+</ul>
+<p>Zure osasunari buruzko datuak dira. Premium planik ez duzun bitartean, ez dira inongo zerbitzarira bidaltzen; telefonotik ateratzeko modu bakarra zuk kopia bat esportatu eta partekatzea da.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kontua (aukerakoa eta doakoa)</h2>
+    <div class="card">
+<p>Kontu bat sor dezakezu zure helbide elektronikoarekin eta pasahitzarekin, Google-rekin edo Apple-rekin. Hau gordetzen dugu:</p>
+<ul>
+<li>Zure <strong>helbide elektronikoa</strong>, kontuaren barne-identifikatzaile bat eta sartzeko metodoa. Google edo Apple erabiliz gero, ematen duten <strong>izena</strong> ere bai.</li>
+<li>Zure <strong>ordu-eremua</strong> (adibidez, Europe/Madrid), zure ordutegiak zure orduaren arabera interpreta daitezen.</li>
+</ul>
+<p>Saio-hasiera <strong>Firebase Authentication</strong>-ek (Google) kudeatzen du. Kontua izateak ez ditu zure botikak igotzen: hori Premium planarekin bakarrik gertatzen da.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hodeiko kopia (Premium planak)</h2>
+    <div class="card">
+<p><strong>Premium</strong> edo <strong>Premium Zaintzailea</strong> plana aktibo duzunean, aplikazioak zure botikak, hartualdiak, hitzorduak eta pisu-erregistroak gure hodeira igotzen ditu eta zure gailuen artean sinkronizatuta mantentzen ditu. <strong>Cloud Firestore</strong>-n (Google Cloud) gordetzen dira, Europar Batasuneko zerbitzarietan (Belgika), eta zuk bakarrik irakur ditzakezu zure kontuarekin.</p>
+<ul>
+<li>Plana amaitzen bada, aplikazioak datuak igotzeari uzten dio, baina hodeian dagoena deskargatzen edo ezabatzen jarrai dezakezu.</li>
+<li><strong>Zure azken plana amaitu eta 12 hilabetera</strong>, hodeiko kopia automatikoki ezabatzen da. Aplikazioak hilabete lehenago abisatzen dizu. Mugikorrean duzuna ez da ukitzen.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zaintzaile modua (Premium Zaintzailea plana)</h2>
+    <div class="card">
+<p>Premium Zaintzailea baduzu, gonbidapen-kode bat sor dezakezu (48 ordu barru iraungitzen da) eta zure botikak ikustea nahi duzun pertsonari eman. Bere doako kontuarekin trukatzen duena zure zaintzaile bihurtzen da:</p>
+<ul>
+<li>Zure zaintzaileak <strong>zure botikak eta hartualdiak</strong> ikusten ditu. <strong>Ez ditu ikusten</strong> zure hitzorduak ez zure pisua, eta ezin du ezer aldatu.</li>
+<li>Bakoitzak bestearen kontuko <strong>izena edo helbide elektronikoa</strong> ikusten du, norekin dagoen lotuta jakiteko.</li>
+<li>Lotura edozein unetan desegin dezakezue, bi aldeetatik edozeinetatik. Zure plana amaitzen bada, sarbidea automatikoki eteten da.</li>
+<li><strong>Zaintzaileari abisuak:</strong> hartualdi bat 30 minutuz markatu gabe badago, gure zerbitzariak jakinarazpen bat bidaltzen die zure zaintzaileei zure izenarekin, botikaren izenarekin eta orduarekin. Horretarako, zaintzailearen mugikorraren jakinarazpen-identifikatzailea (Firebase Cloud Messaging) eta hizkuntza gordetzen ditugu. Bidalitako abisuen erregistroa 2 egunera ezabatzen da.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Harpidetzak eta ordainketak</h2>
+    <div class="card">
+<p>Ordainketak <strong>Apple-k (App Store)</strong> edo <strong>Google-k (Google Play)</strong> kobratzen dituzte; ez dugu inoiz zure txartela ikusten. <strong>RevenueCat</strong> erabiltzen dugu zer plan duzun jakiteko: zure kontuaren barne-identifikatzailea eta dendaren erosketa-agiriak jasotzen ditu, baina ez zure helbide elektronikoa ez zure osasun-datuak. Zer plan duzun eta noiz arte gordetzen dugu.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Iragarkiak (planik gabe bakarrik)</h2>
+    <div class="card">
+<p>Premium planik ez baduzu, aplikazioak <strong>Google AdMob</strong>-en banner bat erakusten du. Europako Esparru Ekonomikoan, Erresuma Batuan eta Suitzan, iragarkirik eskatu aurretik aplikazioak Google-ren baimen-inprimakia erakusten dizu, iragarki pertsonalizatuak onartzen dituzun aukeratzeko. Zure aukera nahi duzunean alda dezakezu <strong>⋮ → Iragarkien pribatutasuna</strong> atalean.</p>
+<ul>
+<li>Android-en, AdMob-ek gailuaren publizitate-identifikatzailea erabil dezake onartu duzunaren arabera.</li>
+<li>iOS-en ez dugu jarraipen-baimenik eskatzen (App Tracking Transparency), beraz ez da Apple-ren publizitate-identifikatzailea erabiltzen.</li>
+<li>Zure botikei edo hartualdiei buruzko informaziorik ez zaio <strong>inoiz</strong> AdMob-i pasatzen.</li>
+</ul>
+<p>Plan aktibo batekin ez da iragarkirik erakusten eta ez da iragarkien SDKa abiarazten.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Segurtasuna</h2>
+    <div class="card">
+<p>Komunikazioak zifratuta doaz (HTTPS). Gure datu-basearen arauek eragozten dute inork zure datuak irakurtzea, zuk izan ezik eta, zaintzaile moduan, zuk lotutako pertsonek izan ezik. Aplikazioak <strong>Firebase App Check</strong> erabiltzen du (Play Integrity Android-en, DeviceCheck iOS-en), eta horrek eskaera benetako aplikaziotik datorrela frogatzen dio Google-ri, datu pertsonal gehigarririk gabe.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Oinarri juridikoa</h2>
+    <div class="card">
+<ul>
+<li><strong>Zure baimen esplizitua</strong> (DBEO 9.2.a art.) zure osasun-datuak hodeian tratatzeko eta zure zaintzaileekin partekatzeko: plana kontratatu eta funtzio horiek aktibatzean ematen duzu, eta datuak edo kontua ezabatuz erretira dezakezu.</li>
+<li><strong>Kontratuaren betearazpena</strong> (6.1.b art.) konturako eta harpidetzetarako.</li>
+<li><strong>Zure baimena</strong> (6.1.a art.) iragarki pertsonalizatuetarako.</li>
+<li><strong>Gure interes legitimoa</strong> (6.1.f art.) zerbitzua gehiegikerietatik babesteko (App Check).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hornitzaileak eta transferentziak</h2>
+    <div class="card">
+<p>Gure izenean datuak tratatzen dituzten hornitzaile hauek erabiltzen ditugu:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, App Check eta AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: harpidetzen egoera.</li>
+</ul>
+<p>Apple-k eta Google-k, denda gisa, ordainketak arduradun independente gisa tratatzen dituzte. Hornitzaile horietako batzuek Europako Esparru Ekonomikotik kanpo trata ditzakete datuak (adibidez, Estatu Batuetan). Kasu horretan, transferentzia EB-AEB Datuen Pribatutasun Esparruan edo Europako Batzordearen kontratu-klausula estandarretan oinarritzen da.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zenbat denboran gordetzen ditugun</h2>
+    <div class="card">
+<ul>
+<li>Mugikorreko datuak: zuk ezabatu arte edo aplikazioa desinstalatu arte.</li>
+<li>Kontua: zuk ezabatu arte.</li>
+<li>Hodeiko kopia: plana duzun bitartean eta hura amaitu eta 12 hilabetera arte.</li>
+<li>Gonbidapen-kodeak: gehienez 48 ordu. Bidalitako abisuen erregistroa: 2 egun.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zure eskubideak</h2>
+    <div class="card">
+<p>Zure datuak eskuratu, zuzendu eta ezabatu ditzakezu, haien tratamenduaren aurka egin, mugatu, eramangarritasuna eskatu eta zure baimena erretiratu nahi duzunean. Gehienak aplikaziotik bertatik egin ditzakezu (<strong>⋮ → Datuak esportatu</strong> aukerak kopia oso bat ematen dizu). Gainerakoetarako, idatzi <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a> helbidera. Zure eskaera behar bezala bete ez dugula uste baduzu, Datuak Babesteko Espainiako Agentzian erreklamazioa aurkez dezakezu (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Segurtasun-kopia eta txostenak</h2>
+    <div class="card">
+<p>Zure datu guztiak JSON fitxategi batera esportatu ditzakezu edo PDF txosten bat sortu. Zure gailuan sortzen dira eta <strong>zuk erabakitzen duzu norekin partekatu</strong>. Kopia bat inportatzean, haren datuek aplikaziokoak ordezkatzen dituzte (eta, planarekin, hodeikoak).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Aplikazioak erabiltzen dituen baimenak</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Jakinarazpenak</strong><span>Hartualdi eta hitzordu bakoitzaz abisatzeko eta, zaintzailea bazara, zaintzen duzunaren markatu gabeko hartualdiez.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Alarma zehatzak</strong><span>Android 12 eta ondorengoetan, abisua bere orduan iris dadin.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Bateriaren optimizazioa</strong><span>Aukerakoa; zuk aktibatzen baduzu bakarrik, sistemak abisuak atzera ez ditzan.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Gailuaren abiaraztea</strong><span>Telefonoa berrabiarazi ondoren abisuak berriro programatzeko.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Fitxategiak hautatzea</strong><span>Kopia bat inportatzeko fitxategi bat aukeratzen duzunean bakarrik.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Konturako, hodeiko kopiarako, zaintzaile modurako, harpidetzetarako eta iragarkietarako. Konturik eta planik gabe, zure osasun-datuak ez dira bidaltzen.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Adingabeak</h2>
+    <div class="card">
+<p>Aplikazioa ez dago 14 urtetik beherakoei zuzenduta, eta haiek ez lukete konturik sortu behar. Guraso edo tutorea bazara eta adingabe batek datuak eman dizkigula uste baduzu, idatzi iezaguzu eta ezabatu egingo ditugu.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zure datuak ezabatzea</h2>
+    <div class="card">
+<ul>
+<li><strong>Kontua ezabatzea:</strong> <strong>⋮ → Kontua → Ezabatu kontua</strong> atalean. Berehala ezabatzen dira zure kontua, hodeiko kopia eta zaintzaile-loturak. Mugikorreko datuak gordetzen dira.</li>
+<li><strong>Datuak bakarrik ezabatzea:</strong> <strong>⋮ → Datu guztiak ezabatu</strong> aukerak mugikorrekoak ezabatzen ditu eta, saioa hasita baduzu, hodeiko kopia ere bai.</li>
+</ul>
+<p>Xehetasun gehiago <a href="cuandometoca-eliminar-cuenta-eu.html">kontua ezabatzeko orrian</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Politika honen aldaketak</h2>
+    <div class="card">
+<p>Politika hau egunera dezakegu. Indarrean dagoen bertsioa helbide berean argitaratuko dugu eta, aldaketa garrantzitsua bada, aplikazioan jakinaraziko dizugu.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Zalantzarik baduzu?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

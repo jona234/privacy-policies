@@ -30,9 +30,7 @@
       gap: 14px;
     }
 
-    .logo-icon {
-      font-size: 28px;
-    }
+    .logo-icon { font-size: 28px; }
 
     .logo-text {
       color: var(--accent-light);
@@ -69,6 +67,25 @@
       display: inline-block;
     }
 
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
     .intro-card {
       background: var(--intro-bg);
       border-left: 4px solid var(--accent);
@@ -79,13 +96,9 @@
       color: #444;
     }
 
-    .intro-card strong {
-      color: #1e1e1e;
-    }
+    .intro-card strong { color: #1e1e1e; }
 
-    section {
-      margin-bottom: 32px;
-    }
+    section { margin-bottom: 32px; }
 
     h2 {
       font-size: 17px;
@@ -107,8 +120,14 @@
 
     .card p { margin-bottom: 10px; }
     .card p:last-child { margin-bottom: 0; }
-
     .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
 
     .badge-none {
       display: inline-block;
@@ -128,9 +147,7 @@
       border-bottom: 1px solid #f0f0f0;
     }
 
-    .permission-item:first-child {
-      padding-top: 0;
-    }
+    .permission-item:first-child { padding-top: 0; }
 
     .permission-item:last-child {
       border-bottom: none;
@@ -187,9 +204,7 @@
       text-decoration: none;
     }
 
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
+    .contact-box a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
@@ -207,6 +222,19 @@
       .page-title { font-size: 22px; }
       header { padding: 16px 20px; }
     }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
   </style>
 </head>
 <body>
@@ -221,59 +249,188 @@
 
 <div class="container">
   <h1 class="page-title">Política de Privacidad</h1>
-  <span class="updated">Última actualización: julio de 2026</span>
+  <span class="updated">Última actualización: octubre de 2026</span>
+  <div class="lang-switch">
+    <span class="current">Español</span>
+    <a href="cuandometoca-en.html">English</a>
+    <a href="cuandometoca-de.html">Deutsch</a>
+    <a href="cuandometoca-zh.html">简体中文</a>
+    <a href="cuandometoca-ca.html">Català</a>
+    <a href="cuandometoca-eu.html">Euskara</a>
+    <a href="cuandometoca-it.html">Italiano</a>
+    <a href="cuandometoca-fr.html">Français</a>
+  </div>
 
-  <div class="intro-card">CuandoMeToca es una app para registrar y recordar tus rutinas y pendientes personales que funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.</div>
+  <div class="intro-card">CuandoMeToca guarda tus medicaciones y tus tomas <strong>en tu dispositivo</strong>. Puedes usarla sin cuenta. Si creas una cuenta (gratis) y contratas un plan Premium, tus datos se copian además en nuestra nube para que no los pierdas y, si quieres, para que una persona de confianza vea si te has tomado la medicación. Sin plan, la app muestra anuncios.</div>
 
   <section>
-    <h2>Datos que recopilamos</h2>
+    <h2>Responsable</h2>
     <div class="card">
-      <span class="badge-none">Ninguno</span>
-      <p>La app no requiere registro ni cuenta. Toda la información que introduces — rutinas, recordatorios y pendientes personales — se almacena <strong>únicamente en tu dispositivo</strong>.</p>
+<p>El responsable del tratamiento es <strong>Jonatan Ortega González</strong> (devlicius), con domicilio en España. Para cualquier cuestión sobre tus datos, escribe a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
     </div>
   </section>
 
   <section>
-    <h2>En resumen</h2>
+    <h2>Sin cuenta: todo en tu móvil</h2>
     <div class="card">
-      <div class="permission-item">
-        <div class="permission-icon">📝</div>
-        <div class="permission-text"><strong>Sin registro</strong><span>No necesitas crear ninguna cuenta para usar la app.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📢</div>
-        <div class="permission-text"><strong>Sin publicidad ni analítica</strong><span>No hay anuncios ni servicios de análisis o seguimiento.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">🤝</div>
-        <div class="permission-text"><strong>Sin terceros</strong><span>No se comparte información con nadie.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📍</div>
-        <div class="permission-text"><strong>Sin datos sensibles</strong><span>No se recopila ubicación, contactos ni ningún otro dato sensible.</span></div>
-      </div>
-      <div class="no-track">✅ No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No compartimos datos con terceros porque no los recopilamos.</div>
+<span class="badge-none">No sale del teléfono</span>
+<p>Si no inicias sesión, todo lo que introduces se guarda <strong>únicamente en tu dispositivo</strong>, en una base de datos local:</p>
+<ul>
+<li>Medicaciones: nombre, dosis, notas, color, horarios o intervalo, unidades disponibles y fechas de tratamiento.</li>
+<li>El historial de tomas.</li>
+<li>Citas y recordatorios, y los registros de peso.</li>
+</ul>
+<p>Son datos relativos a tu salud. Mientras no tengas un plan Premium no se envían a ningún servidor; la única forma de que salgan del teléfono es que tú exportes una copia y decidas compartirla.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cuenta (opcional y gratuita)</h2>
+    <div class="card">
+<p>Puedes crear una cuenta con tu email y contraseña, con Google o con Apple. Guardamos:</p>
+<ul>
+<li>Tu <strong>email</strong>, un identificador interno de cuenta y el método de acceso. Con Google o Apple, también el <strong>nombre</strong> que te facilitan.</li>
+<li>Tu <strong>zona horaria</strong> (por ejemplo, Europe/Madrid), para que tus horarios se interpreten a tu hora.</li>
+</ul>
+<p>El inicio de sesión lo gestiona <strong>Firebase Authentication</strong> (Google). Tener cuenta no sube tus medicaciones: eso solo ocurre con un plan Premium.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Copia en la nube (planes Premium)</h2>
+    <div class="card">
+<p>Con un plan <strong>Premium</strong> o <strong>Premium Cuidador</strong> activo, la app sube a nuestra nube tus medicaciones, tomas, citas y registros de peso, y los mantiene sincronizados entre tus dispositivos. Se guardan en <strong>Cloud Firestore</strong> (Google Cloud), en servidores de la Unión Europea (Bélgica), y solo tú puedes leerlos con tu cuenta.</p>
+<ul>
+<li>Si el plan termina, la app deja de subir datos, pero puedes seguir descargando o borrando lo que haya en la nube.</li>
+<li><strong>12 meses después de que termine tu último plan</strong>, la copia en la nube se borra automáticamente. La app te avisa un mes antes. Lo que tienes en el móvil no se toca.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modo cuidador (plan Premium Cuidador)</h2>
+    <div class="card">
+<p>Si tienes Premium Cuidador, puedes generar un código de invitación (caduca en 48 horas) y dárselo a quien quieras que vea tu medicación. Quien lo canjea, con su propia cuenta gratuita, pasa a ser tu cuidador:</p>
+<ul>
+<li>Tu cuidador ve <strong>tus medicaciones y tus tomas</strong>. <strong>No ve</strong> tus citas ni tu peso, y no puede modificar nada.</li>
+<li>Cada uno ve el <strong>nombre o el email</strong> de la cuenta del otro, para saber a quién está vinculado.</li>
+<li>Podéis deshacer el vínculo en cualquier momento, desde cualquiera de los dos lados. Si tu plan termina, el acceso se corta automáticamente.</li>
+<li><strong>Avisos al cuidador:</strong> si una toma lleva 30 minutos sin marcarse, nuestro servidor envía una notificación a tus cuidadores con tu nombre, el del medicamento y la hora. Para ello guardamos el identificador de notificaciones (Firebase Cloud Messaging) y el idioma del móvil del cuidador. El registro de qué avisos se han enviado se borra a los 2 días.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Suscripciones y pagos</h2>
+    <div class="card">
+<p>Los pagos los cobran <strong>Apple (App Store)</strong> o <strong>Google (Google Play)</strong>; nunca vemos tu tarjeta. Usamos <strong>RevenueCat</strong> para saber qué plan tienes: recibe tu identificador interno de cuenta y los justificantes de compra de la tienda, pero no tu email ni tus datos de salud. Guardamos en nuestra base de datos qué plan tienes y hasta cuándo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anuncios (solo sin plan)</h2>
+    <div class="card">
+<p>Si no tienes un plan Premium, la app muestra un banner de <strong>Google AdMob</strong>. En el Espacio Económico Europeo, Reino Unido y Suiza, antes de pedir ningún anuncio la app te muestra el formulario de consentimiento de Google, donde eliges si aceptas anuncios personalizados. Puedes cambiar tu elección cuando quieras en <strong>⋮ → Privacidad de anuncios</strong>.</p>
+<ul>
+<li>En Android, AdMob puede usar el identificador de publicidad del dispositivo según lo que hayas aceptado.</li>
+<li>En iOS no pedimos permiso de seguimiento (App Tracking Transparency), así que no se usa el identificador de publicidad de Apple.</li>
+<li><strong>Nunca</strong> se pasa a AdMob información sobre tu medicación ni tus tomas.</li>
+</ul>
+<p>Con un plan activo no se muestran anuncios ni se carga el SDK de anuncios.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seguridad</h2>
+    <div class="card">
+<p>Las comunicaciones van cifradas (HTTPS). Las reglas de nuestra base de datos impiden que nadie lea tus datos salvo tú y, en el modo cuidador, las personas que tú hayas vinculado. La app usa <strong>Firebase App Check</strong> (Play Integrity en Android, DeviceCheck en iOS), que envía a Google una prueba de que la petición viene de la app auténtica, sin datos personales adicionales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Base jurídica</h2>
+    <div class="card">
+<ul>
+<li><strong>Tu consentimiento explícito</strong> (art. 9.2.a RGPD) para tratar tus datos de salud en la nube y compartirlos con tus cuidadores: lo das al contratar el plan y activar estas funciones, y puedes retirarlo borrando los datos o la cuenta.</li>
+<li><strong>La ejecución del contrato</strong> (art. 6.1.b) para la cuenta y las suscripciones.</li>
+<li><strong>Tu consentimiento</strong> (art. 6.1.a) para los anuncios personalizados.</li>
+<li><strong>Nuestro interés legítimo</strong> (art. 6.1.f) en proteger el servicio frente a abusos (App Check).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proveedores y transferencias</h2>
+    <div class="card">
+<p>Usamos estos proveedores, que tratan los datos por nuestra cuenta:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, App Check y AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: estado de las suscripciones.</li>
+</ul>
+<p>Apple y Google, como tiendas, tratan los pagos como responsables independientes. Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo (por ejemplo, en Estados Unidos). En ese caso, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la Comisión Europea.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cuánto tiempo los guardamos</h2>
+    <div class="card">
+<ul>
+<li>Datos del móvil: hasta que los borres o desinstales la app.</li>
+<li>Cuenta: hasta que la elimines.</li>
+<li>Copia en la nube: mientras tengas un plan y hasta 12 meses después de que termine.</li>
+<li>Códigos de invitación: 48 horas como máximo. Registro de avisos enviados: 2 días.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tus derechos</h2>
+    <div class="card">
+<p>Puedes acceder a tus datos, rectificarlos, borrarlos, oponerte a su tratamiento, limitarlo, pedir su portabilidad y retirar tu consentimiento cuando quieras. La mayoría puedes ejercerlos desde la propia app (<strong>⋮ → Exportar datos</strong> te da una copia completa). Para el resto, escríbenos a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Copia de seguridad e informes</h2>
+    <div class="card">
+<p>Puedes exportar todos tus datos a un archivo JSON o generar un informe en PDF. Se crean en tu dispositivo y <strong>tú decides con quién compartirlos</strong>. Al importar una copia, sus datos sustituyen a los de la app (y, con plan, a los de la nube).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Permisos que usa la app</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notificaciones</strong><span>Para avisarte de cada toma y de tus citas y, si eres cuidador, de las tomas sin marcar de quien cuidas.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Alarmas exactas</strong><span>En Android 12 y posteriores, para que el aviso llegue a su hora.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Optimización de batería</strong><span>Opcional; solo si lo activas tú, para que el sistema no retrase los avisos.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Inicio del dispositivo</strong><span>Para volver a programar los avisos tras reiniciar el teléfono.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Selección de archivos</strong><span>Solo cuando eliges un archivo para importar una copia.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Para la cuenta, la copia en la nube, el modo cuidador, las suscripciones y los anuncios. Sin cuenta ni plan, tus datos de salud no se envían.</span></div></div>
     </div>
   </section>
 
   <section>
     <h2>Menores</h2>
     <div class="card">
-      <p>La app no recopila datos de ningún usuario, incluidos menores de edad.</p>
+<p>La app no está dirigida a menores de 14 años, que no deben crear una cuenta. Si eres padre, madre o tutor y crees que un menor nos ha facilitado datos, escríbenos y los borraremos.</p>
     </div>
   </section>
 
   <section>
     <h2>Eliminación de tus datos</h2>
     <div class="card">
-      <p>Como toda la información se guarda únicamente en tu dispositivo, puedes borrar cualquier registro dentro de la app o desinstalarla para eliminar todos los datos de forma permanente.</p>
+<ul>
+<li><strong>Eliminar la cuenta:</strong> en <strong>⋮ → Cuenta → Eliminar cuenta</strong>. Se borran al momento tu cuenta, tu copia en la nube y tus vínculos de cuidador. Los datos del móvil se conservan.</li>
+<li><strong>Borrar solo los datos:</strong> <strong>⋮ → Borrar todos los datos</strong> borra los del móvil y, si has iniciado sesión, también la copia en la nube.</li>
+</ul>
+<p>Más detalles en la <a href="cuandometoca-eliminar-cuenta.html">página de eliminación de cuenta</a>.</p>
     </div>
   </section>
 
   <section>
     <h2>Cambios en esta política</h2>
     <div class="card">
-      <p>Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta misma URL.</p>
+<p>Podemos actualizar esta política. Publicaremos la versión vigente en esta misma dirección y, si el cambio es importante, te lo indicaremos en la app.</p>
     </div>
   </section>
 

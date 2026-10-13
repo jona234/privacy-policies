@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>删除账户和数据 — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">删除账户和数据</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">如何删除你的 CuandoMeToca 账户</h1>
+  <span class="updated">最后更新：2026 年 10 月</span>
+  <div class="lang-switch">
+    <a href="cuandometoca-eliminar-cuenta.html">Español</a>
+    <a href="cuandometoca-eliminar-cuenta-en.html">English</a>
+    <a href="cuandometoca-eliminar-cuenta-de.html">Deutsch</a>
+    <span class="current">简体中文</span>
+    <a href="cuandometoca-eliminar-cuenta-ca.html">Català</a>
+    <a href="cuandometoca-eliminar-cuenta-eu.html">Euskara</a>
+    <a href="cuandometoca-eliminar-cuenta-it.html">Italiano</a>
+    <a href="cuandometoca-eliminar-cuenta-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card"><strong>CuandoMeToca</strong> 是由 Jonatan Ortega González（devlicius）开发的用药提醒应用。账户是可选的。如果你有账户，可以随时在应用内自行删除，无需联系我们。</div>
+
+  <section>
+    <h2>在应用内删除账户（推荐）</h2>
+    <div class="card">
+<ol>
+<li>打开应用，点按右上角的 <strong>⋮</strong> 菜单。</li>
+<li>进入<strong>账户</strong>。</li>
+<li>点按<strong>删除账户</strong>。</li>
+<li>确认身份（通过 Google、Apple 或输入密码）并确认删除。</li>
+</ol>
+<p>删除会立即生效。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>无法进入应用？</h2>
+    <div class="card">
+<p>请使用你账户的邮箱发送邮件至 <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>，主题为「删除 CuandoMeToca 账户」。我们会核实请求，并在最多 30 天内删除账户。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>会删除哪些内容</h2>
+    <div class="card">
+<span class="badge-instant">立即且永久删除</span>
+<ul>
+<li>你的登录账户（邮箱、姓名和登录方式）。如果你使用 Apple 登录，还会撤销应用对你 Apple ID 的访问权限。</li>
+<li>你的全部<strong>云端副本</strong>：药物、服药记录、预约和体重。</li>
+<li>双向的<strong>照护关联</strong>以及待使用的邀请码。照护你的人将无法再看到你的用药情况。</li>
+<li>你设备的通知标识和你的时区。</li>
+<li>我们数据库中你的订阅状态，以及你在 RevenueCat 的客户记录。</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>不受影响的内容</h2>
+    <div class="card">
+<p><strong>手机上的数据</strong>会保留，以便你在没有账户的情况下继续使用应用。如需一并删除，请使用 <strong>⋮ → 删除所有数据</strong>或卸载应用。</p>
+<p><strong>你的订阅不会被取消</strong>：扣费由 Apple 或 Google 管理。请在应用商店的订阅设置中取消。</p>
+<p>Apple、Google 和 RevenueCat 可能会根据其政策和法律义务保留自己的购买记录。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>只删除数据、保留账户</h2>
+    <div class="card">
+<p><strong>⋮ → 删除所有数据</strong>会删除手机上的数据；如果你已登录，也会删除云端副本，但会保留你的账户。此外，云端副本会在你最后一个方案结束 12 个月后自动删除。</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>关于删除账户有疑问？</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

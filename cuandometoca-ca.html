@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de privacitat — CuandoMeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #00897b;
+      --accent-light: #4db6ac;
+      --header-bg: #0f2b27;
+      --bg: #f2f7f6;
+      --intro-bg: #e7f4f2;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">⏰</div>
+  <div>
+    <div class="logo-text">CUANDOMETOCA</div>
+    <div class="logo-sub">Política de privacitat</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Política de privacitat</h1>
+  <span class="updated">Última actualització: octubre de 2026</span>
+  <div class="lang-switch">
+    <a href="cuandometoca.html">Español</a>
+    <a href="cuandometoca-en.html">English</a>
+    <a href="cuandometoca-de.html">Deutsch</a>
+    <a href="cuandometoca-zh.html">简体中文</a>
+    <span class="current">Català</span>
+    <a href="cuandometoca-eu.html">Euskara</a>
+    <a href="cuandometoca-it.html">Italiano</a>
+    <a href="cuandometoca-fr.html">Français</a>
+  </div>
+
+  <div class="intro-card">CuandoMeToca desa les teves medicacions i preses <strong>al teu dispositiu</strong>. La pots fer servir sense compte. Si crees un compte (gratuït) i contractes un pla Premium, les teves dades també es copien al nostre núvol perquè no les perdis i, si vols, perquè una persona de confiança pugui veure si t'has pres la medicació. Sense pla, l'app mostra anuncis.</div>
+
+  <section>
+    <h2>Responsable</h2>
+    <div class="card">
+<p>El responsable del tractament és <strong>Jonatan Ortega González</strong> (devlicius), amb domicili a Espanya. Per a qualsevol qüestió sobre les teves dades, escriu a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sense compte: tot al teu mòbil</h2>
+    <div class="card">
+<span class="badge-none">No surt del telèfon</span>
+<p>Si no inicies sessió, tot el que introdueixes es desa <strong>només al teu dispositiu</strong>, en una base de dades local:</p>
+<ul>
+<li>Medicacions: nom, dosi, notes, color, horaris o interval, unitats disponibles i dates de tractament.</li>
+<li>L'historial de preses.</li>
+<li>Cites i recordatoris, i els registres de pes.</li>
+</ul>
+<p>Són dades relatives a la teva salut. Mentre no tinguis un pla Premium no s'envien a cap servidor; només surten del telèfon si tu n'exportes una còpia i decideixes compartir-la.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Compte (opcional i gratuït)</h2>
+    <div class="card">
+<p>Pots crear un compte amb el teu correu i contrasenya, amb Google o amb Apple. Desem:</p>
+<ul>
+<li>El teu <strong>correu</strong>, un identificador intern de compte i el mètode d'accés. Amb Google o Apple, també el <strong>nom</strong> que et faciliten.</li>
+<li>La teva <strong>zona horària</strong> (per exemple, Europe/Madrid), perquè els teus horaris s'interpretin a la teva hora.</li>
+</ul>
+<p>L'inici de sessió el gestiona <strong>Firebase Authentication</strong> (Google). Tenir compte no puja les teves medicacions: això només passa amb un pla Premium.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Còpia al núvol (plans Premium)</h2>
+    <div class="card">
+<p>Amb un pla <strong>Premium</strong> o <strong>Premium Cuidador</strong> actiu, l'app puja al nostre núvol les teves medicacions, preses, cites i registres de pes, i els manté sincronitzats entre els teus dispositius. Es desen a <strong>Cloud Firestore</strong> (Google Cloud), en servidors de la Unió Europea (Bèlgica), i només tu els pots llegir amb el teu compte.</p>
+<ul>
+<li>Si el pla s'acaba, l'app deixa de pujar dades, però pots continuar descarregant o esborrant el que hi hagi al núvol.</li>
+<li><strong>12 mesos després que s'acabi el teu darrer pla</strong>, la còpia al núvol s'esborra automàticament. L'app t'avisa un mes abans. El que tens al mòbil no es toca.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mode cuidador (pla Premium Cuidador)</h2>
+    <div class="card">
+<p>Amb Premium Cuidador pots generar un codi d'invitació (caduca en 48 hores) i donar-lo a qui vulguis que vegi la teva medicació. Qui el bescanvia, amb el seu propi compte gratuït, passa a ser el teu cuidador:</p>
+<ul>
+<li>El teu cuidador veu <strong>les teves medicacions i preses</strong>. <strong>No veu</strong> les teves cites ni el teu pes, i no pot modificar res.</li>
+<li>Cadascú veu el <strong>nom o el correu</strong> del compte de l'altre, per saber amb qui està vinculat.</li>
+<li>Podeu desfer el vincle en qualsevol moment, des de qualsevol dels dos costats. Si el teu pla s'acaba, l'accés es talla automàticament.</li>
+<li><strong>Avisos al cuidador:</strong> si una presa porta 30 minuts sense marcar, el nostre servidor envia una notificació als teus cuidadors amb el teu nom, el del medicament i l'hora. Per a això desem l'identificador de notificacions (Firebase Cloud Messaging) i l'idioma del mòbil del cuidador. El registre dels avisos enviats s'esborra al cap de 2 dies.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Subscripcions i pagaments</h2>
+    <div class="card">
+<p>Els pagaments els cobren <strong>Apple (App Store)</strong> o <strong>Google (Google Play)</strong>; mai no veiem la teva targeta. Fem servir <strong>RevenueCat</strong> per saber quin pla tens: rep el teu identificador intern de compte i els justificants de compra de la botiga, però no el teu correu ni les teves dades de salut. Desem quin pla tens i fins quan.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anuncis (només sense pla)</h2>
+    <div class="card">
+<p>Si no tens un pla Premium, l'app mostra un bàner de <strong>Google AdMob</strong>. A l'Espai Econòmic Europeu, el Regne Unit i Suïssa, abans de demanar cap anunci l'app et mostra el formulari de consentiment de Google, on tries si acceptes anuncis personalitzats. Pots canviar la teva elecció quan vulguis a <strong>⋮ → Privacitat dels anuncis</strong>.</p>
+<ul>
+<li>A Android, AdMob pot fer servir l'identificador de publicitat del dispositiu segons el que hagis acceptat.</li>
+<li>A iOS no demanem permís de seguiment (App Tracking Transparency), de manera que no es fa servir l'identificador de publicitat d'Apple.</li>
+<li>Mai no es passa a AdMob informació sobre la teva medicació ni les teves preses.</li>
+</ul>
+<p>Amb un pla actiu no es mostren anuncis ni es carrega l'SDK d'anuncis.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seguretat</h2>
+    <div class="card">
+<p>Les comunicacions van xifrades (HTTPS). Les regles de la nostra base de dades impedeixen que ningú llegeixi les teves dades excepte tu i, en el mode cuidador, les persones que hagis vinculat. L'app fa servir <strong>Firebase App Check</strong> (Play Integrity a Android, DeviceCheck a iOS), que envia a Google una prova que la petició ve de l'app autèntica, sense dades personals addicionals.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Base jurídica</h2>
+    <div class="card">
+<ul>
+<li><strong>El teu consentiment explícit</strong> (art. 9.2.a RGPD) per tractar les teves dades de salut al núvol i compartir-les amb els teus cuidadors: el dones en contractar el pla i activar aquestes funcions, i el pots retirar esborrant les dades o el compte.</li>
+<li><strong>L'execució del contracte</strong> (art. 6.1.b) per al compte i les subscripcions.</li>
+<li><strong>El teu consentiment</strong> (art. 6.1.a) per als anuncis personalitzats.</li>
+<li><strong>El nostre interès legítim</strong> (art. 6.1.f) a protegir el servei d'abusos (App Check).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proveïdors i transferències</h2>
+    <div class="card">
+<p>Fem servir aquests proveïdors, que tracten les dades per compte nostre:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Firebase Cloud Messaging, App Check i AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: estat de les subscripcions.</li>
+</ul>
+<p>Apple i Google, com a botigues, tracten els pagaments com a responsables independents. Alguns d'aquests proveïdors poden tractar dades fora de l'Espai Econòmic Europeu (per exemple, als Estats Units). En aquest cas, la transferència s'empara en el Marc de Privacitat de Dades UE-EUA o en les clàusules contractuals tipus de la Comissió Europea.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quant de temps les conservem</h2>
+    <div class="card">
+<ul>
+<li>Dades del mòbil: fins que les esborris o desinstal·lis l'app.</li>
+<li>Compte: fins que l'eliminis.</li>
+<li>Còpia al núvol: mentre tinguis un pla i fins a 12 mesos després que s'acabi.</li>
+<li>Codis d'invitació: 48 hores com a màxim. Registre d'avisos enviats: 2 dies.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Els teus drets</h2>
+    <div class="card">
+<p>Pots accedir a les teves dades, rectificar-les, esborrar-les, oposar-te al tractament, limitar-lo, demanar-ne la portabilitat i retirar el consentiment quan vulguis. La majoria els pots exercir des de la mateixa app (<strong>⋮ → Exportar dades</strong> et dona una còpia completa). Per a la resta, escriu-nos a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. Si creus que no hem atès bé la teva sol·licitud, pots reclamar davant l'Agència Espanyola de Protecció de Dades (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Còpia de seguretat i informes</h2>
+    <div class="card">
+<p>Pots exportar totes les teves dades a un fitxer JSON o generar un informe en PDF. Es creen al teu dispositiu i <strong>tu decideixes amb qui els comparteixes</strong>. En importar una còpia, les seves dades substitueixen les de l'app (i, amb pla, les del núvol).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Permisos que fa servir l'app</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notificacions</strong><span>Per avisar-te de cada presa i de les teves cites i, si ets cuidador, de les preses sense marcar de qui cuides.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Alarmes exactes</strong><span>A Android 12 i posteriors, perquè l'avís arribi a la seva hora.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Optimització de bateria</strong><span>Opcional; només si l'actives tu, perquè el sistema no endarrereixi els avisos.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Inici del dispositiu</strong><span>Per tornar a programar els avisos després de reiniciar el telèfon.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Selecció de fitxers</strong><span>Només quan tries un fitxer per importar una còpia.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Per al compte, la còpia al núvol, el mode cuidador, les subscripcions i els anuncis. Sense compte ni pla, les teves dades de salut no s'envien.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Menors</h2>
+    <div class="card">
+<p>L'app no està adreçada a menors de 14 anys, que no han de crear cap compte. Si ets pare, mare o tutor i creus que un menor ens ha facilitat dades, escriu-nos i les esborrarem.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eliminació de les teves dades</h2>
+    <div class="card">
+<ul>
+<li><strong>Eliminar el compte:</strong> a <strong>⋮ → Compte → Elimina el compte</strong>. S'esborren al moment el teu compte, la teva còpia al núvol i els teus vincles de cuidador. Les dades del mòbil es conserven.</li>
+<li><strong>Esborrar només les dades:</strong> <strong>⋮ → Esborrar totes les dades</strong> esborra les del mòbil i, si has iniciat sessió, també la còpia al núvol.</li>
+</ul>
+<p>Més detalls a la <a href="cuandometoca-eliminar-cuenta-ca.html">pàgina d'eliminació del compte</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Canvis en aquesta política</h2>
+    <div class="card">
+<p>Podem actualitzar aquesta política. Publicarem la versió vigent en aquesta mateixa adreça i, si el canvi és important, t'ho indicarem a l'app.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Tens algun dubte?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoMeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>
