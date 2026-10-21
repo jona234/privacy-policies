@@ -239,7 +239,7 @@ const translations = {
   "es": {
     "headerSub": "Política de Privacidad",
     "title": "Política de Privacidad",
-    "updated": "Última actualización: julio de 2026",
+    "updated": "Última actualización: octubre de 2026",
     "footer": "© 2026 EcoKids · Jonatan Ortega González · España",
     "contactLabel": "¿Tienes alguna duda?",
     "intro": "EcoKids es una app educativa para niños de 5 a 10 años que, de la mano de Bambú el panda, enseña a cuidar el medio ambiente jugando. Funciona de forma <strong>100% local</strong> en tu dispositivo: no recopilamos, transmitimos ni almacenamos ningún dato en servidores.",
@@ -248,16 +248,29 @@ const translations = {
         "title": "Datos que recopilamos",
         "type": "none",
         "noneLabel": "Ninguno",
-        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Todo el progreso — lecciones completadas, puntuaciones de los minijuegos, misiones diarias, rachas, medallas, avatares y el bosque virtual — se almacena <strong>únicamente en tu dispositivo</strong>.",
+        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Todo lo que guarda — el nombre o apodo que el niño escribe (opcional), las lecciones completadas, las puntuaciones y estrellas de los minijuegos, las preguntas falladas para repasarlas, las misiones diarias, rachas, medallas, avatares, el bosque virtual y los ajustes (idioma, sonido, lectura en voz alta y recordatorio) — se almacena <strong>únicamente en tu dispositivo</strong>.",
         "note": "Si desinstalas la app, todo el progreso se elimina con ella."
       },
       {
         "title": "Permisos que utiliza la app",
         "type": "permissions",
         "permissions": [
-          { "icon": "🔔", "name": "Notificaciones", "desc": "Solo si los padres activan el recordatorio diario opcional. Se puede desactivar en cualquier momento desde los ajustes." }
+          { "icon": "🔔", "name": "Notificaciones", "desc": "Solo si los padres activan el recordatorio diario opcional. Son notificaciones locales programadas en el propio dispositivo: no pasan por ningún servidor. Se pueden desactivar en cualquier momento desde los ajustes." },
+          { "icon": "⏰", "name": "Alarmas y arranque del dispositivo (solo Android)", "desc": "Se usan únicamente para lanzar el recordatorio diario a la hora elegida y recuperarlo después de reiniciar el móvil. Solo actúan si se activa el recordatorio." },
+          { "icon": "🔋", "name": "Ahorro de batería (solo Android)", "desc": "Al activar el recordatorio por primera vez, Android puede preguntar si la app queda exenta del ahorro de batería para que el aviso no se pierda. Es opcional." },
+          { "icon": "📳", "name": "Vibración", "desc": "Una vibración breve al acertar o fallar en los juegos." }
         ],
-        "noTrack": "No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No hay anuncios ni compras dentro de la app. No compartimos datos con terceros porque no los recopilamos."
+        "noTrack": "La app no usa el micrófono, la cámara, la ubicación, los contactos ni las fotos. No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No hay anuncios ni compras dentro de la app. No compartimos datos con terceros porque no los recopilamos."
+      },
+      {
+        "title": "Sonido y lectura en voz alta",
+        "type": "simple",
+        "body": "Los efectos de sonido son archivos incluidos en la propia app. La lectura en voz alta (opcional) usa el motor de texto a voz del dispositivo para leer las lecciones y preguntas: la app <strong>no graba audio, no usa el micrófono y no envía ningún texto a ningún servidor</strong>. El funcionamiento del motor de voz depende de los ajustes del sistema operativo del dispositivo."
+      },
+      {
+        "title": "Enlaces externos",
+        "type": "simple",
+        "body": "El único enlace que sale de la app es «Valorar la app», un texto discreto al final de los Ajustes que abre la ficha de EcoKids en la tienda (Google Play o App Store). La app no envía ningún dato al abrirla; a partir de ahí rige la política de privacidad de la tienda correspondiente."
       },
       {
         "title": "Menores y familias",
@@ -267,7 +280,7 @@ const translations = {
       {
         "title": "Eliminación de tus datos",
         "type": "simple",
-        "body": "Puedes reiniciar el progreso desde la propia app o desinstalarla para eliminar todos los datos de tu dispositivo de forma permanente. No hay nada que borrar en servidores porque nunca sale nada del dispositivo."
+        "body": "Puedes reiniciar el progreso desde la propia app (Ajustes) o desinstalarla para eliminar todos los datos de tu dispositivo de forma permanente. No hay nada que borrar en servidores porque nunca sale nada del dispositivo."
       },
       {
         "title": "Cambios en esta política",
@@ -279,7 +292,7 @@ const translations = {
   "en": {
     "headerSub": "Privacy Policy",
     "title": "Privacy Policy",
-    "updated": "Last updated: July 2026",
+    "updated": "Last updated: October 2026",
     "footer": "© 2026 EcoKids · Jonatan Ortega González · Spain",
     "contactLabel": "Do you have any questions?",
     "intro": "EcoKids is an educational app for children aged 5 to 10 that, together with Bamboo the panda, teaches them to care for the environment through play. It works <strong>100% locally</strong> on your device: we do not collect, transmit or store any data on servers.",
@@ -288,16 +301,29 @@ const translations = {
         "title": "Data we collect",
         "type": "none",
         "noneLabel": "None",
-        "body": "The app does not require registration or an account and does not need an internet connection to work. All progress — completed lessons, minigame scores, daily missions, streaks, medals, avatars and the virtual forest — is stored <strong>only on your device</strong>.",
+        "body": "The app does not require registration or an account and does not need an internet connection to work. Everything it saves — the name or nickname the child types (optional), completed lessons, minigame scores and stars, missed questions kept for review, daily missions, streaks, medals, avatars, the virtual forest and the settings (language, sound, read-aloud and reminder) — is stored <strong>only on your device</strong>.",
         "note": "If you uninstall the app, all progress is deleted with it."
       },
       {
         "title": "Permissions the app uses",
         "type": "permissions",
         "permissions": [
-          { "icon": "🔔", "name": "Notifications", "desc": "Only if parents enable the optional daily reminder. It can be turned off at any time from the settings." }
+          { "icon": "🔔", "name": "Notifications", "desc": "Only if parents enable the optional daily reminder. These are local notifications scheduled on the device itself: they do not go through any server. They can be turned off at any time from the settings." },
+          { "icon": "⏰", "name": "Alarms and device start-up (Android only)", "desc": "Used only to fire the daily reminder at the chosen time and to restore it after the phone restarts. They only act if the reminder is turned on." },
+          { "icon": "🔋", "name": "Battery optimisation (Android only)", "desc": "When the reminder is first turned on, Android may ask whether the app is exempt from battery saving so the alert is not lost. It is optional." },
+          { "icon": "📳", "name": "Vibration", "desc": "A short vibration when answering right or wrong in the games." }
         ],
-        "noTrack": "No advertising identifiers or analytics and tracking tools are used. There are no ads or in-app purchases. We do not share data with third parties because we do not collect it."
+        "noTrack": "The app does not use the microphone, camera, location, contacts or photos. No advertising identifiers or analytics and tracking tools are used. There are no ads or in-app purchases. We do not share data with third parties because we do not collect it."
+      },
+      {
+        "title": "Sound and read-aloud",
+        "type": "simple",
+        "body": "The sound effects are files bundled with the app. Read-aloud (optional) uses the device's text-to-speech engine to read lessons and questions: the app <strong>does not record audio, does not use the microphone and does not send any text to any server</strong>. How the voice engine behaves depends on the settings of the device's operating system."
+      },
+      {
+        "title": "External links",
+        "type": "simple",
+        "body": "The only link that leaves the app is \"Rate the app\", a discreet text at the bottom of the Settings that opens EcoKids' page in the store (Google Play or the App Store). The app sends no data when opening it; from there the privacy policy of the corresponding store applies."
       },
       {
         "title": "Children and families",
@@ -307,7 +333,7 @@ const translations = {
       {
         "title": "Deleting your data",
         "type": "simple",
-        "body": "You can reset the progress within the app or uninstall it to permanently remove all data from your device. There is nothing to delete on servers because nothing ever leaves the device."
+        "body": "You can reset the progress within the app (Settings) or uninstall it to permanently remove all data from your device. There is nothing to delete on servers because nothing ever leaves the device."
       },
       {
         "title": "Changes to this policy",
