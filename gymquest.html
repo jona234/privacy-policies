@@ -239,7 +239,7 @@ const translations = {
   "es": {
     "headerSub": "Política de Privacidad",
     "title": "Política de Privacidad",
-    "updated": "Última actualización: julio de 2026",
+    "updated": "Última actualización: octubre de 2026",
     "footer": "© 2026 GymQuest · Jonatan Ortega González · España",
     "contactLabel": "¿Tienes alguna duda?",
     "intro": "GymQuest es un juego de fitness RPG con ejercicios de peso corporal que funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.",
@@ -248,15 +248,38 @@ const translations = {
         "title": "Datos que recopilamos",
         "type": "none",
         "noneLabel": "Ninguno",
-        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Todo tu progreso — nivel, experiencia, atributos, entrenamientos completados, récords personales, rachas, logros, calendario de actividad y ajustes — se almacena <strong>únicamente en tu dispositivo</strong>.",
-        "note": "Si exportas tu progreso, el archivo se guarda donde tú decidas y solo se comparte si tú lo compartes."
+        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Todo tu progreso — nivel, experiencia, atributos, entrenamientos completados, récords personales, rachas, logros, retos semanales, ajustes de dificultad, calendario de actividad y preferencias — se almacena <strong>únicamente en tu dispositivo</strong>.",
+        "note": "Si exportas tu progreso, se copia como texto al portapapeles de tu dispositivo: solo sale de él si tú lo pegas o lo envías a otro sitio. Las tarjetas que creas para compartir se generan en tu dispositivo y solo van a donde tú las envíes."
       },
       {
         "title": "Permisos que utiliza la app",
         "type": "permissions",
         "permissions": [
-          { "icon": "🔔", "name": "Notificaciones / alarmas exactas", "desc": "Para enviarte los recordatorios de entrenamiento en los días y hora que elijas, y el aviso opcional cuando tu racha corre peligro." },
-          { "icon": "💾", "name": "Almacenamiento", "desc": "Para crear o leer los archivos de progreso que tú exportes o importes." }
+          {
+            "icon": "🔔",
+            "name": "Notificaciones y alarmas exactas",
+            "desc": "Para enviarte los recordatorios de entrenamiento en los días y hora que elijas, y el aviso opcional cuando tu racha corre peligro. Las alarmas exactas solo se usan en Android."
+          },
+          {
+            "icon": "🔄",
+            "name": "Inicio del dispositivo (Android)",
+            "desc": "Para volver a programar tus recordatorios después de reiniciar el móvil."
+          },
+          {
+            "icon": "🔋",
+            "name": "Optimización de batería (Android, opcional)",
+            "desc": "La app puede pedirte que la excluyas del ahorro de batería para que los recordatorios lleguen a su hora. Puedes rechazarlo."
+          },
+          {
+            "icon": "📳",
+            "name": "Vibración",
+            "desc": "Respuesta háptica durante el entrenamiento. Puedes desactivarla en Ajustes."
+          },
+          {
+            "icon": "🖼️",
+            "name": "Guardar en Fotos (iOS, solo si lo pides)",
+            "desc": "Únicamente cuando eliges «Guardar imagen» al compartir una tarjeta de progreso. La app no lee tu galería."
+          }
         ],
         "noTrack": "No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No hay anuncios ni compras dentro de la app. No compartimos datos con terceros porque no los recopilamos."
       },
@@ -268,7 +291,7 @@ const translations = {
       {
         "title": "Eliminación de tus datos",
         "type": "simple",
-        "body": "Como toda la información se guarda únicamente en tu dispositivo, puedes eliminarla borrando los datos de la app o desinstalándola. No hay nada que borrar en servidores porque nunca sale nada del dispositivo."
+        "body": "Como toda la información se guarda únicamente en tu dispositivo, puedes eliminarla desde Ajustes → Reiniciar progreso, borrando los datos de la app o desinstalándola. No hay nada que borrar en servidores porque nunca sale nada del dispositivo."
       },
       {
         "title": "Cambios en esta política",
@@ -280,7 +303,7 @@ const translations = {
   "en": {
     "headerSub": "Privacy Policy",
     "title": "Privacy Policy",
-    "updated": "Last updated: July 2026",
+    "updated": "Last updated: October 2026",
     "footer": "© 2026 GymQuest · Jonatan Ortega González · Spain",
     "contactLabel": "Do you have any questions?",
     "intro": "GymQuest is a fitness RPG game with bodyweight exercises that works <strong>100% locally</strong> on your device. We do not collect, transmit or store your data on any server.",
@@ -289,15 +312,38 @@ const translations = {
         "title": "Data we collect",
         "type": "none",
         "noneLabel": "None",
-        "body": "The app does not require registration or an account and does not need an internet connection to work. All your progress — level, experience, attributes, completed workouts, personal records, streaks, achievements, activity calendar and settings — is stored <strong>only on your device</strong>.",
-        "note": "If you export your progress, the file is saved wherever you choose and is only shared if you share it."
+        "body": "The app does not require registration or an account and does not need an internet connection to work. All your progress — level, experience, attributes, completed workouts, personal records, streaks, achievements, weekly challenges, difficulty adjustments, activity calendar and settings — is stored <strong>only on your device</strong>.",
+        "note": "If you export your progress, it is copied as text to your device's clipboard: it only leaves the device if you paste or send it somewhere else. The cards you create to share are generated on your device and only go wherever you send them."
       },
       {
         "title": "Permissions the app uses",
         "type": "permissions",
         "permissions": [
-          { "icon": "🔔", "name": "Notifications / exact alarms", "desc": "To send you workout reminders on the days and time you choose, and the optional alert when your streak is at risk." },
-          { "icon": "💾", "name": "Storage", "desc": "To create or read the progress files you export or import." }
+          {
+            "icon": "🔔",
+            "name": "Notifications and exact alarms",
+            "desc": "To send you workout reminders on the days and time you choose, and the optional alert when your streak is at risk. Exact alarms are only used on Android."
+          },
+          {
+            "icon": "🔄",
+            "name": "Device startup (Android)",
+            "desc": "To reschedule your reminders after your phone restarts."
+          },
+          {
+            "icon": "🔋",
+            "name": "Battery optimization (Android, optional)",
+            "desc": "The app may ask you to exclude it from battery saving so reminders arrive on time. You can decline."
+          },
+          {
+            "icon": "📳",
+            "name": "Vibration",
+            "desc": "Haptic feedback during workouts. You can turn it off in Settings."
+          },
+          {
+            "icon": "🖼️",
+            "name": "Save to Photos (iOS, only on request)",
+            "desc": "Only when you choose \"Save Image\" while sharing a progress card. The app never reads your photo library."
+          }
         ],
         "noTrack": "No advertising identifiers or analytics and tracking tools are used. There are no ads or in-app purchases. We do not share data with third parties because we do not collect it."
       },
@@ -309,7 +355,7 @@ const translations = {
       {
         "title": "Deleting your data",
         "type": "simple",
-        "body": "Since all information is stored only on your device, you can delete it by clearing the app's data or uninstalling it. There is nothing to delete on servers because nothing ever leaves the device."
+        "body": "Since all information is stored only on your device, you can delete it from Settings → Reset progress, by clearing the app's data or by uninstalling it. There is nothing to delete on servers because nothing ever leaves the device."
       },
       {
         "title": "Changes to this policy",
@@ -321,7 +367,7 @@ const translations = {
   "de": {
     "headerSub": "Datenschutzrichtlinie",
     "title": "Datenschutzrichtlinie",
-    "updated": "Letzte Aktualisierung: Juli 2026",
+    "updated": "Letzte Aktualisierung: Oktober 2026",
     "footer": "© 2026 GymQuest · Jonatan Ortega González · Spanien",
     "contactLabel": "Hast du Fragen?",
     "intro": "GymQuest ist ein Fitness-RPG-Spiel mit Körpergewichtsübungen, das <strong>100% lokal</strong> auf deinem Gerät funktioniert. Wir erfassen, übertragen oder speichern deine Daten nicht auf Servern.",
@@ -330,15 +376,38 @@ const translations = {
         "title": "Erfasste Daten",
         "type": "none",
         "noneLabel": "Keine",
-        "body": "Die App erfordert keine Registrierung oder ein Konto und benötigt keine Internetverbindung. Dein gesamter Fortschritt — Level, Erfahrung, Attribute, abgeschlossene Trainings, persönliche Rekorde, Serien, Erfolge, Aktivitätskalender und Einstellungen — wird <strong>ausschließlich auf deinem Gerät</strong> gespeichert.",
-        "note": "Wenn du deinen Fortschritt exportierst, wird die Datei dort gespeichert, wo du es entscheidest, und nur geteilt, wenn du sie teilst."
+        "body": "Die App erfordert keine Registrierung oder ein Konto und benötigt keine Internetverbindung. Dein gesamter Fortschritt — Level, Erfahrung, Attribute, abgeschlossene Trainings, persönliche Rekorde, Serien, Erfolge, Wochenherausforderungen, Schwierigkeitsanpassungen, Aktivitätskalender und Einstellungen — wird <strong>ausschließlich auf deinem Gerät</strong> gespeichert.",
+        "note": "Wenn du deinen Fortschritt exportierst, wird er als Text in die Zwischenablage deines Geräts kopiert: Er verlässt das Gerät nur, wenn du ihn woanders einfügst oder sendest. Karten, die du zum Teilen erstellst, werden auf deinem Gerät erzeugt und gehen nur dorthin, wohin du sie schickst."
       },
       {
         "title": "Von der App verwendete Berechtigungen",
         "type": "permissions",
         "permissions": [
-          { "icon": "🔔", "name": "Benachrichtigungen / genaue Alarme", "desc": "Um dir Trainingserinnerungen an den von dir gewählten Tagen und Uhrzeiten zu senden, sowie die optionale Warnung, wenn deine Serie in Gefahr ist." },
-          { "icon": "💾", "name": "Speicher", "desc": "Um die von dir exportierten oder importierten Fortschrittsdateien zu erstellen oder zu lesen." }
+          {
+            "icon": "🔔",
+            "name": "Benachrichtigungen und genaue Alarme",
+            "desc": "Um dir Trainingserinnerungen an den von dir gewählten Tagen und Uhrzeiten zu senden, sowie die optionale Warnung, wenn deine Serie in Gefahr ist. Genaue Alarme werden nur unter Android verwendet."
+          },
+          {
+            "icon": "🔄",
+            "name": "Gerätestart (Android)",
+            "desc": "Um deine Erinnerungen nach einem Neustart des Handys neu zu planen."
+          },
+          {
+            "icon": "🔋",
+            "name": "Akku-Optimierung (Android, optional)",
+            "desc": "Die App kann dich bitten, sie vom Energiesparen auszunehmen, damit Erinnerungen pünktlich ankommen. Du kannst ablehnen."
+          },
+          {
+            "icon": "📳",
+            "name": "Vibration",
+            "desc": "Haptisches Feedback beim Training. Du kannst es in den Einstellungen deaktivieren."
+          },
+          {
+            "icon": "🖼️",
+            "name": "In Fotos speichern (iOS, nur auf Wunsch)",
+            "desc": "Nur wenn du beim Teilen einer Fortschrittskarte „Bild sichern“ wählst. Die App liest deine Mediathek nie."
+          }
         ],
         "noTrack": "Es werden keine Werbekennungen oder Analyse- und Tracking-Tools verwendet. Es gibt keine Werbung und keine In-App-Käufe. Wir teilen keine Daten mit Dritten, da wir keine erfassen."
       },
@@ -350,7 +419,7 @@ const translations = {
       {
         "title": "Löschen deiner Daten",
         "type": "simple",
-        "body": "Da alle Informationen ausschließlich auf deinem Gerät gespeichert werden, kannst du sie löschen, indem du die App-Daten löschst oder die App deinstallierst. Auf Servern gibt es nichts zu löschen, da das Gerät nie etwas verlässt."
+        "body": "Da alle Informationen ausschließlich auf deinem Gerät gespeichert werden, kannst du sie unter Einstellungen → Fortschritt zurücksetzen, durch Löschen der App-Daten oder durch Deinstallation entfernen. Auf Servern gibt es nichts zu löschen, da nichts das Gerät verlässt."
       },
       {
         "title": "Änderungen dieser Richtlinie",
@@ -362,7 +431,7 @@ const translations = {
   "zh": {
     "headerSub": "隐私政策",
     "title": "隐私政策",
-    "updated": "最后更新：2026年7月",
+    "updated": "最后更新：2026年10月",
     "footer": "© 2026 GymQuest · Jonatan Ortega González · 西班牙",
     "contactLabel": "有任何疑问？",
     "intro": "GymQuest是一款自重训练健身RPG游戏，<strong>100%在本地</strong>运行于您的设备上。我们不会在服务器上收集、传输或存储您的数据。",
@@ -371,15 +440,38 @@ const translations = {
         "title": "我们收集的数据",
         "type": "none",
         "noneLabel": "无",
-        "body": "该应用无需注册或账户，无需互联网连接即可运行。您的所有进度——等级、经验、属性、已完成的训练、个人记录、连续天数、成就、活动日历和设置——<strong>仅存储在您的设备上</strong>。",
-        "note": "如果您导出进度，文件将保存在您选择的位置，只有您主动分享时才会被共享。"
+        "body": "该应用无需注册或账户，无需互联网连接即可运行。您的所有进度——等级、经验、属性、已完成的训练、个人记录、连续天数、成就、每周挑战、难度调整、活动日历和设置——<strong>仅存储在您的设备上</strong>。",
+        "note": "如果您导出进度，它会以文本形式复制到设备的剪贴板：只有您将其粘贴或发送到其他地方时才会离开设备。您创建的分享卡片在设备上生成，只会发送到您选择的地方。"
       },
       {
         "title": "应用使用的权限",
         "type": "permissions",
         "permissions": [
-          { "icon": "🔔", "name": "通知 / 精确闹钟", "desc": "用于在您选择的日期和时间发送训练提醒，以及在连续记录面临中断时发送可选提醒。" },
-          { "icon": "💾", "name": "存储", "desc": "用于创建或读取您导出或导入的进度文件。" }
+          {
+            "icon": "🔔",
+            "name": "通知和精确闹钟",
+            "desc": "用于在您选择的日期和时间发送训练提醒，以及在连续记录面临中断时发送可选提醒。精确闹钟仅在 Android 上使用。"
+          },
+          {
+            "icon": "🔄",
+            "name": "设备启动（Android）",
+            "desc": "用于在手机重启后重新安排您的提醒。"
+          },
+          {
+            "icon": "🔋",
+            "name": "电池优化（Android，可选）",
+            "desc": "应用可能会请您将其排除在省电模式之外，以便提醒准时送达。您可以拒绝。"
+          },
+          {
+            "icon": "📳",
+            "name": "振动",
+            "desc": "训练时的触感反馈，可在设置中关闭。"
+          },
+          {
+            "icon": "🖼️",
+            "name": "保存到照片（iOS，仅在您要求时）",
+            "desc": "仅当您在分享进度卡片时选择“存储图像”时使用。应用从不读取您的相册。"
+          }
         ],
         "noTrack": "不使用任何广告标识符或分析和跟踪工具。没有广告，也没有应用内购买。我们不与第三方共享数据，因为我们不收集数据。"
       },
@@ -391,12 +483,268 @@ const translations = {
       {
         "title": "删除您的数据",
         "type": "simple",
-        "body": "由于所有信息仅存储在您的设备上，您可以通过清除应用数据或卸载应用来删除它们。服务器上没有任何需要删除的内容，因为数据从未离开设备。"
+        "body": "由于所有信息仅存储在您的设备上，您可以通过 设置 → 重置进度、清除应用数据或卸载应用来删除它们。服务器上没有任何需要删除的内容，因为数据从未离开设备。"
       },
       {
         "title": "政策变更",
         "type": "simple",
         "body": "我们可能随时更新本政策。我们将在此URL发布当前版本。"
+      }
+    ]
+  },
+  "fr": {
+    "headerSub": "Politique de confidentialité",
+    "title": "Politique de confidentialité",
+    "updated": "Dernière mise à jour : octobre 2026",
+    "footer": "© 2026 GymQuest · Jonatan Ortega González · Espagne",
+    "contactLabel": "Une question ?",
+    "intro": "GymQuest est un jeu de fitness RPG avec des exercices au poids du corps qui fonctionne <strong>100 % en local</strong> sur ton appareil. Nous ne collectons, ne transmettons ni ne stockons tes données sur des serveurs.",
+    "sections": [
+      {
+        "title": "Données collectées",
+        "type": "none",
+        "noneLabel": "Aucune",
+        "body": "L'app ne nécessite ni inscription ni compte et n'a pas besoin de connexion internet pour fonctionner. Toute ta progression — niveau, expérience, attributs, entraînements terminés, records personnels, séries, succès, défis de la semaine, ajustements de difficulté, calendrier d'activité et réglages — est stockée <strong>uniquement sur ton appareil</strong>.",
+        "note": "Si tu exportes ta progression, elle est copiée sous forme de texte dans le presse-papiers de ton appareil : elle n'en sort que si tu la colles ou l'envoies ailleurs. Les cartes que tu crées pour partager sont générées sur ton appareil et ne vont que là où tu les envoies."
+      },
+      {
+        "title": "Autorisations utilisées par l'app",
+        "type": "permissions",
+        "permissions": [
+          {
+            "icon": "🔔",
+            "name": "Notifications et alarmes exactes",
+            "desc": "Pour t'envoyer les rappels d'entraînement aux jours et à l'heure que tu choisis, et l'alerte facultative quand ta série est en danger. Les alarmes exactes ne sont utilisées que sur Android."
+          },
+          {
+            "icon": "🔄",
+            "name": "Démarrage de l'appareil (Android)",
+            "desc": "Pour reprogrammer tes rappels après le redémarrage du téléphone."
+          },
+          {
+            "icon": "🔋",
+            "name": "Optimisation de la batterie (Android, facultatif)",
+            "desc": "L'app peut te demander de l'exclure de l'économie de batterie pour que les rappels arrivent à l'heure. Tu peux refuser."
+          },
+          {
+            "icon": "📳",
+            "name": "Vibration",
+            "desc": "Retour haptique pendant l'entraînement. Tu peux la désactiver dans les Réglages."
+          },
+          {
+            "icon": "🖼️",
+            "name": "Enregistrer dans Photos (iOS, seulement si tu le demandes)",
+            "desc": "Uniquement quand tu choisis « Enregistrer l'image » en partageant une carte de progression. L'app ne lit jamais ta photothèque."
+          }
+        ],
+        "noTrack": "Aucun identifiant publicitaire ni outil d'analyse ou de suivi n'est utilisé. Il n'y a ni publicité ni achats intégrés. Nous ne partageons aucune donnée avec des tiers, car nous n'en collectons pas."
+      },
+      {
+        "title": "Mineurs",
+        "type": "simple",
+        "body": "L'app ne collecte de données d'aucun utilisateur, y compris les mineurs."
+      },
+      {
+        "title": "Suppression de tes données",
+        "type": "simple",
+        "body": "Comme toutes les informations sont stockées uniquement sur ton appareil, tu peux les supprimer via Réglages → Réinitialiser la progression, en effaçant les données de l'app ou en la désinstallant. Il n'y a rien à supprimer sur des serveurs, car rien ne quitte l'appareil."
+      },
+      {
+        "title": "Modifications de cette politique",
+        "type": "simple",
+        "body": "Nous pouvons mettre à jour cette politique à tout moment. La version en vigueur sera publiée à cette même URL."
+      }
+    ]
+  },
+  "it": {
+    "headerSub": "Informativa sulla privacy",
+    "title": "Informativa sulla privacy",
+    "updated": "Ultimo aggiornamento: ottobre 2026",
+    "footer": "© 2026 GymQuest · Jonatan Ortega González · Spagna",
+    "contactLabel": "Hai qualche dubbio?",
+    "intro": "GymQuest è un gioco di fitness RPG con esercizi a corpo libero che funziona <strong>al 100% in locale</strong> sul tuo dispositivo. Non raccogliamo, trasmettiamo né conserviamo i tuoi dati su server.",
+    "sections": [
+      {
+        "title": "Dati che raccogliamo",
+        "type": "none",
+        "noneLabel": "Nessuno",
+        "body": "L'app non richiede registrazione né account e non ha bisogno di connessione a internet per funzionare. Tutti i tuoi progressi — livello, esperienza, attributi, allenamenti completati, record personali, serie, obiettivi, sfide settimanali, regolazioni di difficoltà, calendario delle attività e impostazioni — sono salvati <strong>solo sul tuo dispositivo</strong>.",
+        "note": "Se esporti i tuoi progressi, vengono copiati come testo negli appunti del dispositivo: escono dal dispositivo solo se li incolli o li invii altrove. Le card che crei per condividere vengono generate sul dispositivo e vanno solo dove le invii tu."
+      },
+      {
+        "title": "Permessi utilizzati dall'app",
+        "type": "permissions",
+        "permissions": [
+          {
+            "icon": "🔔",
+            "name": "Notifiche e sveglie esatte",
+            "desc": "Per inviarti i promemoria di allenamento nei giorni e all'ora che scegli, e l'avviso opzionale quando la tua serie è in pericolo. Le sveglie esatte si usano solo su Android."
+          },
+          {
+            "icon": "🔄",
+            "name": "Avvio del dispositivo (Android)",
+            "desc": "Per riprogrammare i tuoi promemoria dopo il riavvio del telefono."
+          },
+          {
+            "icon": "🔋",
+            "name": "Ottimizzazione batteria (Android, opzionale)",
+            "desc": "L'app può chiederti di escluderla dal risparmio energetico perché i promemoria arrivino puntuali. Puoi rifiutare."
+          },
+          {
+            "icon": "📳",
+            "name": "Vibrazione",
+            "desc": "Feedback aptico durante l'allenamento. Puoi disattivarla nelle Impostazioni."
+          },
+          {
+            "icon": "🖼️",
+            "name": "Salva in Foto (iOS, solo se lo chiedi)",
+            "desc": "Solo quando scegli «Salva immagine» condividendo una card dei progressi. L'app non legge mai la tua libreria foto."
+          }
+        ],
+        "noTrack": "Non si usa alcun identificatore pubblicitario né strumenti di analisi o tracciamento. Non ci sono pubblicità né acquisti in-app. Non condividiamo dati con terzi perché non li raccogliamo."
+      },
+      {
+        "title": "Minori",
+        "type": "simple",
+        "body": "L'app non raccoglie dati di nessun utente, compresi i minori."
+      },
+      {
+        "title": "Eliminazione dei tuoi dati",
+        "type": "simple",
+        "body": "Poiché tutte le informazioni sono salvate solo sul tuo dispositivo, puoi eliminarle da Impostazioni → Azzera i progressi, cancellando i dati dell'app o disinstallandola. Non c'è nulla da cancellare sui server perché nulla lascia il dispositivo."
+      },
+      {
+        "title": "Modifiche a questa informativa",
+        "type": "simple",
+        "body": "Possiamo aggiornare questa informativa in qualsiasi momento. Pubblicheremo la versione in vigore a questo stesso URL."
+      }
+    ]
+  },
+  "ca": {
+    "headerSub": "Política de privadesa",
+    "title": "Política de privadesa",
+    "updated": "Darrera actualització: octubre de 2026",
+    "footer": "© 2026 GymQuest · Jonatan Ortega González · Espanya",
+    "contactLabel": "Tens algun dubte?",
+    "intro": "GymQuest és un joc de fitness RPG amb exercicis de pes corporal que funciona de manera <strong>100% local</strong> al teu dispositiu. No recollim, transmetem ni emmagatzemem les teves dades en servidors.",
+    "sections": [
+      {
+        "title": "Dades que recollim",
+        "type": "none",
+        "noneLabel": "Cap",
+        "body": "L'app no requereix registre ni compte i no necessita connexió a internet per funcionar. Tot el teu progrés — nivell, experiència, atributs, entrenaments completats, rècords personals, ratxes, assoliments, reptes setmanals, ajustos de dificultat, calendari d'activitat i preferències — es desa <strong>únicament al teu dispositiu</strong>.",
+        "note": "Si exportes el teu progrés, es copia com a text al porta-retalls del dispositiu: només en surt si tu l'enganxes o l'envies a un altre lloc. Les targetes que crees per compartir es generen al teu dispositiu i només van on tu les envies."
+      },
+      {
+        "title": "Permisos que utilitza l'app",
+        "type": "permissions",
+        "permissions": [
+          {
+            "icon": "🔔",
+            "name": "Notificacions i alarmes exactes",
+            "desc": "Per enviar-te els recordatoris d'entrenament els dies i l'hora que triïs, i l'avís opcional quan la teva ratxa està en perill. Les alarmes exactes només s'utilitzen a Android."
+          },
+          {
+            "icon": "🔄",
+            "name": "Inici del dispositiu (Android)",
+            "desc": "Per tornar a programar els recordatoris després de reiniciar el mòbil."
+          },
+          {
+            "icon": "🔋",
+            "name": "Optimització de bateria (Android, opcional)",
+            "desc": "L'app et pot demanar que l'excloguis de l'estalvi de bateria perquè els recordatoris arribin a l'hora. Pots rebutjar-ho."
+          },
+          {
+            "icon": "📳",
+            "name": "Vibració",
+            "desc": "Resposta hàptica durant l'entrenament. La pots desactivar a Ajustos."
+          },
+          {
+            "icon": "🖼️",
+            "name": "Desar a Fotos (iOS, només si ho demanes)",
+            "desc": "Únicament quan tries «Desa la imatge» en compartir una targeta de progrés. L'app no llegeix mai la teva galeria."
+          }
+        ],
+        "noTrack": "No s'utilitza cap identificador publicitari ni eines d'analítica o seguiment. No hi ha anuncis ni compres dins de l'app. No compartim dades amb tercers perquè no en recollim."
+      },
+      {
+        "title": "Menors",
+        "type": "simple",
+        "body": "L'app no recull dades de cap usuari, incloent-hi menors d'edat."
+      },
+      {
+        "title": "Eliminació de les teves dades",
+        "type": "simple",
+        "body": "Com que tota la informació es desa únicament al teu dispositiu, la pots eliminar des d'Ajustos → Reinicia el progrés, esborrant les dades de l'app o desinstal·lant-la. No hi ha res a esborrar en servidors perquè mai no surt res del dispositiu."
+      },
+      {
+        "title": "Canvis en aquesta política",
+        "type": "simple",
+        "body": "Podem actualitzar aquesta política en qualsevol moment. Publicarem la versió vigent en aquesta mateixa URL."
+      }
+    ]
+  },
+  "eu": {
+    "headerSub": "Pribatutasun-politika",
+    "title": "Pribatutasun-politika",
+    "updated": "Azken eguneraketa: 2026ko urria",
+    "footer": "© 2026 GymQuest · Jonatan Ortega González · Espainia",
+    "contactLabel": "Zalantzarik baduzu?",
+    "intro": "GymQuest gorputz-pisuko ariketak dituen fitness RPG jokoa da, eta <strong>% 100 lokalean</strong> dabil zure gailuan. Ez dugu zure daturik biltzen, transmititzen edo zerbitzarietan gordetzen.",
+    "sections": [
+      {
+        "title": "Biltzen ditugun datuak",
+        "type": "none",
+        "noneLabel": "Bat ere ez",
+        "body": "Aplikazioak ez du erregistrorik edo konturik behar, ezta Interneteko konexiorik ere. Zure aurrerapen guztia — maila, esperientzia, ezaugarriak, osatutako entrenamenduak, errekor pertsonalak, segidak, lorpenak, asteko erronkak, zailtasun-doikuntzak, jarduera-egutegia eta ezarpenak — <strong>zure gailuan bakarrik</strong> gordetzen da.",
+        "note": "Zure aurrerapena esportatzen baduzu, testu gisa kopiatzen da gailuaren arbelean: zuk beste nonbait itsatsi edo bidaltzen baduzu bakarrik ateratzen da gailutik. Partekatzeko sortzen dituzun txartelak zure gailuan sortzen dira eta zuk bidaltzen dituzun lekura bakarrik doaz."
+      },
+      {
+        "title": "Aplikazioak erabiltzen dituen baimenak",
+        "type": "permissions",
+        "permissions": [
+          {
+            "icon": "🔔",
+            "name": "Jakinarazpenak eta alarma zehatzak",
+            "desc": "Aukeratzen dituzun egun eta orduetan entrenamendu-gogorarazpenak bidaltzeko, eta zure segida arriskuan dagoenean aukerako abisua emateko. Alarma zehatzak Android-en bakarrik erabiltzen dira."
+          },
+          {
+            "icon": "🔄",
+            "name": "Gailuaren abiaraztea (Android)",
+            "desc": "Mugikorra berrabiarazi ondoren zure gogorarazpenak berriro programatzeko."
+          },
+          {
+            "icon": "🔋",
+            "name": "Bateriaren optimizazioa (Android, aukerakoa)",
+            "desc": "Aplikazioak bateria-aurrezpenetik kanpo uzteko eska diezazuke, gogorarazpenak garaiz irits daitezen. Uko egin diezaiokezu."
+          },
+          {
+            "icon": "📳",
+            "name": "Bibrazioa",
+            "desc": "Erantzun haptikoa entrenamenduan. Ezarpenetan desaktiba dezakezu."
+          },
+          {
+            "icon": "🖼️",
+            "name": "Gorde Argazkietan (iOS, zuk eskatzen baduzu bakarrik)",
+            "desc": "Aurrerapen-txartel bat partekatzean «Gorde irudia» aukeratzen duzunean bakarrik. Aplikazioak ez du inoiz zure argazki-liburutegia irakurtzen."
+          }
+        ],
+        "noTrack": "Ez da publizitate-identifikatzailerik edo analitika- eta jarraipen-tresnarik erabiltzen. Ez dago iragarkirik ezta aplikazio barneko erosketarik ere. Ez dugu daturik partekatzen hirugarrenekin, ez baitugu daturik biltzen."
+      },
+      {
+        "title": "Adingabeak",
+        "type": "simple",
+        "body": "Aplikazioak ez du inongo erabiltzaileren daturik biltzen, adingabeenak barne."
+      },
+      {
+        "title": "Zure datuak ezabatzea",
+        "type": "simple",
+        "body": "Informazio guztia zure gailuan bakarrik gordetzen denez, Ezarpenak → Berrabiarazi aurrerapena atalean, aplikazioaren datuak ezabatuz edo aplikazioa desinstalatuz ezaba dezakezu. Zerbitzarietan ez dago ezer ezabatzeko, ezer ez baita inoiz gailutik ateratzen."
+      },
+      {
+        "title": "Politika honen aldaketak",
+        "type": "simple",
+        "body": "Politika hau edozein unetan egunera dezakegu. Indarrean dagoen bertsioa URL honetan bertan argitaratuko dugu."
       }
     ]
   }
@@ -437,8 +785,21 @@ function render(lang) {
   document.getElementById('content').innerHTML = html;
 }
 
-const lang = new URLSearchParams(window.location.search).get('lang') || 'es';
-render(['es','en','de','zh'].includes(lang) ? lang : 'es');
+// Idioma: ?lang=xx; si no se indica, el del navegador (si lo tenemos).
+const SUPPORTED = ['es','en','de','zh','fr','it','ca','eu'];
+function pickLang() {
+  const q = new URLSearchParams(window.location.search).get('lang');
+  if (q && SUPPORTED.includes(q)) return q;
+  for (const l of (navigator.languages || [navigator.language || 'es'])) {
+    const code = String(l).toLowerCase().split('-')[0];
+    if (SUPPORTED.includes(code)) return code;
+    if (code === 'gl') return 'es';
+  }
+  return 'en'; // como la app: idioma no soportado → inglés
+}
+const lang = pickLang();
+document.documentElement.lang = lang;
+render(lang);
 </script>
 </body>
 </html>
