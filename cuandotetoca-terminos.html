@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos de Uso — CuandoTeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #7e57c2;
+      --accent-light: #b39ddb;
+      --header-bg: #221833;
+      --bg: #f6f4fa;
+      --intro-bg: #f0ebf9;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">🧸</div>
+  <div>
+    <div class="logo-text">CUANDOTETOCA</div>
+    <div class="logo-sub">Términos de Uso</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">Términos de Uso</h1>
+  <span class="updated">Última actualización: octubre de 2026</span>
+  <div class="lang-switch">
+    <span class="current">Español</span>
+    <a href="cuandotetoca-terminos-en.html">English</a>
+  </div>
+
+  <div class="intro-card">Al usar CuandoTeToca aceptas estos términos. Léelos junto con la <a href="cuandotetoca.html">Política de Privacidad</a>, que explica qué datos tratamos y cómo.</div>
+
+  <section>
+    <h2>El servicio</h2>
+    <div class="card">
+<p>CuandoTeToca te ayuda a organizar las actividades extraescolares, los eventos, los gastos y quién lleva y recoge a tus hijos, con recordatorios en el móvil. Puedes usarla gratis y sin cuenta; todo se guarda en tu dispositivo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cuenta</h2>
+    <div class="card">
+<ul>
+<li>La cuenta es opcional. Para crearla debes tener al menos 14 años; la app está pensada para personas adultas.</li>
+<li>Eres responsable de mantener seguro tu acceso (tu contraseña o tu cuenta de Google o Apple).</li>
+<li>Puedes eliminar la cuenta cuando quieras desde la app (Ajustes → Tu cuenta → Eliminar cuenta).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Datos de tus hijos</h2>
+    <div class="card">
+<p>Al introducir datos de menores declaras que eres su madre, padre, tutor o que cuentas con su permiso para hacerlo. Te recomendamos introducir solo lo necesario. Cómo tratamos esos datos se explica en la <a href="cuandotetoca.html">Política de Privacidad</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Planes y suscripciones</h2>
+    <div class="card">
+<p>Con un plan puedes guardar los datos en la nube, compartirlos con tu familia y quitar los anuncios:</p>
+<ul>
+<li><strong>Individual</strong> (1 persona), <strong>Pareja</strong> (2 personas) y <strong>Familia</strong> (hasta 5 adultos: la persona titular y 4 más), con pago mensual o anual.</li>
+<li>El precio exacto se muestra en la pantalla de compra, gestionada por <strong>Apple App Store</strong> o <strong>Google Play</strong>, antes de confirmar. El cobro lo hace tu tienda, no nosotros.</li>
+<li><strong>Prueba gratuita:</strong> si se ofrece (por ejemplo, 7 días en el plan Pareja), al terminar se cobra automáticamente salvo que canceles antes. Solo se puede usar una vez.</li>
+<li><strong>Renovación automática:</strong> la suscripción se renueva al precio vigente salvo que la canceles al menos 24 horas antes de que termine el periodo en curso.</li>
+<li><strong>Cancelación:</strong> desde los ajustes de suscripciones de tu cuenta de App Store o Google Play. El acceso ya pagado sigue hasta el final del periodo. Desinstalar la app o eliminar la cuenta no cancela la suscripción.</li>
+<li><strong>Reembolsos:</strong> los gestionan Apple o Google según sus políticas.</li>
+<li><strong>Cambiar de plan y restaurar compras</strong> se hace desde la pantalla de planes de la app.</li>
+<li>En el App Store, las compras se rigen además por el contrato de licencia estándar de Apple (<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">EULA</a>).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Familia compartida</h2>
+    <div class="card">
+<ul>
+<li>El plan lo paga la persona <strong>titular</strong>. Los miembros invitados no pagan y su acceso depende del plan del titular: si el plan termina, la familia queda en solo lectura y, 12 meses después, la copia en la nube se borra.</li>
+<li>Todos los miembros pueden ver y modificar los datos de la familia. Invita solo a personas de confianza.</li>
+<li>El titular puede quitar a un miembro, y cualquier miembro puede salir. Si el titular elimina su cuenta, la familia se borra para todos; cada uno conserva lo que tenga en su móvil.</li>
+<li>Cada miembro es responsable de lo que añade o cambia.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anuncios</h2>
+    <div class="card">
+<p>Sin plan, la app muestra un banner servido por Google AdMob, sujeto también a los Términos de Servicio de Google. Con un plan activo, tuyo o de tu familia, no se muestran anuncios.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Recordatorios</h2>
+    <div class="card">
+<p>Hacemos lo posible para que los recordatorios lleguen a su hora, pero dependen del sistema del móvil, sus ajustes de batería y permisos. No sustituyen tu propia organización: no respondemos de citas o actividades perdidas por un aviso que no llegó.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Uso aceptable</h2>
+    <div class="card">
+<p>No debes usar la app para infringir la ley ni para tratar datos de otras personas sin permiso, ni intentar acceder a datos de familias de las que no eres miembro, descompilar la app o interferir con su funcionamiento, salvo en la medida en que la ley lo permita expresamente. Podemos suspender cuentas que incumplan estos términos.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sin garantía y limitación de responsabilidad</h2>
+    <div class="card">
+<p>La app se ofrece "tal cual", sin garantías de ningún tipo. En la medida permitida por la ley, no seremos responsables de daños indirectos derivados del uso o la imposibilidad de usar la app, incluida la pérdida de datos. Te recomendamos hacer copias de seguridad (Ajustes → Exportar / Importar). Nada en estos términos limita la responsabilidad que no pueda excluirse según la ley aplicable ni tus derechos como consumidor.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cambios en estos términos</h2>
+    <div class="card">
+<p>Podemos actualizar estos términos; publicaremos la versión vigente en esta misma dirección con su fecha y, si el cambio es importante, te lo indicaremos en la app.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ley aplicable</h2>
+    <div class="card">
+<p>Estos términos se rigen por la legislación española, sin perjuicio de los derechos que la normativa de protección al consumidor de tu país de residencia pueda reconocerte.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>¿Tienes alguna duda?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoTeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>
