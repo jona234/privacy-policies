@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account deletion — CuandoTeToca</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #7e57c2;
+      --accent-light: #b39ddb;
+      --header-bg: #221833;
+      --bg: #f6f4fa;
+      --intro-bg: #f0ebf9;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-icon">🧸</div>
+  <div>
+    <div class="logo-text">CUANDOTETOCA</div>
+    <div class="logo-sub">Account and data deletion</div>
+  </div>
+</header>
+
+<div class="container">
+  <h1 class="page-title">How to delete your CuandoTeToca account</h1>
+  <span class="updated">Last updated: October 2026</span>
+  <div class="lang-switch">
+    <a href="cuandotetoca-eliminar-cuenta.html">Español</a>
+    <span class="current">English</span>
+  </div>
+
+  <div class="intro-card">CuandoTeToca is an app to organise your kids' activities, developed by Jonatan Ortega González (devlicius). The account is optional. If you have one, you can delete it yourself at any time from the app, without writing to us.</div>
+
+  <section>
+    <h2>Delete your account from the app (recommended)</h2>
+    <div class="card">
+<ol>
+<li>Open the app and go to <strong>Settings</strong>.</li>
+<li>Open <strong>Your account</strong>.</li>
+<li>Tap <strong>Delete account</strong>.</li>
+<li>Confirm it's you (with Google, with Apple or by typing your password) and accept.</li>
+</ol>
+<p>Deletion is immediate.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Can't access the app?</h2>
+    <div class="card">
+<p>Write from your account's email to <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a> with the subject "Delete CuandoTeToca account". We will check the request and delete the account within 30 days at most.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What is deleted</h2>
+    <div class="card">
+<span class="badge-none">Immediate and permanent deletion</span>
+<ul>
+<li>Your sign-in account (email, name and sign-in method). If you used Apple, the app's access to your Apple ID is also revoked.</li>
+<li>If you are a family's <strong>owner</strong>: the whole family in the cloud (kids, activities, events, adults, holidays…), for all its members, and its pending invitation codes. The other members stop sharing it and keep what is on their phones.</li>
+<li>If you are a <strong>member</strong> of someone else's family: you leave it; that family's data still belongs to its owner.</li>
+<li>Your devices' notification tokens and your notice preferences.</li>
+<li>Your subscription status in our database and your customer record in RevenueCat.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>What is not affected</h2>
+    <div class="card">
+<ul>
+<li>The data on your phone is kept so you can keep using the app without an account. To delete it too, use <strong>Settings → Delete all data</strong> or uninstall the app.</li>
+<li>Your subscription is not cancelled: billing is handled by Apple or Google. Cancel it in your store's subscription settings.</li>
+<li>Apple, Google and RevenueCat may keep their own purchase records according to their policies and legal obligations.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Delete the data without deleting the account</h2>
+    <div class="card">
+<p><strong>Settings → Delete all data</strong> deletes the phone's data and, if you are an owner with a plan, the family's cloud data too, but keeps your account. Also, the cloud copy is deleted automatically 12 months after the owner's plan ends.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Questions about deleting your account?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 CuandoTeToca · Jonatan Ortega González · España</footer>
+
+</body>
+</html>

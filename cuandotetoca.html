@@ -30,9 +30,7 @@
       gap: 14px;
     }
 
-    .logo-icon {
-      font-size: 28px;
-    }
+    .logo-icon { font-size: 28px; }
 
     .logo-text {
       color: var(--accent-light);
@@ -69,6 +67,25 @@
       display: inline-block;
     }
 
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
     .intro-card {
       background: var(--intro-bg);
       border-left: 4px solid var(--accent);
@@ -79,13 +96,9 @@
       color: #444;
     }
 
-    .intro-card strong {
-      color: #1e1e1e;
-    }
+    .intro-card strong { color: #1e1e1e; }
 
-    section {
-      margin-bottom: 32px;
-    }
+    section { margin-bottom: 32px; }
 
     h2 {
       font-size: 17px;
@@ -107,8 +120,14 @@
 
     .card p { margin-bottom: 10px; }
     .card p:last-child { margin-bottom: 0; }
-
     .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
 
     .badge-none {
       display: inline-block;
@@ -128,9 +147,7 @@
       border-bottom: 1px solid #f0f0f0;
     }
 
-    .permission-item:first-child {
-      padding-top: 0;
-    }
+    .permission-item:first-child { padding-top: 0; }
 
     .permission-item:last-child {
       border-bottom: none;
@@ -187,9 +204,7 @@
       text-decoration: none;
     }
 
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
+    .contact-box a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
@@ -207,6 +222,19 @@
       .page-title { font-size: 22px; }
       header { padding: 16px 20px; }
     }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
   </style>
 </head>
 <body>
@@ -221,59 +249,207 @@
 
 <div class="container">
   <h1 class="page-title">Política de Privacidad</h1>
-  <span class="updated">Última actualización: julio de 2026</span>
+  <span class="updated">Última actualización: octubre de 2026</span>
+  <div class="lang-switch">
+    <span class="current">Español</span>
+    <a href="cuandotetoca-en.html">English</a>
+  </div>
 
-  <div class="intro-card">CuandoTeToca es una app para registrar y recordar las actividades y rutinas de tus hijos que funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.</div>
+  <div class="intro-card">CuandoTeToca organiza las actividades extraescolares y los eventos de tus hijos y lo guarda todo <strong>en tu dispositivo</strong>. Puedes usarla sin cuenta. Si creas una cuenta (gratis) y contratas un plan, los datos de tu familia se copian además en nuestra nube para que no los pierdas y para compartirlos con las personas que tú invites (tu pareja, los abuelos…). Sin plan, la app muestra anuncios.</div>
 
   <section>
-    <h2>Datos que recopilamos</h2>
+    <h2>Responsable</h2>
     <div class="card">
-      <span class="badge-none">Ninguno</span>
-      <p>La app no requiere registro ni cuenta. Toda la información que introduces — actividades, rutinas y recordatorios de tus hijos — se almacena <strong>únicamente en tu dispositivo</strong>.</p>
+<p>El responsable del tratamiento es <strong>Jonatan Ortega González</strong> (devlicius), con domicilio en España. Para cualquier cuestión sobre tus datos, escribe a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
     </div>
   </section>
 
   <section>
-    <h2>En resumen</h2>
+    <h2>Sin cuenta: todo en tu móvil</h2>
     <div class="card">
-      <div class="permission-item">
-        <div class="permission-icon">📝</div>
-        <div class="permission-text"><strong>Sin registro</strong><span>No necesitas crear ninguna cuenta para usar la app.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📢</div>
-        <div class="permission-text"><strong>Sin publicidad ni analítica</strong><span>No hay anuncios ni servicios de análisis o seguimiento.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">🤝</div>
-        <div class="permission-text"><strong>Sin terceros</strong><span>No se comparte información con nadie.</span></div>
-      </div>
-      <div class="permission-item">
-        <div class="permission-icon">📍</div>
-        <div class="permission-text"><strong>Sin datos sensibles</strong><span>No se recopila ubicación, contactos ni ningún otro dato sensible.</span></div>
-      </div>
-      <div class="no-track">✅ No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No compartimos datos con terceros porque no los recopilamos.</div>
+<span class="badge-none">No sale del teléfono</span>
+<p>Si no inicias sesión, todo lo que introduces se guarda <strong>únicamente en tu dispositivo</strong>, en una base de datos local:</p>
+<ul>
+<li>Tus hijos: nombre, color y fecha de nacimiento (o edad).</li>
+<li>Sus actividades: categoría, días y horario, lugar, coste y matrícula, fechas del curso, qué llevar, notas y, si lo añades, el nombre y el teléfono de un contacto (monitor, academia…).</li>
+<li>Eventos puntuales (excursiones, cumpleaños, médico…), los adultos que llevan y recogen (solo el nombre que pongas), vacaciones y festivos, y los cambios de un día concreto.</li>
+<li>Tus preferencias: idioma, tema, avisos.</li>
+</ul>
+<p>Mientras no tengas un plan, nada de esto se envía a ningún servidor; la única forma de que salga del teléfono es que tú exportes una copia y decidas compartirla.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Datos de tus hijos</h2>
+    <div class="card">
+<p>CuandoTeToca la usan <strong>personas adultas</strong> (madres, padres, abuelos, cuidadores) para organizar las actividades de los niños. Los datos de los menores los introduces tú y solo se usan para que la app funcione: mostrar el horario, avisarte y, con plan, compartirlo con quien tú invites.</p>
+<ul>
+<li>No los usamos para publicidad ni para crear perfiles, y nunca se envían a la red de anuncios.</li>
+<li>Te recomendamos poner solo lo necesario (basta un nombre o un apodo).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cuenta (opcional y gratuita)</h2>
+    <div class="card">
+<p>Puedes crear una cuenta con tu email y contraseña, con Google o con Apple. Guardamos:</p>
+<ul>
+<li>Tu <strong>email</strong>, un identificador interno de cuenta y el método de acceso. Con Google o Apple, también el <strong>nombre</strong> que te facilitan.</li>
+<li>El <strong>nombre que se muestra</strong> a los miembros de tu familia (tu nombre o la parte de tu email antes de la @) y el <strong>idioma</strong> de la app, para escribirte los avisos en tu idioma.</li>
+</ul>
+<p>El inicio de sesión lo gestiona <strong>Firebase Authentication</strong> (Google). Tener cuenta no sube los datos de tu familia: eso solo ocurre con un plan.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nube y familia compartida (con plan)</h2>
+    <div class="card">
+<p>Con un plan activo (<strong>Individual</strong>, <strong>Pareja</strong> o <strong>Familia</strong>), los datos del apartado «Sin cuenta» se suben a nuestra nube y se mantienen sincronizados entre los móviles de tu familia. Se guardan en <strong>Cloud Firestore</strong> (Google Cloud), en servidores de la Unión Europea (Bélgica). Las preferencias de cada móvil y los recordatorios que elige cada persona no se suben.</p>
+<ul>
+<li>El plan lo paga la persona <strong>titular</strong> de la familia. Con los planes Pareja (2 personas) y Familia (hasta 5), puede invitar a otras personas con un <strong>código que caduca en 48 horas</strong>.</li>
+<li>Los miembros de una familia <strong>ven y pueden modificar todos sus datos</strong>, y cada uno ve el nombre y el email de los demás. Solo pueden leerlos los miembros.</li>
+<li>Cualquier miembro puede <strong>salir</strong> de la familia (y conservar o no una copia en su móvil), y el titular puede <strong>quitar</strong> a alguien. Si el titular elimina su cuenta, la familia se borra para todos; cada uno conserva lo que tenga en su móvil.</li>
+<li>Si el plan termina, la familia queda en solo lectura. <strong>12 meses después</strong> de que termine el plan del titular, la copia en la nube se borra automáticamente. Lo que hay en los móviles no se toca.</li>
+<li>Los cambios de un día concreto y las vacaciones se borran de la nube 30 días después de su fecha.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Avisos entre miembros (Pareja y Familia)</h2>
+    <div class="card">
+<p>Si otra persona de tu familia cambia algo de los próximos días (por ejemplo, «Hoy no hay natación» o quién recoge a un niño), nuestro servidor te envía una notificación con su nombre y el cambio. Para ello guardamos el <strong>identificador de notificaciones</strong> de tus dispositivos (Firebase Cloud Messaging), la plataforma, el idioma y tus preferencias (si los quieres y de qué hijos). También guardamos un pequeño registro técnico para no enviarte más de un aviso cada 10 minutos, que se borra con la familia.</p>
+<p>Puedes desactivarlos en <strong>Ajustes → Familia compartida</strong> o en los ajustes de notificaciones del móvil.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Suscripciones y pagos</h2>
+    <div class="card">
+<p>Los pagos los cobran <strong>Apple (App Store)</strong> o <strong>Google (Google Play)</strong>; nunca vemos tu tarjeta. Usamos <strong>RevenueCat</strong> para saber qué plan tienes: recibe tu identificador interno de cuenta y los justificantes de compra de la tienda, pero no tu email ni los datos de tu familia. Guardamos en nuestra base de datos qué plan tienes y hasta cuándo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anuncios (solo sin plan)</h2>
+    <div class="card">
+<p>Si ni tú ni tu familia tenéis un plan activo, la app muestra un banner de <strong>Google AdMob</strong>.</p>
+<ul>
+<li>Pedimos anuncios <strong>no personalizados</strong> y aptos para todos los públicos. En el Espacio Económico Europeo, Reino Unido y Suiza, antes de pedir ningún anuncio la app te muestra el formulario de consentimiento de Google; puedes cambiar tu elección en <strong>Ajustes → Privacidad de anuncios</strong>.</li>
+<li>Aun siendo no personalizados, Google puede usar datos técnicos limitados (por ejemplo, para contar impresiones y evitar fraudes).</li>
+<li>En iOS no pedimos permiso de seguimiento (App Tracking Transparency), así que no se usa el identificador de publicidad de Apple.</li>
+<li>Nunca se pasa a AdMob información de tus hijos ni de sus actividades.</li>
+<li>Con un plan activo, tuyo o de tu familia, no se muestran anuncios.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Widget de Android</h2>
+    <div class="card">
+<p>Si añades el widget a la pantalla de inicio, muestra las actividades de hoy (o de mañana). Los datos se leen del propio móvil y no salen de él, pero cualquiera que vea tu pantalla podrá verlos. Puedes quitar el widget cuando quieras.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seguridad</h2>
+    <div class="card">
+<p>Las comunicaciones van cifradas (HTTPS). Las reglas de nuestra base de datos impiden que nadie lea los datos de una familia salvo sus miembros. La app usa <strong>Firebase App Check</strong> (Play Integrity en Android, App Attest/DeviceCheck en iOS), que envía a Google una prueba de que la petición viene de la app auténtica, sin datos personales adicionales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Base jurídica</h2>
+    <div class="card">
+<ul>
+<li>La <strong>ejecución del contrato</strong> (art. 6.1.b RGPD) para la cuenta, la nube, la familia compartida, los avisos entre miembros y las suscripciones.</li>
+<li>Tu <strong>consentimiento</strong> (art. 6.1.a) para los anuncios y para las notificaciones, que das con el formulario de Google y con el permiso del móvil, y que puedes retirar cuando quieras.</li>
+<li>Nuestro <strong>interés legítimo</strong> (art. 6.1.f) en proteger el servicio frente a abusos (App Check y límite de intentos con los códigos de invitación).</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proveedores y transferencias</h2>
+    <div class="card">
+<p>Usamos estos proveedores, que tratan los datos por nuestra cuenta:</p>
+<ul>
+<li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Cloud Tasks, Firebase Cloud Messaging, App Check y AdMob.</li>
+<li><strong>RevenueCat, Inc.</strong>: estado de las suscripciones.</li>
+</ul>
+<p>Apple y Google, como tiendas, tratan los pagos como responsables independientes. Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo (por ejemplo, en Estados Unidos). En ese caso, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la Comisión Europea.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cuánto tiempo los guardamos</h2>
+    <div class="card">
+<ul>
+<li>Datos del móvil: hasta que los borres o desinstales la app.</li>
+<li>Cuenta: hasta que la elimines.</li>
+<li>Copia en la nube: mientras el titular de la familia tenga un plan y hasta 12 meses después de que termine.</li>
+<li>Cambios de un día y vacaciones en la nube: 30 días después de su fecha.</li>
+<li>Códigos de invitación: 48 horas como máximo. Registro de intentos de canje: 1 hora.</li>
+</ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tus derechos</h2>
+    <div class="card">
+<p>Puedes acceder a tus datos, rectificarlos, borrarlos, oponerte a su tratamiento, limitarlo, pedir su portabilidad y retirar tu consentimiento cuando quieras. La mayoría puedes ejercerlos desde la propia app (<strong>Ajustes → Exportar / Importar</strong> te da una copia completa). Para el resto, escríbenos a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Copias, calendario e informes</h2>
+    <div class="card">
+<p>Puedes exportar todos los datos a un archivo, pasar las actividades a tu calendario (.ics) y sacar el resumen de gastos en PDF o CSV. Se crean en tu dispositivo y tú decides con quién compartirlos. La app guarda también una copia automática en el propio móvil. Al importar una copia, sus datos sustituyen a los de la app (y, con plan, a los de la familia en la nube).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Enlaces a otras apps</h2>
+    <div class="card">
+<p>Los botones <strong>Llamar</strong>, <strong>WhatsApp</strong> y <strong>Cómo llegar</strong> de una actividad abren esas apps solo cuando los pulsas, con el teléfono o el lugar que hayas escrito. <strong>Valorar la app</strong> abre la ficha de la tienda. No enviamos esa información a ningún sitio más.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Permisos que usa la app</h2>
+    <div class="card">
+<div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notificaciones</strong><span>Para recordarte las actividades y los eventos y, con plan, avisarte de los cambios de otros miembros.</span></div></div>
+<div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Alarmas exactas</strong><span>En Android 12 y posteriores, para que el recordatorio llegue a su hora.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Optimización de batería</strong><span>Opcional; solo si lo activas tú, para que el sistema no retrase los avisos.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Inicio del dispositivo</strong><span>Para volver a programar los avisos tras reiniciar el teléfono.</span></div></div>
+<div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Selección de archivos</strong><span>Solo cuando eliges un archivo para importar una copia.</span></div></div>
+<div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Para la cuenta, la nube, la familia compartida, las suscripciones y los anuncios. Sin cuenta ni plan, los datos de tu familia no se envían.</span></div></div>
     </div>
   </section>
 
   <section>
     <h2>Menores</h2>
     <div class="card">
-      <p>La app no recopila datos de ningún usuario, incluidos menores de edad.</p>
+<p>La app está pensada para personas adultas y no está dirigida a menores de 14 años, que no deben crear una cuenta. Los datos de los niños los introducen sus padres o cuidadores. Si crees que un menor nos ha facilitado datos, escríbenos y los borraremos.</p>
     </div>
   </section>
 
   <section>
     <h2>Eliminación de tus datos</h2>
     <div class="card">
-      <p>Como toda la información se guarda únicamente en tu dispositivo, puedes borrar cualquier registro dentro de la app o desinstalarla para eliminar todos los datos de forma permanente.</p>
+<ul>
+<li><strong>Eliminar la cuenta:</strong> en <strong>Ajustes → Tu cuenta → Eliminar cuenta</strong>. Se borran al momento tu cuenta y tus datos en la nube; si eres titular, también la familia para todos sus miembros. Los datos del móvil se conservan.</li>
+<li><strong>Borrar solo los datos:</strong> <strong>Ajustes → Borrar todos los datos</strong> borra los del móvil y, si eres titular con plan, también los de la familia en la nube.</li>
+</ul>
+<p>Más detalles en la <a href="cuandotetoca-eliminar-cuenta.html">página de eliminación de cuenta</a>.</p>
     </div>
   </section>
 
   <section>
     <h2>Cambios en esta política</h2>
     <div class="card">
-      <p>Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta misma URL.</p>
+<p>Podemos actualizar esta política. Publicaremos la versión vigente en esta misma dirección y, si el cambio es importante, te lo indicaremos en la app.</p>
     </div>
   </section>
 
