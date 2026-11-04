@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoKids · Aprende a cuidar el planeta jugando</title>
+  <meta name="description" content="EcoKids, la app de Bambú el panda para niños de 5 a 10 años: minijuegos, lecciones cortas y una misión ecológica cada día. Sin anuncios, sin compras y sin conexión.">
+  <link rel="icon" type="image/png" href="img/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EcoKids · Aprende a cuidar el planeta jugando">
+  <meta property="og:description" content="Minijuegos, lecciones cortas y una misión ecológica cada día, con Bambú el panda. Sin anuncios, sin compras y sin conexión.">
+  <meta property="og:image" content="https://jona234.github.io/privacy-policies/ecokids/img/es_home.jpg">
+  <style>
+    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url(fonts/Fredoka-SemiBold.ttf) format('truetype'); }
+    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url(fonts/Nunito-Regular.ttf) format('truetype'); }
+    @font-face { font-family: 'Nunito'; font-weight: 600; font-display: swap; src: url(fonts/Nunito-SemiBold.ttf) format('truetype'); }
+    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url(fonts/Nunito-Bold.ttf) format('truetype'); }
+
+    :root {
+      --bg: #FAF7EE; --surface: #FFFFFF; --ink: #1F3A22; --ink2: #3A5A3F; --line: #E4DEC6;
+      --leaf: #4A9E5C; --leaf-text: #2F6B3C; --on-leaf: #FFFFFF; --soft: #DFF0D2; --sun: #FFD466;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #121C16; --surface: #1B2A20; --ink: #EAF3EA; --ink2: #B5CDB8; --line: #2D4034;
+              --leaf: #6FBF7F; --leaf-text: #8ED39B; --on-leaf: #10200F; --soft: #243A2A; --sun: #FFD466; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif; line-height: 1.6; }
+    a { color: var(--leaf-text); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    h1, h2 { font-family: 'Fredoka', 'Trebuchet MS', sans-serif; font-weight: 600; line-height: 1.15; text-wrap: balance; }
+
+    header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka', 'Trebuchet MS', sans-serif; font-size: 24px; font-weight: 600; text-decoration: none; color: var(--ink); }
+    .brand img { width: 42px; height: 42px; border-radius: 11px; }
+    .brand em { color: var(--leaf-text); font-style: normal; }
+    .langs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .langs button { background: none; border: 1.5px solid var(--line); color: var(--ink2); font: 700 13px 'Nunito', sans-serif; padding: 6px 11px; border-radius: 99px; cursor: pointer; }
+    .langs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 28px 0 40px; }
+    .hero h1 { font-size: clamp(34px, 5.2vw, 56px); }
+    .hero h1 em { color: var(--leaf-text); font-style: normal; background: linear-gradient(transparent 62%, var(--sun) 62%); }
+    .hero p { color: var(--ink2); font-size: 18px; margin: 18px 0 28px; max-width: 36em; }
+    .stores { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 20px; border-radius: 14px; }
+    .btn.primary { background: var(--leaf); color: var(--on-leaf); }
+    .btn.ghost { border: 2px solid var(--ink); color: var(--ink); }
+    .btn svg { width: 20px; height: 20px; }
+    .hero-shot { justify-self: center; width: min(320px, 80vw); border-radius: 28px; box-shadow: 0 24px 60px rgba(31, 58, 34, .28); }
+
+    .facts { display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 6px 0 22px; }
+    .facts div { display: flex; align-items: baseline; gap: 8px; }
+    .facts b { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 30px; color: var(--leaf-text); }
+    .facts span { color: var(--ink2); font-weight: 600; }
+
+    .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 0 24px; }
+    .shots img { flex: 0 0 auto; width: 230px; border-radius: 20px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(31, 58, 34, .18); }
+
+    section { padding: 36px 0; }
+    section h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .card { background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 18px 20px; }
+    .card b { display: block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 20px; margin-bottom: 4px; }
+    .card span { color: var(--ink2); font-size: 15px; }
+    .family { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 24px; }
+    .family li { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; }
+    .family li::before { content: "✓"; flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: var(--soft); color: var(--leaf-text); text-align: center; line-height: 24px; font-size: 14px; font-weight: 700; margin-top: 1px; }
+    .note { color: var(--ink2); font-size: 15px; margin-top: 16px; max-width: 46em; }
+
+    footer { border-top: 2px solid var(--line); margin-top: 24px; padding: 28px 0 40px; color: var(--ink2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8px; }
+      .hero-shot { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><img src="img/icon.png" alt=""><span>Eco<em>Kids</em></span></a>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es">ES</button>
+        <button type="button" data-set-lang="en">EN</button>
+        <button type="button" data-set-lang="ca">CA</button>
+        <button type="button" data-set-lang="pt">PT</button>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1 data-i18n-html="heroTitle"></h1>
+        <p data-i18n="heroText"></p>
+        <div class="stores">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.devlicius.ecokids">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l10-9.5L4 2.5zm11.4 10.9-2.2 2.1 2.6 2.5 4.3-2.4c.8-.5.8-1.6 0-2.1l-2.6-1.5-2.1 1.4zM5.6 1.6l9.9 9-2.2 2.1L5.6 1.6zm0 20.8 7.7-7.1 2.2 2.1-9.9 5z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <a class="btn ghost" href="https://apps.apple.com/app/id6790372570">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.7c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+      <img class="hero-shot" data-shot="home" alt="">
+    </div>
+
+    <div class="facts" id="facts"></div>
+
+    <div class="shots">
+      <img data-shot="games" alt="">
+      <img data-shot="classify" alt="">
+      <img data-shot="animals" alt="">
+      <img data-shot="lesson" alt="">
+      <img data-shot="forest" alt="">
+      <img data-shot="profile" alt="">
+      <img data-shot="home" alt="">
+    </div>
+
+    <section>
+      <h2 data-i18n="featuresTitle"></h2>
+      <div class="grid" id="features"></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="familyTitle"></h2>
+      <ul class="family" id="family"></ul>
+      <p class="note" data-i18n="familyNote"></p>
+    </section>
+
+    <footer>
+      <nav>
+        <a data-link="privacy" data-i18n="linkPrivacy"></a>
+        <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+      </nav>
+      <span>© 2026 Jonatan Ortega González · <span data-i18n="country"></span></span>
+    </footer>
+  </div>
+
+  <script>
+    const T = {
+      es: {
+        title: 'EcoKids · Aprende a cuidar el planeta jugando',
+        description: 'EcoKids, la app de Bambú el panda para niños de 5 a 10 años: minijuegos, lecciones cortas y una misión ecológica cada día. Sin anuncios, sin compras y sin conexión.',
+        heroTitle: 'Aprende a cuidar el planeta <em>jugando</em>',
+        heroText: 'EcoKids es la app de Bambú el panda para niños de 5 a 10 años: minijuegos, lecciones cortas y una misión ecológica cada día. Sin anuncios, sin compras y sin necesidad de conexión.',
+        facts: [['10', 'minijuegos'], ['12', 'lecciones'], ['100', 'preguntas'], ['18', 'medallas'], ['4', 'idiomas']],
+        featuresTitle: 'Qué hay dentro',
+        features: [
+          ['10 minijuegos', 'Clasifica residuos, salva la playa, apaga el fuego, atrapa la basura del río, juega a las parejas, ordena los pasos de la naturaleza y descubre dónde vive cada animal.'],
+          ['12 lecciones con repaso', 'Agua, reciclaje, energía, océanos, animales… en pasos cortos, con preguntas de repaso y un reto real al final.'],
+          ['Una misión cada día', '30 misiones del mundo real, como cerrar el grifo o reciclar tres cosas, para crear hábitos verdes y mantener la racha.'],
+          ['Un bosque que crece', 'Cada lección planta un árbol y cada punto te acerca al siguiente. ¿Llenarás los 20 huecos?'],
+          ['Medallas, estrellas y avatares', '18 medallas, de 1 a 3 estrellas y récord en cada juego, y 14 animales para elegir (la mitad se desbloquea con medallas).'],
+          ['Bambú lo lee en voz alta', 'Las lecciones y las preguntas se pueden escuchar con la voz del propio dispositivo, para quien aún no lee con soltura.'],
+        ],
+        familyTitle: 'Pensada para familias',
+        family: ['Sin anuncios y sin compras dentro de la app', 'Sin registro y sin recogida de datos: todo se guarda en el dispositivo', 'Funciona sin conexión', 'En español, inglés, catalán y portugués', 'Recordatorio diario opcional, que configuran los padres'],
+        familyNote: 'Para niños de 5 a 10 años. La app no usa micrófono, cámara ni ubicación, ni herramientas de seguimiento.',
+        shots: { home: 'Pantalla de inicio de EcoKids', games: 'Menú de minijuegos', classify: 'Minijuego Clasifica la basura', animals: 'Minijuego ¿Dónde vive?', lesson: 'Una lección con Bambú', forest: 'El bosque virtual', profile: 'Medallas y avatares' },
+        linkPrivacy: 'Política de privacidad', country: 'España',
+      },
+      en: {
+        title: 'EcoKids · Learn to care for the planet by playing',
+        description: "EcoKids, Bambú the panda's app for children aged 5 to 10: mini-games, short lessons and an eco mission every day. No ads, no purchases and no internet needed.",
+        heroTitle: 'Learn to care for the planet by <em>playing</em>',
+        heroText: "EcoKids is Bambú the panda's app for children aged 5 to 10: mini-games, short lessons and an eco mission every day. No ads, no purchases and no internet connection needed.",
+        facts: [['10', 'mini-games'], ['12', 'lessons'], ['100', 'questions'], ['18', 'medals'], ['4', 'languages']],
+        featuresTitle: "What's inside",
+        features: [
+          ['10 mini-games', 'Sort the waste, save the beach, put out the fire, catch the litter in the river, match the pairs, put natural processes in order and find where each animal lives.'],
+          ['12 lessons with review', 'Water, recycling, energy, oceans, animals… in short steps, with review questions and a real-world challenge at the end.'],
+          ['A mission every day', '30 real-world missions, like turning off the tap or recycling three things, to build green habits and keep your streak going.'],
+          ['A forest that grows', 'Every lesson plants a tree and every point brings the next one closer. Can you fill all 20 spots?'],
+          ['Medals, stars and avatars', '18 medals, 1 to 3 stars and a best score in every game, and 14 animals to choose from (half of them unlocked with medals).'],
+          ['Bambú reads aloud', "Lessons and questions can be listened to with the device's own voice, for children who don't read fluently yet."],
+        ],
+        familyTitle: 'Made for families',
+        family: ['No ads and no in-app purchases', 'No sign-up and no data collection: everything stays on the device', 'Works offline', 'In English, Spanish, Catalan and Portuguese', 'Optional daily reminder that parents configure'],
+        familyNote: 'For children aged 5 to 10. The app uses no microphone, camera, location or tracking tools.',
+        shots: { home: 'EcoKids home screen', games: 'Mini-games menu', classify: 'Sort the waste mini-game', animals: 'Animal homes mini-game', lesson: 'A lesson with Bambú', forest: 'The virtual forest', profile: 'Medals and avatars' },
+        linkPrivacy: 'Privacy policy', country: 'Spain',
+      },
+      ca: {
+        title: 'EcoKids · Aprèn a cuidar el planeta jugant',
+        description: "EcoKids, l'app d'en Bambú el panda per a nens de 5 a 10 anys: minijocs, lliçons curtes i una missió ecològica cada dia. Sense anuncis, sense compres i sense connexió.",
+        heroTitle: 'Aprèn a cuidar el planeta <em>jugant</em>',
+        heroText: "EcoKids és l'app d'en Bambú el panda per a nens de 5 a 10 anys: minijocs, lliçons curtes i una missió ecològica cada dia. Sense anuncis, sense compres i sense necessitat de connexió.",
+        facts: [['10', 'minijocs'], ['12', 'lliçons'], ['100', 'preguntes'], ['18', 'medalles'], ['4', 'idiomes']],
+        featuresTitle: 'Què hi ha a dins',
+        features: [
+          ['10 minijocs', "Classifica residus, salva la platja, apaga el foc, atrapa la brossa del riu, juga a les parelles, ordena els passos de la natura i descobreix on viu cada animal."],
+          ['12 lliçons amb repàs', 'Aigua, reciclatge, energia, oceans, animals… en passos curts, amb preguntes de repàs i un repte real al final.'],
+          ['Una missió cada dia', '30 missions del món real, com tancar l\'aixeta o reciclar tres coses, per crear hàbits verds i mantenir la ratxa.'],
+          ['Un bosc que creix', 'Cada lliçó planta un arbre i cada punt t\'acosta al següent. Ompliràs els 20 forats?'],
+          ['Medalles, estrelles i avatars', "18 medalles, d'1 a 3 estrelles i rècord a cada joc, i 14 animals per triar (la meitat es desbloquegen amb medalles)."],
+          ["En Bambú ho llegeix en veu alta", "Les lliçons i les preguntes es poden escoltar amb la veu del mateix dispositiu, per a qui encara no llegeix amb fluïdesa."],
+        ],
+        familyTitle: 'Pensada per a famílies',
+        family: ["Sense anuncis i sense compres dins l'app", 'Sense registre i sense recollida de dades: tot es guarda al dispositiu', 'Funciona sense connexió', 'En català, castellà, anglès i portuguès', 'Recordatori diari opcional, que configuren els pares'],
+        familyNote: "Per a nens de 5 a 10 anys. L'app no fa servir micròfon, càmera ni ubicació, ni eines de seguiment.",
+        shots: { home: "Pantalla d'inici d'EcoKids", games: 'Menú de minijocs', classify: 'Minijoc Classifica la brossa', animals: 'Minijoc On viu?', lesson: "Una lliçó amb en Bambú", forest: 'El bosc virtual', profile: 'Medalles i avatars' },
+        linkPrivacy: 'Política de privadesa', country: 'Espanya',
+      },
+      pt: {
+        title: 'EcoKids · Aprende a cuidar do planeta a brincar',
+        description: 'EcoKids, a app do Bambu, o panda, para crianças dos 5 aos 10 anos: minijogos, lições curtas e uma missão ecológica todos os dias. Sem anúncios, sem compras e sem internet.',
+        heroTitle: 'Aprende a cuidar do planeta a <em>brincar</em>',
+        heroText: 'O EcoKids é a app do Bambu, o panda, para crianças dos 5 aos 10 anos: minijogos, lições curtas e uma missão ecológica todos os dias. Sem anúncios, sem compras e sem precisar de ligação à internet.',
+        facts: [['10', 'minijogos'], ['12', 'lições'], ['100', 'perguntas'], ['18', 'medalhas'], ['4', 'idiomas']],
+        featuresTitle: 'O que há lá dentro',
+        features: [
+          ['10 minijogos', 'Separa o lixo, salva a praia, apaga o fogo, apanha o lixo do rio, joga aos pares, ordena os passos da natureza e descobre onde vive cada animal.'],
+          ['12 lições com revisão', 'Água, reciclagem, energia, oceanos, animais… em passos curtos, com perguntas de revisão e um desafio real no fim.'],
+          ['Uma missão todos os dias', '30 missões do mundo real, como fechar a torneira ou reciclar três coisas, para criar hábitos verdes e manter a sequência.'],
+          ['Uma floresta que cresce', 'Cada lição planta uma árvore e cada ponto aproxima-te da seguinte. Consegues encher os 20 lugares?'],
+          ['Medalhas, estrelas e avatares', '18 medalhas, de 1 a 3 estrelas e recorde em cada jogo, e 14 animais para escolher (metade desbloqueia-se com medalhas).'],
+          ['O Bambu lê em voz alta', 'As lições e as perguntas podem ser ouvidas com a voz do próprio dispositivo, para quem ainda não lê com fluência.'],
+        ],
+        familyTitle: 'Pensada para famílias',
+        family: ['Sem anúncios e sem compras na app', 'Sem registo e sem recolha de dados: tudo fica guardado no dispositivo', 'Funciona sem ligação à internet', 'Em português, espanhol, inglês e catalão', 'Lembrete diário opcional, configurado pelos pais'],
+        familyNote: 'Para crianças dos 5 aos 10 anos. A app não usa microfone, câmara nem localização, nem ferramentas de rastreamento.',
+        shots: { home: 'Ecrã inicial do EcoKids', games: 'Menu de minijogos', classify: 'Minijogo Separa o lixo', animals: 'Minijogo Onde vive?', lesson: 'Uma lição com o Bambu', forest: 'A floresta virtual', profile: 'Medalhas e avatares' },
+        linkPrivacy: 'Política de privacidade', country: 'Espanha',
+      },
+    };
+    const SUPPORTED = Object.keys(T);
+    function render(lang) {
+      const t = T[lang];
+      document.documentElement.lang = lang;
+      document.title = t.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', t.description);
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t[el.dataset.i18nHtml]; });
+      document.getElementById('facts').replaceChildren(...t.facts.map(([n, label]) => {
+        const d = document.createElement('div');
+        const b = document.createElement('b'); b.textContent = n;
+        const s = document.createElement('span'); s.textContent = label;
+        d.append(b, s);
+        return d;
+      }));
+      document.getElementById('features').replaceChildren(...t.features.map(([title, text]) => {
+        const d = document.createElement('div'); d.className = 'card';
+        const b = document.createElement('b'); b.textContent = title;
+        const s = document.createElement('span'); s.textContent = text;
+        d.append(b, s);
+        return d;
+      }));
+      document.getElementById('family').replaceChildren(...t.family.map(text => {
+        const li = document.createElement('li'); li.textContent = text; return li;
+      }));
+      document.querySelectorAll('[data-link="privacy"]').forEach(a => { a.href = '../ecokids.html?lang=' + lang; });
+      document.querySelectorAll('[data-shot]').forEach(img => {
+        img.src = `img/${lang}_${img.dataset.shot}.jpg`;
+        img.alt = t.shots[img.dataset.shot];
+      });
+      document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
+    }
+    const asked = new URLSearchParams(location.search).get('lang');
+    const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    let lang = SUPPORTED.includes(asked) ? asked : (SUPPORTED.includes(nav) ? nav : 'en');
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => {
+      lang = b.dataset.setLang; render(lang);
+      history.replaceState(null, '', '?lang=' + lang);
+    }));
+    render(lang);
+  </script>
+</body>
+</html>
