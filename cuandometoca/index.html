@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuandoMeToca · Recordatorio de medicación</title>
+  <meta name="description" content="Recordatorios a su hora para tus medicamentos, vitaminas, suplementos y cremas, y para tus citas médicas. Con modo cuidador para que alguien de confianza vea si te has tomado la medicación.">
+  <link rel="icon" type="image/png" href="img/icon.png">
+  <style>
+    @font-face { font-family: 'Inter Tight'; font-weight: 400; font-display: swap; src: url(fonts/InterTight-Regular.ttf) format('truetype'); }
+    @font-face { font-family: 'Inter Tight'; font-weight: 600; font-display: swap; src: url(fonts/InterTight-SemiBold.ttf) format('truetype'); }
+    @font-face { font-family: 'Inter Tight'; font-weight: 700; font-display: swap; src: url(fonts/InterTight-Bold.ttf) format('truetype'); }
+    @font-face { font-family: 'Inter Tight'; font-weight: 800; font-display: swap; src: url(fonts/InterTight-ExtraBold.ttf) format('truetype'); }
+
+    /* The app's own palette (AppPalette in app_colors.dart): warm paper, deep green. */
+    :root {
+      --bg: #ECE8E1; --surface: #FAF6ED; --ink: #2A2620; --ink2: #6B6558; --line: #DDD6C8;
+      --accent: #2F6E5B; --accent-text: #2F6E5B; --on-accent: #FFFFFF; --soft: #D6EBE1;
+      --rose: #B54A3A; --sky: #3A5B85; --plum: #6B4775; --butter: #9A8228;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #16140F; --surface: #221F19; --ink: #EFEBE2; --ink2: #B6AF9F; --line: #3A352C;
+              --accent: #6FBFA1; --accent-text: #6FBFA1; --on-accent: #10261F; --soft: #1E3A31;
+              --rose: #E59182; --sky: #89AFDB; --plum: #BE9BC9; --butter: #DCC468; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif; line-height: 1.55; }
+    a { color: var(--accent-text); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    h1, h2 { font-weight: 800; letter-spacing: -.02em; line-height: 1.08; text-wrap: balance; }
+
+    header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; text-decoration: none; color: var(--ink); }
+    .brand img { width: 42px; height: 42px; border-radius: 11px; background: #fff; }
+    .brand b { font-weight: 800; }
+    .brand span { color: var(--accent-text); }
+    .langs { display: flex; gap: 6px; }
+    .langs button { background: none; border: 1px solid var(--line); color: var(--ink2); font: 600 13px 'Inter Tight', sans-serif; padding: 6px 10px; border-radius: 99px; cursor: pointer; }
+    .langs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .langs button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 28px 0 48px; }
+    .hero h1 { font-size: clamp(34px, 5.2vw, 56px); }
+    .hero h1 em { font-style: normal; color: var(--accent-text); }
+    .hero p { color: var(--ink2); font-size: 18px; margin: 18px 0 28px; max-width: 36em; }
+    .stores { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 20px; border-radius: 14px; }
+    .btn.primary { background: var(--accent); color: var(--on-accent); }
+    .btn.ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn svg { width: 20px; height: 20px; }
+    .hero-shot { justify-self: center; width: min(320px, 80vw); border-radius: 28px; box-shadow: 0 24px 60px rgba(20, 50, 40, .28); }
+
+    .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 0 24px; }
+    .shots img { flex: 0 0 auto; width: 230px; border-radius: 20px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(20, 50, 40, .18); }
+
+    section { padding: 36px 0; }
+    section h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; }
+    .card b { display: block; font-size: 16px; margin-bottom: 4px; }
+    .card span { color: var(--ink2); font-size: 15px; }
+    .card i { display: block; width: 10px; height: 10px; border-radius: 50%; margin-bottom: 10px; }
+    .card.plan b { font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
+    .tag { display: inline-block; background: var(--soft); color: var(--accent-text); font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-top: 8px; }
+    .note { color: var(--ink2); font-size: 15px; margin-top: 14px; max-width: 46em; }
+
+    footer { border-top: 1px solid var(--line); margin-top: 24px; padding: 28px 0 40px; color: var(--ink2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8px; }
+      .hero-shot { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><img src="img/icon.png" alt=""><b>Cuando<span>MeToca</span></b></a>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es">ES</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1 data-i18n-html="heroTitle"></h1>
+        <p data-i18n="heroText"></p>
+        <div class="stores">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.devlicius.cuandometoca">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l10-9.5L4 2.5zm11.4 10.9-2.2 2.1 2.6 2.5 4.3-2.4c.8-.5.8-1.6 0-2.1l-2.6-1.5-2.1 1.4zM5.6 1.6l9.9 9-2.2 2.1L5.6 1.6zm0 20.8 7.7-7.1 2.2 2.1-9.9 5z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <a class="btn ghost" id="appstore" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.7c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+      <img class="hero-shot" data-shot="hoy" alt="">
+    </div>
+
+    <div class="shots">
+      <img data-shot="hoy" alt="">
+      <img data-shot="citas" alt="">
+      <img data-shot="cuidador" alt="">
+      <img data-shot="stats" alt="">
+    </div>
+
+    <section>
+      <h2 data-i18n="featuresTitle"></h2>
+      <div class="grid" id="features"></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="plansTitle"></h2>
+      <div class="grid" id="plans"></div>
+      <p class="note" data-i18n="plansNote"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="privacyTitle"></h2>
+      <p class="note" data-i18n="privacyText"></p>
+      <p class="note" data-i18n="medicalNote"></p>
+    </section>
+
+    <footer>
+      <nav>
+        <a data-link="privacy" data-i18n="linkPrivacy"></a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i18n="linkTerms"></a>
+        <a data-link="delete" data-i18n="linkDelete"></a>
+        <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+      </nav>
+      <span>© 2026 Jonatan Ortega González · <span data-i18n="country"></span></span>
+    </footer>
+  </div>
+
+  <script>
+    // The App Store button shows once this holds the app's numeric Apple ID
+    // (App Store Connect → App Information → Apple ID).
+    const APP_STORE_ID = '6774165902';
+
+    const T = {
+      es: {
+        title: 'CuandoMeToca · Recordatorio de medicación',
+        heroTitle: 'Cada toma, <em>a su hora</em>',
+        heroText: 'Recordatorios para tus medicamentos, vitaminas, suplementos o cremas, y también para tus citas médicas. Funciona sin cuenta y sin conexión, y si quieres, alguien de confianza puede ver si te has tomado la medicación.',
+        featuresTitle: 'Todo lo que necesitas',
+        features: [
+          ['Avisos a su hora', 'Llegan aunque la app esté cerrada, el móvil sin conexión o recién reiniciado. Si no marcas la toma, te lo recuerda a los 30 y a los 60 minutos.', 'accent'],
+          ['Tres formas de programar', 'A horas fijas, cada X horas desde la última toma, o cuando lo necesites, sin avisos.', 'butter'],
+          ['Citas médicas', 'Consulta, pruebas, fisio o vacunas, cada una con su icono y un aviso a la hora, unos minutos antes o el día anterior.', 'sky'],
+          ['Modo cuidador', 'Un familiar o cuidador ve desde su móvil si te has tomado la medicación, y recibe un aviso si se te pasa una toma.', 'rose'],
+          ['Estadísticas e informe', 'Tu adherencia de los últimos días, un registro de peso con gráfica y un informe en PDF o CSV para tu médico.', 'plum'],
+          ['Stock, widget y modo oscuro', 'Te avisa cuando quedan pocas unidades, te enseña lo que te toca desde la pantalla de inicio (Android) y está en 8 idiomas.', 'accent'],
+        ],
+        plansTitle: 'Planes',
+        plans: [
+          ['Gratis', 'La app completa en tu móvil, con anuncios.', ''],
+          ['Premium', '0,99 €/mes o 9,99 €/año · sin anuncios y con una copia de tus datos en la nube.', ''],
+          ['Premium Cuidador', '1,99 €/mes o 19,99 €/año · todo lo de Premium y el modo cuidador.', '7 días gratis'],
+        ],
+        plansNote: 'Quien cuida no paga nada: basta con que el plan Cuidador lo tenga la persona a la que se cuida. Se gestiona y cancela desde Google Play o el App Store. Los precios pueden variar según el país.',
+        privacyTitle: 'Tus datos, bajo tu control',
+        privacyText: 'Sin cuenta, todo se guarda solo en tu móvil, nunca en un servidor. La cuenta solo hace falta para la copia en la nube y el modo cuidador, y quien te cuida ve tus medicamentos y tus tomas, nada más: ni tus citas ni tu peso. Puedes borrar tu cuenta y todos sus datos desde la propia app.',
+        medicalNote: 'CuandoMeToca es una ayuda para recordar y no sustituye el consejo de un profesional sanitario.',
+        linkPrivacy: 'Política de privacidad', linkTerms: 'Términos de uso', linkDelete: 'Eliminar la cuenta',
+        country: 'España',
+      },
+      en: {
+        title: 'CuandoMeToca · Medication reminder',
+        heroTitle: 'Every dose, <em>right on time</em>',
+        heroText: 'Reminders for your medication, vitamins, supplements or creams, and for your medical appointments too. It works without an account and offline, and if you like, someone you trust can see whether you have taken your medication.',
+        featuresTitle: 'Everything you need',
+        features: [
+          ['Reminders right on time', "They arrive even when the app is closed, the phone is offline or has just restarted. If you don't mark a dose, you're reminded again after 30 and 60 minutes.", 'accent'],
+          ['Three ways to schedule', 'At set times, every X hours from the last dose, or as needed, with no reminders.', 'butter'],
+          ['Medical appointments', 'Visits, tests, physio or vaccines, each with its own icon and a reminder at the time, a few minutes before or the day before.', 'sky'],
+          ['Caregiver mode', 'A relative or carer sees from their phone whether you have taken your medication, and gets an alert if you miss a dose.', 'rose'],
+          ['Stats and a report', 'Your adherence over the last days, a weight log with a chart and a PDF or CSV report for your doctor.', 'plum'],
+          ['Stock, widget and dark mode', "It warns you when you're running low, shows what's due from your home screen (Android) and comes in 8 languages.", 'accent'],
+        ],
+        plansTitle: 'Plans',
+        plans: [
+          ['Free', 'The full app on your phone, with ads.', ''],
+          ['Premium', '€0.99/month or €9.99/year · no ads, plus a copy of your data in the cloud.', ''],
+          ['Premium Caregiver', '€1.99/month or €19.99/year · everything in Premium, plus caregiver mode.', '7 days free'],
+        ],
+        plansNote: 'Caregivers pay nothing: only the person being cared for needs the Caregiver plan. Manage and cancel it in Google Play or the App Store. Prices may vary by country.',
+        privacyTitle: 'Your data, your control',
+        privacyText: 'Without an account, everything stays on your phone, never on a server. An account is only needed for the cloud copy and caregiver mode, and your caregiver sees your medication and your doses, nothing else: not your appointments or your weight. You can delete your account and all its data from within the app.',
+        medicalNote: 'CuandoMeToca is a memory aid and does not replace advice from a healthcare professional.',
+        linkPrivacy: 'Privacy policy', linkTerms: 'Terms of use', linkDelete: 'Delete your account',
+        country: 'Spain',
+      },
+    };
+    const BASE = '../';
+    const LINKS = {
+      es: { privacy: 'cuandometoca.html', delete: 'cuandometoca-eliminar-cuenta.html' },
+      en: { privacy: 'cuandometoca-en.html', delete: 'cuandometoca-eliminar-cuenta-en.html' },
+    };
+    const store = document.getElementById('appstore');
+    if (APP_STORE_ID) { store.href = 'https://apps.apple.com/app/id' + APP_STORE_ID; store.hidden = false; }
+
+    function render(lang) {
+      const t = T[lang];
+      document.documentElement.lang = lang;
+      document.title = t.title;
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t[el.dataset.i18nHtml]; });
+      const card = (title, text, extra, plan) => {
+        const d = document.createElement('div');
+        d.className = 'card' + (plan ? ' plan' : '');
+        if (!plan) { const i = document.createElement('i'); i.style.background = `var(--${extra})`; d.append(i); }
+        const b = document.createElement('b'); b.textContent = title;
+        const s = document.createElement('span'); s.textContent = text;
+        d.append(b, s);
+        if (plan && extra) { const g = document.createElement('div'); g.className = 'tag'; g.textContent = extra; d.append(g); }
+        return d;
+      };
+      document.getElementById('features').replaceChildren(...t.features.map(([a, b, c]) => card(a, b, c)));
+      document.getElementById('plans').replaceChildren(...t.plans.map(([a, b, c]) => card(a, b, c, true)));
+      document.querySelectorAll('[data-link]').forEach(a => { a.href = BASE + LINKS[lang][a.dataset.link]; });
+      document.querySelectorAll('[data-shot]').forEach(img => { img.src = `img/${lang}_${img.dataset.shot}.jpg`; img.alt = t.heroTitle.replace(/<[^>]+>/g, ''); });
+      document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
+    }
+    const asked = new URLSearchParams(location.search).get('lang');
+    const nav = (navigator.language || 'es').slice(0, 2);
+    let lang = T[asked] ? asked : (['es', 'ca', 'eu', 'gl'].includes(nav) ? 'es' : 'en');
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => {
+      lang = b.dataset.setLang; render(lang);
+      history.replaceState(null, '', '?lang=' + lang);
+    }));
+    render(lang);
+  </script>
+</body>
+</html>
