@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pack de Navidad para tu negocio | Dev-licius</title>
+<meta name="description" content="Convertimos las fotos de tu negocio en fotos navideñas para Instagram, con textos y calendario hasta Reyes. 19,99 €. Muestra gratis con tus fotos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pino:#12372A; --pino-claro:#1D4A3A; --cable:#3D6556; --apagada:#2E5244;
+  --nieve:#F7F9F8; --linea:#D5DED9; --musgo:#4F6E60;
+  --bombilla:#FFC845; --acebo:#C62F2F;
+  --serif:"Young Serif",Georgia,serif; --sans:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--nieve);color:var(--pino);font:400 1.125rem/1.6 var(--sans)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--bombilla);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.15}
+p{margin:0}
+.envoltura{max-width:1080px;margin:0 auto;padding:0 16px}
+.bloque{padding:72px 0}
+
+/* Botones */
+.boton{display:inline-block;background:var(--bombilla);color:var(--pino);font-weight:700;text-decoration:none;
+  padding:16px 26px;border-radius:999px;font-size:1.05rem;line-height:1.2}
+.boton:hover{background:#FFD873}
+.boton-borde{background:transparent;color:var(--nieve);border:1.5px solid rgba(247,249,248,.55);padding:10px 18px;font-size:.95rem;font-weight:600}
+.boton-borde:hover{background:transparent;border-color:var(--nieve)}
+
+/* Cabecera */
+.hero{background:var(--pino);color:var(--nieve);padding-bottom:72px}
+.luces{position:relative;display:flex;justify-content:space-between;height:48px;padding:0 3%}
+.luces::before{content:"";position:absolute;left:0;right:0;top:6px;height:1px;background:var(--cable)}
+.luces span{--caida:12px;position:relative;width:12px;height:18px;margin-top:var(--caida);
+  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--apagada);transition:background .25s,box-shadow .25s}
+.luces span:nth-child(even){--caida:22px}
+.luces span::before{content:"";position:absolute;left:50%;bottom:100%;width:1px;height:calc(var(--caida) - 6px);background:var(--cable)}
+.luces span:nth-child(3n+1){--c:var(--bombilla)}
+.luces span:nth-child(3n+2){--c:#FF7A6B}
+.luces span:nth-child(3n){--c:#FFFFFF}
+.luces span.on{background:var(--c);box-shadow:0 0 14px 3px var(--c)}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:4px 0 40px}
+.marca{font-family:var(--serif);font-size:1.35rem;text-decoration:none}
+.hero-rejilla{display:grid;gap:44px;align-items:center}
+h1{font-size:clamp(2.5rem,6.5vw,4.25rem);line-height:1.04;max-width:13ch}
+.entradilla{font-size:1.25rem;max-width:36ch;margin:22px 0 14px;color:#DCE7E1}
+.precio-linea{max-width:42ch;margin-bottom:30px;color:#DCE7E1}
+.precio-linea strong{color:var(--nieve)}
+
+/* Antes / después */
+.comparador{position:relative;margin:0;width:100%;max-width:440px;justify-self:center;aspect-ratio:4/5;
+  border-radius:20px;overflow:hidden;background:var(--pino-claro)}
+.comparador:has(input:focus-visible){outline:3px solid var(--bombilla);outline-offset:4px}
+.comparador img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.comparador .despues{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.comparador::after{content:"";position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;
+  background:var(--bombilla);box-shadow:0 0 14px var(--bombilla);pointer-events:none}
+.tirador{position:absolute;top:50%;left:var(--pos,50%);width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;
+  background:var(--bombilla);color:var(--pino);display:grid;place-items:center;font-weight:700;pointer-events:none;z-index:1}
+.comparador input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:2}
+.marca-foto{position:absolute;top:14px;padding:4px 12px;border-radius:999px;background:rgba(18,55,42,.78);font-size:.85rem;font-weight:600}
+.marca-despues{left:14px}
+.marca-antes{right:14px}
+.comparador figcaption{position:absolute;z-index:1;left:50%;bottom:14px;transform:translateX(-50%);white-space:nowrap;
+  padding:6px 14px;border-radius:999px;background:rgba(18,55,42,.78);font-size:.9rem}
+.aviso-vacio{display:none}
+.comparador.vacio{display:grid;place-items:center;padding:32px;border:2px dashed var(--cable);text-align:center}
+.comparador.vacio > :not(.aviso-vacio){display:none}
+.comparador.vacio::after{display:none}
+.comparador.vacio .aviso-vacio{display:block;color:#DCE7E1;font-size:.95rem}
+
+/* Cómo funciona */
+.pasos{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:36px;counter-reset:paso}
+.pasos li{counter-increment:paso}
+.pasos li::before{content:counter(paso);display:block;font-family:var(--serif);font-size:2.75rem;line-height:1;color:var(--acebo);margin-bottom:12px}
+.pasos h3{font-size:1.4rem;line-height:1.25;margin-bottom:8px}
+.pasos p{color:var(--musgo);max-width:34ch}
+
+/* Qué incluye */
+.incluye-zona{background:#EAF0EC}
+.incluye-rejilla{display:grid;gap:48px;align-items:center}
+.incluye{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:18px;max-width:52ch}
+.incluye li{position:relative;padding-left:30px}
+.incluye li::before{content:"";position:absolute;left:4px;top:.45em;width:11px;height:15px;
+  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--acebo)}
+.precio-tarjeta{justify-self:center;width:100%;max-width:340px;padding:34px 30px 30px 64px;color:#FFFFFF;
+  background:radial-gradient(circle at 30px 50%,#EAF0EC 9px,transparent 10px),var(--acebo);
+  clip-path:polygon(40px 0,100% 0,100% 100%,40px 100%,0 50%);transform:rotate(-2deg)}
+.precio{font-family:var(--serif);font-size:3.25rem;line-height:1;margin-bottom:14px}
+.precio-tarjeta p + p{margin-top:4px}
+.precio-tarjeta .boton{margin-top:24px}
+
+/* Preguntas */
+.preguntas{margin-top:28px;max-width:720px}
+details{border-top:1px solid var(--linea);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--linea)}
+summary{cursor:pointer;font-weight:600;font-size:1.15rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--serif);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;color:var(--musgo);max-width:60ch}
+
+/* Cierre */
+.cierre{background:var(--pino);color:var(--nieve);text-align:center}
+.cierre p{margin:14px auto 30px;max-width:44ch;color:#DCE7E1}
+footer{padding:28px 0 40px;font-size:.9rem;color:var(--musgo)}
+footer p + p{margin-top:6px}
+
+@media (min-width:860px){
+  .hero-rejilla{grid-template-columns:1.1fr .9fr}
+  .comparador{justify-self:end}
+  .pasos{grid-template-columns:repeat(3,1fr)}
+  .incluye-rejilla{grid-template-columns:1.3fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .luces span{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="luces" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="envoltura">
+    <nav class="barra">
+      <a class="marca" href="#">Dev-licius</a>
+      <a class="boton boton-borde" data-whatsapp href="#contacto">Pedir muestra</a>
+    </nav>
+    <div class="hero-rejilla">
+      <div>
+        <h1>Tu negocio, vestido de Navidad en Instagram</h1>
+        <p class="entradilla">Convertimos tus fotos de siempre en fotos navideñas y te damos los textos y el calendario para publicarlas hasta Reyes.</p>
+        <p class="precio-linea"><strong>Pack completo: 19,99 €.</strong> Antes te enseñamos una muestra gratis hecha con tus fotos.</p>
+        <a class="boton" data-whatsapp href="#contacto">Pedir mi muestra gratis por WhatsApp</a>
+      </div>
+      <figure class="comparador">
+        <img class="antes" src="img/antes.jpg" alt="Foto original de un negocio" onerror="this.closest('.comparador').classList.add('vacio')">
+        <img class="despues" src="img/despues.jpg" alt="La misma foto con decoración navideña" onerror="this.closest('.comparador').classList.add('vacio')">
+        <span class="marca-foto marca-despues">Después</span>
+        <span class="marca-foto marca-antes">Antes</span>
+        <span class="tirador" aria-hidden="true">↔</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Desliza para comparar la foto original con la navideña">
+        <figcaption>Desliza para encender la Navidad</figcaption>
+        <p class="aviso-vacio">Falta el ejemplo: añade img/antes.jpg e img/despues.jpg</p>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="bloque">
+    <div class="envoltura">
+      <h2>Cómo funciona</h2>
+      <ol class="pasos">
+        <li>
+          <h3>Nos mandas 3–6 fotos</h3>
+          <p>De tu fachada, tu local o tus platos y productos. Si lo prefieres, las cogemos de tu Instagram o Google Maps.</p>
+        </li>
+        <li>
+          <h3>Te enseñamos una muestra</h3>
+          <p>Dos imágenes de tu negocio con decoración navideña, gratis y sin compromiso.</p>
+        </li>
+        <li>
+          <h3>Si te gusta, recibes el pack</h3>
+          <p>Pagas 19,99 € y en 48 horas tienes todas las imágenes, los textos y el calendario.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloque incluye-zona">
+    <div class="envoltura incluye-rejilla">
+      <div>
+        <h2>Qué incluye el pack</h2>
+        <ul class="incluye">
+          <li><strong>Alrededor de 12 imágenes de tu negocio</strong>, en formato post y story, con decoración navideña.</li>
+          <li><strong>Textos listos para publicar</strong> con el tono de tu negocio. Solo rellenas tus precios y horarios.</li>
+          <li><strong>Un calendario de publicaciones</strong> con qué subir cada día, desde ahora hasta el 6 de enero.</li>
+          <li><strong>Tus fotos solo se usan para tu pack.</strong> Las borramos en cuanto te lo entregamos.</li>
+        </ul>
+      </div>
+      <div class="precio-tarjeta">
+        <p class="precio">19,99 €</p>
+        <p>Pago único, sin suscripción.</p>
+        <p>Entrega en 48 horas.</p>
+        <a class="boton" data-whatsapp href="#contacto">Pedir mi muestra gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="envoltura">
+      <h2>Preguntas frecuentes</h2>
+      <div class="preguntas">
+        <details>
+          <summary>¿Tengo que saber de diseño o de Instagram?</summary>
+          <p>No. Te lo damos todo hecho: imágenes, textos y qué día publicar cada cosa. Solo tienes que subirlo.</p>
+        </details>
+        <details>
+          <summary>¿Las fotos parecen de verdad?</summary>
+          <p>Sí. Mantenemos tu local, tus platos y tus colores, y solo añadimos la decoración. Si alguna imagen no te convence, te la rehacemos.</p>
+        </details>
+        <details>
+          <summary>¿Cuándo y cómo pago?</summary>
+          <p>Solo cuando hayas visto la muestra y quieras el pack. Entonces te mandamos cómo pagar por WhatsApp.</p>
+        </details>
+        <details>
+          <summary>¿Hacéis packs para otras fechas?</summary>
+          <p>Sí, también para otras campañas como Halloween o San Valentín. Escríbenos y te contamos.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque cierre" id="contacto">
+    <div class="envoltura">
+      <h2>¿Lo vemos con tus fotos?</h2>
+      <p>Mándanos 3 fotos de tu negocio por WhatsApp y te enseñamos dos imágenes navideñas, gratis.</p>
+      <a class="boton" data-whatsapp href="#contacto">Pedir mi muestra gratis por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>Dev-licius, desarrollo web y apps.</p>
+    <p>Responsable: Jonatan Ortega González, España. Contacto: <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
+  </div>
+</footer>
+
+<script>
+// Cambia aquí tu número: prefijo 34 y el número, sin + ni espacios.
+const TELEFONO = "34XXXXXXXXX";
+const MENSAJE = "Hola, quiero la muestra gratis del pack de Navidad para mi negocio.";
+document.querySelectorAll("[data-whatsapp]").forEach(a => {
+  a.href = `https://wa.me/${TELEFONO}?text=${encodeURIComponent(MENSAJE)}`;
+  a.target = "_blank";
+  a.rel = "noopener";
+});
+
+const comparador = document.querySelector(".comparador");
+const rango = comparador.querySelector("input");
+const luces = document.querySelectorAll(".luces span");
+function pintar(v) {
+  comparador.style.setProperty("--pos", v + "%");
+  const encendidas = Math.round(v / 100 * luces.length);
+  luces.forEach((luz, i) => luz.classList.toggle("on", i < encendidas));
+}
+rango.addEventListener("input", () => pintar(+rango.value));
+
+// Un único momento animado: al cargar, la Navidad se va encendiendo hasta el 60 %.
+let animacion;
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  rango.value = 60; pintar(60);
+} else {
+  let v = 6; pintar(v);
+  animacion = setInterval(() => {
+    v += 2; rango.value = v; pintar(v);
+    if (v >= 60) clearInterval(animacion);
+  }, 24);
+}
+rango.addEventListener("pointerdown", () => clearInterval(animacion));
+rango.addEventListener("keydown", () => clearInterval(animacion));
+</script>
+</body>
+</html>
