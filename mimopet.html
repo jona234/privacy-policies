@@ -7,27 +7,33 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --accent: #e8913a;
+      --accent-light: #f4a94e;
+      --header-bg: #1e1e1e;
+      --bg: #f7f5f2;
+      --intro-bg: #fff8ee;
+    }
+
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #f7f5f2;
+      background: var(--bg);
       color: #2c2c2c;
       line-height: 1.7;
     }
 
     header {
-      background: #1e1e1e;
+      background: var(--header-bg);
       padding: 24px 32px;
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
-    .logo-icon {
-      font-size: 28px;
-    }
+    .logo-icon { font-size: 28px; }
 
     .logo-text {
-      color: #f4a94e;
+      color: var(--accent-light);
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 1px;
@@ -57,13 +63,32 @@
       color: #999;
       margin-bottom: 28px;
       padding-bottom: 20px;
-      border-bottom: 2px solid #f4a94e;
+      border-bottom: 2px solid var(--accent);
       display: inline-block;
     }
 
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
     .intro-card {
-      background: #fff8ee;
-      border-left: 4px solid #f4a94e;
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
       border-radius: 10px;
       padding: 20px 24px;
       margin-bottom: 36px;
@@ -71,18 +96,14 @@
       color: #444;
     }
 
-    .intro-card strong {
-      color: #1e1e1e;
-    }
+    .intro-card strong { color: #1e1e1e; }
 
-    section {
-      margin-bottom: 32px;
-    }
+    section { margin-bottom: 32px; }
 
     h2 {
       font-size: 17px;
       font-weight: 700;
-      color: #f4a94e;
+      color: var(--accent);
       margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -99,20 +120,14 @@
 
     .card p { margin-bottom: 10px; }
     .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
 
     .card ul {
-      margin: 8px 0 0 20px;
+      margin: 8px 0 10px 20px;
+      padding: 0;
     }
 
-    .card ul li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      color: #444;
-    }
-
-    .card ul li strong {
-      color: #1e1e1e;
-    }
+    .card li { margin-bottom: 4px; }
 
     .badge-none {
       display: inline-block;
@@ -131,6 +146,8 @@
       padding: 12px 0;
       border-bottom: 1px solid #f0f0f0;
     }
+
+    .permission-item:first-child { padding-top: 0; }
 
     .permission-item:last-child {
       border-bottom: none;
@@ -167,7 +184,7 @@
     }
 
     .contact-box {
-      background: #1e1e1e;
+      background: var(--header-bg);
       border-radius: 12px;
       padding: 28px;
       text-align: center;
@@ -181,25 +198,23 @@
     }
 
     .contact-box a {
-      color: #f4a94e;
+      color: var(--accent-light);
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
     }
 
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
+    .contact-box a:hover { text-decoration: underline; }
 
     footer {
       text-align: center;
       padding: 24px;
       font-size: 12px;
       color: #aaa;
-      background: #1e1e1e;
+      background: var(--header-bg);
     }
 
-    a { color: #f4a94e; text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     @media (max-width: 600px) {
@@ -207,231 +222,223 @@
       .page-title { font-size: 22px; }
       header { padding: 16px 20px; }
     }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="logo-icon">🐾</div>
   <div>
     <div class="logo-text">MIMOPET</div>
-    <div class="logo-sub" id="header-sub">Política de Privacidad</div>
+    <div class="logo-sub">Política de Privacidad</div>
   </div>
 </header>
 
-<div class="container" id="content"></div>
+<div class="container">
+<h1 class="page-title">Política de Privacidad</h1>
+  <span class="updated">Última actualización: noviembre de 2026</span>
 
-<footer id="footer-text">© 2026 MimoPet · Jonatan Ortega González · España</footer>
+  <div class="lang-switch">
+    <span class="current">Español</span>
+    <a href="mimopet-en.html">English</a>
+  </div>
 
-<script>
-const translations = {
-  "es": {
-    "headerSub": "Política de Privacidad",
-    "title": "Política de Privacidad",
-    "updated": "Última actualización: junio de 2026",
-    "footer": "© 2026 MimoPet · Jonatan Ortega González · España",
-    "contactLabel": "¿Tienes alguna duda?",
-    "intro": "MimoPet es una aplicación de cuidado de mascotas que funciona de forma <strong>100% local</strong> en tu dispositivo. No recopilamos, transmitimos ni almacenamos tus datos en servidores.",
-    "sections": [
-      {
-        "title": "Datos que recopilamos",
-        "type": "none",
-        "noneLabel": "Ninguno",
-        "body": "La app no requiere registro ni cuenta y no necesita conexión a internet para funcionar. Toda la información que introduces — mascotas, comidas, medicación, vacunas, collares, desparasitación, citas veterinarias, peluquería, peso, fotos y notas — se almacena <strong>únicamente en tu dispositivo</strong>.",
-        "note": "Si exportas una copia de seguridad, el archivo JSON se guarda donde tú decidas y solo se comparte si tú lo compartes."
-      },
-      {
-        "title": "Permisos que utiliza la app",
-        "type": "permissions",
-        "permissions": [
-          { "icon": "🔔", "name": "Notificaciones / alarmas exactas", "desc": "Para enviarte los recordatorios programados." },
-          { "icon": "📷", "name": "Fotos / cámara", "desc": "Solo si eliges una foto para una mascota. La imagen se copia a la app y permanece en tu dispositivo." },
-          { "icon": "💾", "name": "Almacenamiento", "desc": "Para crear o leer los archivos de copia de seguridad que tú generes o importes." }
-        ],
-        "noTrack": "No se utiliza ningún identificador publicitario ni herramienta de analítica o seguimiento. No hay anuncios. No compartimos datos con terceros porque no los recopilamos."
-      },
-      {
-        "title": "Menores",
-        "type": "simple",
-        "body": "La app no recopila datos de ningún usuario, incluidos menores de edad."
-      },
-      {
-        "title": "Eliminación de tus datos",
-        "type": "simple",
-        "body": "Puedes borrar cualquier registro dentro de la app o desinstalarla para eliminar todos los datos de tu dispositivo de forma permanente."
-      },
-      {
-        "title": "Cambios en esta política",
-        "type": "simple",
-        "body": "Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta misma URL."
-      }
-    ]
-  },
-  "en": {
-    "headerSub": "Privacy Policy",
-    "title": "Privacy Policy",
-    "updated": "Last updated: June 2026",
-    "footer": "© 2026 MimoPet · Jonatan Ortega González · Spain",
-    "contactLabel": "Do you have any questions?",
-    "intro": "MimoPet is a pet care app that works <strong>100% locally</strong> on your device. We do not collect, transmit or store your data on any server.",
-    "sections": [
-      {
-        "title": "Data we collect",
-        "type": "none",
-        "noneLabel": "None",
-        "body": "The app does not require registration or an account and does not need an internet connection to work. All the information you enter — pets, meals, medication, vaccines, collars, deworming, vet appointments, grooming, weight, photos and notes — is stored <strong>only on your device</strong>.",
-        "note": "If you export a backup, the JSON file is saved wherever you choose and is only shared if you share it."
-      },
-      {
-        "title": "Permissions the app uses",
-        "type": "permissions",
-        "permissions": [
-          { "icon": "🔔", "name": "Notifications / exact alarms", "desc": "To send you the scheduled reminders." },
-          { "icon": "📷", "name": "Photos / camera", "desc": "Only if you choose a photo for a pet. The image is copied to the app and stays on your device." },
-          { "icon": "💾", "name": "Storage", "desc": "To create or read the backup files you generate or import." }
-        ],
-        "noTrack": "No advertising identifiers or analytics and tracking tools are used. There are no ads. We do not share data with third parties because we do not collect it."
-      },
-      {
-        "title": "Minors",
-        "type": "simple",
-        "body": "The app does not collect data from any user, including minors."
-      },
-      {
-        "title": "Deleting your data",
-        "type": "simple",
-        "body": "You can delete any record within the app or uninstall it to permanently remove all data from your device."
-      },
-      {
-        "title": "Changes to this policy",
-        "type": "simple",
-        "body": "We may update this policy at any time. We will publish the current version at this same URL."
-      }
-    ]
-  },
-  "de": {
-    "headerSub": "Datenschutzrichtlinie",
-    "title": "Datenschutzrichtlinie",
-    "updated": "Letzte Aktualisierung: Juni 2026",
-    "footer": "© 2026 MimoPet · Jonatan Ortega González · Spanien",
-    "contactLabel": "Hast du Fragen?",
-    "intro": "MimoPet ist eine Haustierpflege-App, die <strong>100% lokal</strong> auf deinem Gerät funktioniert. Wir erfassen, übertragen oder speichern deine Daten nicht auf Servern.",
-    "sections": [
-      {
-        "title": "Erfasste Daten",
-        "type": "none",
-        "noneLabel": "Keine",
-        "body": "Die App erfordert keine Registrierung oder ein Konto und benötigt keine Internetverbindung. Alle von dir eingegebenen Informationen — Haustiere, Mahlzeiten, Medikamente, Impfungen, Halsbänder, Entwurmung, Tierarzttermine, Pflege, Gewicht, Fotos und Notizen — werden <strong>ausschließlich auf deinem Gerät</strong> gespeichert.",
-        "note": "Wenn du ein Backup exportierst, wird die JSON-Datei dort gespeichert, wo du es entscheidest, und nur geteilt, wenn du sie teilst."
-      },
-      {
-        "title": "Von der App verwendete Berechtigungen",
-        "type": "permissions",
-        "permissions": [
-          { "icon": "🔔", "name": "Benachrichtigungen / genaue Alarme", "desc": "Um dir die geplanten Erinnerungen zu senden." },
-          { "icon": "📷", "name": "Fotos / Kamera", "desc": "Nur wenn du ein Foto für ein Haustier auswählst. Das Bild wird in die App kopiert und bleibt auf deinem Gerät." },
-          { "icon": "💾", "name": "Speicher", "desc": "Um die von dir erstellten oder importierten Backup-Dateien zu erstellen oder zu lesen." }
-        ],
-        "noTrack": "Es werden keine Werbekennungen oder Analyse- und Tracking-Tools verwendet. Es gibt keine Werbung. Wir teilen keine Daten mit Dritten, da wir keine erfassen."
-      },
-      {
-        "title": "Minderjährige",
-        "type": "simple",
-        "body": "Die App erfasst keine Daten von Nutzern, einschließlich Minderjähriger."
-      },
-      {
-        "title": "Löschen deiner Daten",
-        "type": "simple",
-        "body": "Du kannst jeden Eintrag in der App löschen oder sie deinstallieren, um alle Daten dauerhaft von deinem Gerät zu entfernen."
-      },
-      {
-        "title": "Änderungen dieser Richtlinie",
-        "type": "simple",
-        "body": "Wir können diese Richtlinie jederzeit aktualisieren. Wir veröffentlichen die aktuelle Version unter dieser URL."
-      }
-    ]
-  },
-  "zh": {
-    "headerSub": "隐私政策",
-    "title": "隐私政策",
-    "updated": "最后更新：2026年6月",
-    "footer": "© 2026 MimoPet · Jonatan Ortega González · 西班牙",
-    "contactLabel": "有任何疑问？",
-    "intro": "MimoPet是一款宠物护理应用，<strong>100%在本地</strong>运行于您的设备上。我们不会在服务器上收集、传输或存储您的数据。",
-    "sections": [
-      {
-        "title": "我们收集的数据",
-        "type": "none",
-        "noneLabel": "无",
-        "body": "该应用无需注册或账户，无需互联网连接即可运行。您输入的所有信息——宠物、喂食、药物、疫苗、项圈、驱虫、兽医预约、美容、体重、照片和备注——<strong>仅存储在您的设备上</strong>。",
-        "note": "如果您导出备份，JSON文件将保存在您选择的位置，只有您主动分享时才会被共享。"
-      },
-      {
-        "title": "应用使用的权限",
-        "type": "permissions",
-        "permissions": [
-          { "icon": "🔔", "name": "通知 / 精确闹钟", "desc": "用于向您发送预定提醒。" },
-          { "icon": "📷", "name": "照片 / 相机", "desc": "仅在您为宠物选择照片时使用。图片会复制到应用中并保留在您的设备上。" },
-          { "icon": "💾", "name": "存储", "desc": "用于创建或读取您生成或导入的备份文件。" }
-        ],
-        "noTrack": "不使用任何广告标识符或分析和跟踪工具。没有广告。我们不与第三方共享数据，因为我们不收集数据。"
-      },
-      {
-        "title": "未成年人",
-        "type": "simple",
-        "body": "该应用不收集任何用户的数据，包括未成年人。"
-      },
-      {
-        "title": "删除您的数据",
-        "type": "simple",
-        "body": "您可以在应用内删除任何记录，或卸载应用以永久删除设备上的所有数据。"
-      },
-      {
-        "title": "政策变更",
-        "type": "simple",
-        "body": "我们可能随时更新本政策。我们将在此URL发布当前版本。"
-      }
-    ]
-  }
-};
+  <div class="intro-card">MimoPet te ayuda a cuidar de tus mascotas (comidas, medicación, vacunas, antiparasitarios, citas, peso…) y lo guarda todo <strong>en tu dispositivo</strong>. Puedes usarla sin cuenta. Si creas una cuenta (gratis) y contratas un plan, los datos de tus mascotas se copian además en nuestra nube para que no los pierdas y para compartirlos con las personas que tú invites (tu pareja, tus hijos, quien las cuida cuando no estás…). Sin plan, la app muestra anuncios.</div>
 
-function render(lang) {
-  const t = translations[lang] || translations['es'];
-  document.getElementById('header-sub').textContent = t.headerSub;
-  document.getElementById('footer-text').textContent = t.footer;
-  document.title = t.headerSub + ' — MimoPet';
+  <section>
+    <h2>Responsable</h2>
+    <div class="card">
+      <p>El responsable del tratamiento es <strong>Jonatan Ortega González</strong> (devlicius), con domicilio en España. Para cualquier cuestión sobre tus datos, escribe a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>.</p>
+    </div>
+  </section>
 
-  let html = `<h1 class="page-title">${t.title}</h1>
-<span class="updated">${t.updated}</span>
-<div class="intro-card">${t.intro}</div>`;
+  <section>
+    <h2>Sin cuenta: todo en tu móvil</h2>
+    <div class="card">
+      <span class="badge-none">No sale del teléfono</span>
+      <p>Si no inicias sesión, todo lo que introduces se guarda <strong>únicamente en tu dispositivo</strong>, en una base de datos local:</p>
+      <ul>
+        <li>Tus mascotas: nombre, especie, raza, sexo, fecha de nacimiento, peso, microchip, si están esterilizadas, foto y notas.</li>
+        <li>Su cuidado: comidas, tratamientos y las tomas dadas, vacunas, collares antiparasitarios, desparasitaciones, registros de peso y citas de veterinario y de peluquería, con sus notas.</li>
+        <li>Tus preferencias: idioma, tema y avisos.</li>
+      </ul>
+      <p>Mientras no tengas un plan, nada de esto se envía a ningún servidor; la única forma de que salga del teléfono es que tú exportes una copia y decidas compartirla. Las comidas y las tomas de hace más de un año se borran automáticamente.</p>
+    </div>
+  </section>
 
-  t.sections.forEach(s => {
-    html += `<section><h2>${s.title}</h2><div class="card">`;
+  <section>
+    <h2>Cuenta (opcional y gratuita)</h2>
+    <div class="card">
+      <p>Puedes crear una cuenta con tu email y contraseña, con Google o, en iPhone, con Apple. Guardamos:</p>
+      <ul>
+        <li>Tu <strong>email</strong>, un identificador interno de cuenta y el método de acceso. Con Google o Apple, también el <strong>nombre</strong> que te facilitan.</li>
+        <li>El <strong>nombre que se muestra</strong> a los miembros de tu familia (tu nombre o la parte de tu email antes de la @) y el <strong>idioma</strong> de la app, para escribirte los avisos en tu idioma.</li>
+      </ul>
+      <p>El inicio de sesión lo gestiona <strong>Firebase Authentication</strong> (Google). Tener cuenta no sube los datos de tus mascotas: eso solo ocurre con un plan.</p>
+    </div>
+  </section>
 
-    if (s.type === 'none') {
-      html += `<span class="badge-none">${s.noneLabel}</span><p>${s.body}</p>`;
-      if (s.note) html += `<p style="color:#888;font-size:13px;margin-top:8px">ℹ️ ${s.note}</p>`;
-    } else if (s.type === 'permissions') {
-      s.permissions.forEach(p => {
-        html += `<div class="permission-item">
-          <div class="permission-icon">${p.icon}</div>
-          <div class="permission-text"><strong>${p.name}</strong><span>${p.desc}</span></div>
-        </div>`;
-      });
-      html += `<div class="no-track">✅ ${s.noTrack}</div>`;
-    } else {
-      html += `<p>${s.body}</p>`;
-    }
+  <section>
+    <h2>Nube y familia compartida (con plan)</h2>
+    <div class="card">
+      <p>Con un plan activo (<strong>Individual</strong>, <strong>Pareja</strong> o <strong>Familia</strong>), los datos del apartado «Sin cuenta» se suben a nuestra nube y se mantienen sincronizados entre los móviles de tu familia. Se guardan en <strong>Cloud Firestore</strong> (Google Cloud), en servidores de la Unión Europea (Bélgica). <strong>Las fotos de tus mascotas no se suben</strong>: se quedan en el móvil donde las elegiste. Tampoco se suben las preferencias de cada móvil.</p>
+      <ul>
+        <li>El plan lo paga la persona <strong>titular</strong> de la familia. Con los planes Pareja (2 personas) y Familia (hasta 5), puede invitar a otras personas con un <strong>código que caduca en 48 horas</strong>.</li>
+        <li>Los miembros de una familia <strong>ven y pueden modificar todos sus datos</strong>, y cada uno ve el nombre de los demás. Solo pueden leerlos los miembros.</li>
+        <li>Cualquier miembro puede <strong>salir</strong> de la familia (y conservar o no una copia en su móvil), y el titular puede <strong>quitar</strong> a alguien. Si el titular elimina su cuenta, la familia se borra para todos; cada uno conserva lo que tenga en su móvil.</li>
+        <li>Si el plan termina, la familia queda en solo lectura. <strong>12 meses después</strong> de que termine el plan del titular, la copia en la nube se borra automáticamente. Lo que hay en los móviles no se toca.</li>
+        <li>Las comidas y las tomas se borran de la nube un año después de su fecha, igual que en el móvil.</li>
+      </ul>
+    </div>
+  </section>
 
-    html += `</div></section>`;
-  });
+  <section>
+    <h2>Avisos entre miembros (Pareja y Familia)</h2>
+    <div class="card">
+      <p>Cuando otra persona de tu familia da una toma de medicación, da de comer a una mascota, cambia un tratamiento o apunta, cambia o anula una cita de veterinario o de peluquería de los próximos días, nuestro servidor te envía una notificación con su nombre y el cambio.</p>
+      <p>Cuando alguien marca una toma como dada, tu móvil <strong>quita el recordatorio de esa toma</strong> para que no la des dos veces. Esto ocurre aunque hayas desactivado los avisos: en ese caso el mensaje llega sin texto ni sonido y solo sirve para quitar el recordatorio.</p>
+      <p>Para ello guardamos el <strong>identificador de notificaciones</strong> de tus dispositivos (Firebase Cloud Messaging), la plataforma, el idioma y tus preferencias (si quieres los avisos y de qué mascotas). También guardamos un pequeño registro técnico para no enviarte más de un aviso cada 10 minutos, que se borra con la familia.</p>
+      <p>Puedes desactivarlos en <strong>Ajustes → Cuenta y familia → Tu cuenta → Familia compartida → Avisos de la familia</strong> o en los ajustes de notificaciones del móvil.</p>
+    </div>
+  </section>
 
-  html += `<div class="contact-box"><p>${t.contactLabel}</p><a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a></div>`;
-  document.getElementById('content').innerHTML = html;
-}
+  <section>
+    <h2>Suscripciones y pagos</h2>
+    <div class="card">
+      <p>Los pagos los cobran <strong>Apple (App Store)</strong> o <strong>Google (Google Play)</strong>; nunca vemos tu tarjeta. Usamos <strong>RevenueCat</strong> para saber qué plan tienes: recibe tu identificador interno de cuenta y los justificantes de compra de la tienda, pero no tu email ni los datos de tus mascotas. Guardamos en nuestra base de datos qué plan tienes y hasta cuándo.</p>
+    </div>
+  </section>
 
-const lang = new URLSearchParams(window.location.search).get('lang') || 'es';
-render(['es','en','de','zh'].includes(lang) ? lang : 'es');
-</script>
+  <section>
+    <h2>Anuncios (solo sin plan)</h2>
+    <div class="card">
+      <p>Si ni tú ni tu familia tenéis un plan activo, la app muestra un banner de <strong>Google AdMob</strong>.</p>
+      <ul>
+        <li>Pedimos anuncios <strong>no personalizados</strong> y aptos para todos los públicos. En el Espacio Económico Europeo, Reino Unido y Suiza, antes de pedir ningún anuncio la app te muestra el formulario de consentimiento de Google, y puedes cambiar tu elección desde los ajustes de la app.</li>
+        <li>Aun siendo no personalizados, Google puede usar datos técnicos limitados (por ejemplo, para contar impresiones y evitar fraudes).</li>
+        <li>En iOS, antes del primer anuncio la app te pide el permiso de rastreo de Apple (App Tracking Transparency). Si dices que no, AdMob no usa el identificador de publicidad de tu dispositivo. Puedes cambiarlo cuando quieras en <strong>Ajustes de iOS → Privacidad y seguridad → Rastreo</strong>.</li>
+        <li>Nunca se pasa a AdMob información de tus mascotas ni de su cuidado.</li>
+        <li>Con un plan activo, tuyo o de tu familia, no se muestran anuncios.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Seguridad</h2>
+    <div class="card">
+      <p>Las comunicaciones van cifradas (HTTPS). Las reglas de nuestra base de datos impiden que nadie lea los datos de una familia salvo sus miembros. La app usa <strong>Firebase App Check</strong> (Play Integrity en Android, App Attest/DeviceCheck en iOS), que envía a Google una prueba de que la petición viene de la app auténtica, sin datos personales adicionales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Base jurídica</h2>
+    <div class="card">
+      <ul>
+        <li>La <strong>ejecución del contrato</strong> (art. 6.1.b RGPD) para la cuenta, la nube, la familia compartida, los avisos entre miembros y las suscripciones.</li>
+        <li>Tu <strong>consentimiento</strong> (art. 6.1.a) para los anuncios y para las notificaciones, que das con el formulario de Google y con el permiso del móvil, y que puedes retirar cuando quieras.</li>
+        <li>Nuestro <strong>interés legítimo</strong> (art. 6.1.f) en proteger el servicio frente a abusos (App Check y límite de intentos con los códigos de invitación).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Proveedores y transferencias</h2>
+    <div class="card">
+      <p>Usamos estos proveedores, que tratan los datos por nuestra cuenta:</p>
+      <ul>
+        <li><strong>Google</strong>: Firebase Authentication, Cloud Firestore, Cloud Functions, Cloud Tasks, Firebase Cloud Messaging, App Check y AdMob.</li>
+        <li><strong>RevenueCat, Inc.</strong>: estado de las suscripciones.</li>
+      </ul>
+      <p>Apple y Google, como tiendas, tratan los pagos como responsables independientes. Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo (por ejemplo, en Estados Unidos). En ese caso, la transferencia se ampara en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la Comisión Europea.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cuánto tiempo los guardamos</h2>
+    <div class="card">
+      <ul>
+        <li>Datos del móvil: hasta que los borres o desinstales la app (las comidas y las tomas, como mucho un año).</li>
+        <li>Cuenta: hasta que la elimines.</li>
+        <li>Copia en la nube: mientras el titular de la familia tenga un plan y hasta 12 meses después de que termine.</li>
+        <li>Comidas y tomas en la nube: un año desde su fecha.</li>
+        <li>Códigos de invitación: 48 horas como máximo. Registro de intentos de canje: 1 hora.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tus derechos</h2>
+    <div class="card">
+      <p>Puedes acceder a tus datos, rectificarlos, borrarlos, oponerte a su tratamiento, limitarlo, pedir su portabilidad y retirar tu consentimiento cuando quieras. La mayoría puedes ejercerlos desde la propia app (<strong>Ajustes → Copia de seguridad → Exportar datos</strong> te da una copia completa). Para el resto, escríbenos a <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>. Si crees que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Copias de seguridad y compartir</h2>
+    <div class="card">
+      <p>Puedes exportar todos los datos a un archivo (JSON). Se crea en tu dispositivo y tú decides dónde guardarlo y con quién compartirlo. Al importar una copia, sus datos sustituyen a los de la app (y, con plan, a los de la familia en la nube). El botón de compartir el código de invitación abre el menú de compartir del móvil solo cuando lo pulsas.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Permisos que usa la app</h2>
+    <div class="card">
+      <div class="permission-item"><div class="permission-icon">🔔</div><div class="permission-text"><strong>Notificaciones</strong><span>Para recordarte las comidas, las tomas, las vacunas y las citas y, con plan, avisarte de lo que hacen otros miembros.</span></div></div>
+      <div class="permission-item"><div class="permission-icon">⏰</div><div class="permission-text"><strong>Alarmas exactas</strong><span>En Android 12 y posteriores, para que el recordatorio llegue a su hora.</span></div></div>
+      <div class="permission-item"><div class="permission-icon">🔋</div><div class="permission-text"><strong>Optimización de batería</strong><span>Opcional; solo si lo activas tú, para que el sistema no retrase los avisos.</span></div></div>
+      <div class="permission-item"><div class="permission-icon">🔄</div><div class="permission-text"><strong>Inicio del dispositivo</strong><span>Para volver a programar los avisos tras reiniciar el teléfono o cambiar la hora.</span></div></div>
+      <div class="permission-item"><div class="permission-icon">📷</div><div class="permission-text"><strong>Fotos / cámara</strong><span>Solo si eliges una foto para una mascota. La imagen se copia a la app y se queda en tu dispositivo.</span></div></div>
+      <div class="permission-item"><div class="permission-icon">📂</div><div class="permission-text"><strong>Selección de archivos</strong><span>Solo cuando eliges un archivo para importar una copia.</span></div></div>
+      <div class="permission-item"><div class="permission-icon">🌐</div><div class="permission-text"><strong>Internet</strong><span>Para la cuenta, la nube, la familia compartida, las suscripciones y los anuncios. Sin cuenta ni plan, los datos de tus mascotas no se envían.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Menores</h2>
+    <div class="card">
+      <p>La app está pensada para personas adultas y no está dirigida a menores de 14 años, que no deben crear una cuenta. Si crees que un menor nos ha facilitado datos, escríbenos y los borraremos.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eliminación de tus datos</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Eliminar la cuenta:</strong> en <strong>Ajustes → Cuenta y familia → Tu cuenta → Eliminar cuenta</strong>. Se borran al momento tu cuenta y tus datos en la nube; si eres titular, también la familia para todos sus miembros. Los datos del móvil se conservan.</li>
+        <li><strong>Borrar datos:</strong> puedes eliminar cualquier registro o una mascota con todo lo suyo; con plan, se borra también para toda la familia. Desinstalar la app borra todo lo del móvil.</li>
+      </ul>
+      <p>Más detalles en la <a href="mimopet-eliminar-cuenta.html">página de eliminación de cuenta</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cambios en esta política</h2>
+    <div class="card">
+      <p>Podemos actualizar esta política. Publicaremos la versión vigente en esta misma dirección y, si el cambio es importante, te lo indicaremos en la app.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>¿Tienes alguna duda?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 MimoPet · Jonatan Ortega González · España</footer>
+
 </body>
 </html>

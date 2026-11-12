@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — MimoPet</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #e8913a;
+      --accent-light: #f4a94e;
+      --header-bg: #1e1e1e;
+      --bg: #f7f5f2;
+      --intro-bg: #fff8ee;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon { font-size: 28px; }
+
+    .logo-text {
+      color: var(--accent-light);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .lang-switch {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .lang-switch a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 6px;
+    }
+
+    .lang-switch a:hover { text-decoration: underline; }
+
+    .lang-switch .current {
+      color: #999;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .intro-card {
+      background: var(--intro-bg);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .intro-card strong { color: #1e1e1e; }
+
+    section { margin-bottom: 32px; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card p { margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p strong { color: #1e1e1e; }
+
+    .card ul {
+      margin: 8px 0 10px 20px;
+      padding: 0;
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    .badge-none {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .permission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .permission-item:first-child { padding-top: 0; }
+
+    .permission-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .permission-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+
+    .permission-text strong {
+      display: block;
+      color: #1e1e1e;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .permission-text span {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .no-track {
+      background: #f0faf0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #444;
+      border-left: 3px solid #4caf50;
+    }
+
+    .contact-box {
+      background: var(--header-bg);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box a {
+      color: var(--accent-light);
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #aaa;
+      background: var(--header-bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      .page-title { font-size: 22px; }
+      header { padding: 16px 20px; }
+    }
+    .badge-instant {
+      display: inline-block;
+      background: #fdecea;
+      color: #c62828;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card ol { margin: 8px 0 10px 20px; padding: 0; }
+    .card ol li { margin-bottom: 4px; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-icon">🐾</div>
+  <div>
+    <div class="logo-text">MIMOPET</div>
+    <div class="logo-sub">Terms of Use</div>
+  </div>
+</header>
+
+<div class="container">
+<h1 class="page-title">Terms of Use</h1>
+  <span class="updated">Last updated: November 2026</span>
+
+  <div class="lang-switch">
+    <a href="mimopet-terminos.html">Español</a>
+    <span class="current">English</span>
+  </div>
+
+  <div class="intro-card">By using MimoPet you accept these terms. Read them together with the <a href="mimopet-en.html">Privacy Policy</a>, which explains what data we process and how.</div>
+
+  <section>
+    <h2>The service</h2>
+    <div class="card">
+      <p>MimoPet helps you keep track of your pets' care: meals, medication, vaccines, parasite collars, deworming, vet and grooming appointments and weight, with reminders on your phone. You can use it for free and without an account; everything is stored on your device.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Not veterinary advice</h2>
+    <div class="card">
+      <p>MimoPet is an organisation tool. It is not a veterinary service and does not replace your vet's judgement. You enter the doses, treatments and dates yourself: always follow your vet's instructions and each medicine's leaflet.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Account</h2>
+    <div class="card">
+      <ul>
+        <li>An account is optional. You must be at least 14 years old to create one; the app is intended for adults.</li>
+        <li>You are responsible for keeping your access secure (your password or your Google or Apple account).</li>
+        <li>You can delete your account at any time from the app (Settings → Account and family → Your account → Delete account).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Plans and subscriptions</h2>
+    <div class="card">
+      <p>With a plan you can keep your data in the cloud, share it with your family and remove the ads:</p>
+      <ul>
+        <li><strong>Individual</strong> (1 person), <strong>Couple</strong> (2 people) and <strong>Family</strong> (up to 5 people: the owner and 4 more), paid monthly or yearly.</li>
+        <li>The exact price is shown on the purchase screen, handled by the <strong>Apple App Store</strong> or <strong>Google Play</strong>, before you confirm. Your store charges you, not us.</li>
+        <li><strong>Free trial:</strong> if offered, you are charged automatically when it ends unless you cancel before. It can only be used once.</li>
+        <li><strong>Automatic renewal:</strong> the subscription renews at the current price unless you cancel it at least 24 hours before the end of the current period.</li>
+        <li><strong>Cancellation:</strong> from the subscription settings of your App Store or Google Play account. Access already paid for continues until the end of the period. Uninstalling the app or deleting your account does not cancel the subscription.</li>
+        <li><strong>Refunds:</strong> handled by Apple or Google according to their policies.</li>
+        <li><strong>Changing plans and restoring purchases</strong> is done from the app's plans screen.</li>
+        <li>On the App Store, purchases are also governed by Apple's standard licence agreement (<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">EULA</a>).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Shared family</h2>
+    <div class="card">
+      <ul>
+        <li>The plan is paid by the <strong>owner</strong>. Invited members don't pay and their access depends on the owner's plan: if the plan ends, the family becomes read-only and, 12 months later, the cloud copy is deleted.</li>
+        <li>All members can see and change the family's data. Only invite people you trust.</li>
+        <li>The owner can remove a member, and any member can leave. If the owner deletes their account, the family is deleted for everyone; each person keeps what is on their phone.</li>
+        <li>Each member is responsible for what they add or change. If you mark a dose as given, the others will stop getting its reminder: only mark it when you have really given it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ads</h2>
+    <div class="card">
+      <p>Without a plan, the app shows a banner served by Google AdMob, also subject to Google's Terms of Service. With an active plan, yours or your family's, no ads are shown.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reminders</h2>
+    <div class="card">
+      <p>We do our best to make reminders arrive on time, but they depend on your phone's system, its battery settings and permissions and, for notifications between members, on the connection. They don't replace your own care: we are not liable for doses, vaccines or appointments missed because a reminder didn't arrive.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Acceptable use</h2>
+    <div class="card">
+      <p>You must not use the app to break the law or to process other people's data without permission, nor try to access data of families you are not a member of, decompile the app or interfere with how it works, except to the extent the law expressly allows. We may suspend accounts that breach these terms.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>No warranty and limitation of liability</h2>
+    <div class="card">
+      <p>The app is provided "as is", without warranties of any kind. To the extent permitted by law, we will not be liable for indirect damages arising from the use of, or inability to use, the app, including loss of data. We recommend making backups (Settings → Backup). Nothing in these terms limits liability that cannot be excluded under applicable law or your rights as a consumer.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Changes to these terms</h2>
+    <div class="card">
+      <p>We may update these terms; we will publish the current version at this same address with its date and, if the change is significant, we will let you know in the app.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Governing law</h2>
+    <div class="card">
+      <p>These terms are governed by Spanish law, without prejudice to any rights the consumer protection rules of your country of residence may give you.</p>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <p>Any questions?</p>
+    <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+  </div>
+</div>
+
+<footer>© 2026 MimoPet · Jonatan Ortega González · Spain</footer>
+
+</body>
+</html>
