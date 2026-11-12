@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survival Workout · Juego de fitness para fiestas</title>
+  <meta name="description" content="El juego de fitness para fiestas: de 2 a 8 jugadores con un solo móvil. La ruleta elige ejercicio y repeticiones; si no aguantas, quedas eliminado. El último en pie gana.">
+  <link rel="icon" type="image/png" href="img/icon.png">
+  <style>
+    /* The app's own palette (AppColors in lib/theme/colors.dart): near-black, red accent. */
+    :root {
+      --bg: #FAF7F7; --surface: #FFFFFF; --ink: #141414; --ink2: #5E5A5A; --line: #E6DFDF;
+      --accent: #E5142A; --accent-text: #B80F21; --on-accent: #FFFFFF; --soft: #FCE3E6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0A0A0A; --surface: #141414; --ink: #F5F5F5; --ink2: #8C8C8C; --line: #262626;
+              --accent: #E5142A; --accent-text: #FF4D5E; --on-accent: #FFFFFF; --soft: #2A0A0E; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
+    body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; line-height: 1.55; }
+    a { color: var(--accent-text); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    h1, h2 { font-weight: 800; letter-spacing: -.02em; line-height: 1.08; text-wrap: balance; }
+
+    header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; text-decoration: none; color: var(--ink); }
+    .brand img { width: 42px; height: 42px; border-radius: 11px; }
+    .brand span { color: var(--accent-text); }
+    .langs { display: flex; gap: 6px; }
+    .langs button { background: none; border: 1px solid var(--line); color: var(--ink2); font: 600 13px system-ui, sans-serif; padding: 6px 10px; border-radius: 99px; cursor: pointer; }
+    .langs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .langs button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 28px 0 48px; }
+    .hero h1 { font-size: clamp(34px, 5.2vw, 56px); }
+    .hero h1 em { font-style: normal; color: var(--accent-text); }
+    .hero p { color: var(--ink2); font-size: 18px; margin: 18px 0 28px; max-width: 36em; }
+    .stores { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 20px; border-radius: 14px; }
+    .btn.primary { background: var(--accent); color: var(--on-accent); }
+    .btn.ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn svg { width: 20px; height: 20px; }
+    .hero-shot { justify-self: center; width: min(320px, 80vw); border-radius: 28px; box-shadow: 0 24px 60px rgba(120, 10, 20, .30); }
+
+    .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 0 24px; }
+    .shots img { flex: 0 0 auto; width: 230px; border-radius: 20px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(120, 10, 20, .20); }
+
+    section { padding: 36px 0; }
+    section h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; }
+    .card b { display: block; font-size: 16px; margin-bottom: 4px; }
+    .card span { color: var(--ink2); font-size: 15px; }
+    .card i { display: block; width: 10px; height: 10px; border-radius: 50%; margin-bottom: 10px; background: var(--accent); }
+    .card.plan b { font-size: 22px; font-weight: 800; letter-spacing: -.01em; }
+    .tag { display: inline-block; background: var(--soft); color: var(--accent-text); font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 99px; margin-top: 8px; }
+    .note { color: var(--ink2); font-size: 15px; margin-top: 14px; max-width: 46em; }
+
+    footer { border-top: 1px solid var(--line); margin-top: 24px; padding: 28px 0 40px; color: var(--ink2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8px; }
+      .hero-shot { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><img src="img/icon.png" alt=""><b>Survival<span>Workout</span></b></a>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es">ES</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1 data-i18n-html="heroTitle"></h1>
+        <p data-i18n="heroText"></p>
+        <div class="stores">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.devlicius.survivalworkout">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l10-9.5L4 2.5zm11.4 10.9-2.2 2.1 2.6 2.5 4.3-2.4c.8-.5.8-1.6 0-2.1l-2.6-1.5-2.1 1.4zM5.6 1.6l9.9 9-2.2 2.1L5.6 1.6zm0 20.8 7.7-7.1 2.2 2.1-9.9 5z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <a class="btn ghost" id="appstore" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.7c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+      <img class="hero-shot" data-shot="ruleta" alt="">
+    </div>
+
+    <div class="shots">
+      <img data-shot="jugadores" alt="">
+      <img data-shot="ruleta" alt="">
+      <img data-shot="ejercicio" alt="">
+      <img data-shot="ganador" alt="">
+    </div>
+
+    <section>
+      <h2 data-i18n="featuresTitle"></h2>
+      <div class="grid" id="features"></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="plansTitle"></h2>
+      <div class="grid" id="plans"></div>
+      <p class="note" data-i18n="plansNote"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="privacyTitle"></h2>
+      <p class="note" data-i18n="privacyText"></p>
+      <p class="note" data-i18n="safetyNote"></p>
+    </section>
+
+    <footer>
+      <nav>
+        <a data-link="privacy" data-i18n="linkPrivacy"></a>
+        <a data-link="terms" data-i18n="linkTerms"></a>
+        <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+      </nav>
+      <span>© 2026 Jonatan Ortega González · <span data-i18n="country"></span></span>
+    </footer>
+  </div>
+
+  <script>
+    // The App Store button shows once this holds the app's numeric Apple ID
+    // (App Store Connect → App Information → Apple ID).
+    const APP_STORE_ID = '6777979198';
+
+    const T = {
+      es: {
+        title: 'Survival Workout · Juego de fitness para fiestas',
+        heroTitle: '¿Quién aguanta más? <em>El último en pie gana</em>',
+        heroText: 'El juego de fitness para jugar con amigos: pasaos un solo móvil, la ruleta elige ejercicio y repeticiones, y quien no aguante queda eliminado. Sin cuenta ni registro.',
+        featuresTitle: 'Cómo se juega',
+        features: [
+          ['De 2 a 8 jugadores', 'Escribe los nombres, elige un color para cada uno y pasaos el móvil por turnos.'],
+          ['La ruleta decide', 'Cada turno toca un ejercicio y un número de repeticiones al azar: flexiones, sentadillas, abdominales, burpees y más.'],
+          ['Aguanta o caes', 'Completa las repeticiones para seguir en juego. Si te rindes, quedas eliminado.'],
+          ['Modo equipos y modo tiempo', 'Jugad por equipos o cambiad las repeticiones por segundos aguantando el ejercicio.'],
+          ['Estadísticas', 'Turnos, repeticiones y tiempo de cada jugador, y el resultado listo para compartir.'],
+          ['Sonido y vibración', 'Avisos al empezar, al terminar y al caer, para jugar sin mirar la pantalla. En 8 idiomas.'],
+        ],
+        plansTitle: 'Planes',
+        plans: [
+          ['Gratis', 'El juego completo, con algún anuncio antes de una partida.', ''],
+          ['Sin anuncios mensual', '0,99 €/mes · sin anuncios.', ''],
+          ['Sin anuncios para siempre', '4,99 € · sin anuncios para siempre.', 'Pago único'],
+        ],
+        plansNote: 'La suscripción se gestiona y cancela desde Google Play o el App Store. Los precios pueden variar según el país.',
+        privacyTitle: 'Sin cuenta y sin registro',
+        privacyText: 'Los nombres de los jugadores y tus ajustes se guardan únicamente en tu móvil. Lo único que sale de él es lo que Google AdMob y RevenueCat necesitan para mostrar los anuncios y gestionar la compra.',
+        safetyNote: 'Survival Workout es un juego, no un programa de entrenamiento. Calienta antes, adapta los ejercicios a tu forma física y para si notas dolor.',
+        linkPrivacy: 'Política de privacidad', linkTerms: 'Términos de uso',
+        country: 'España',
+      },
+      en: {
+        title: 'Survival Workout · The fitness party game',
+        heroTitle: 'Who lasts longest? <em>Last one standing wins</em>',
+        heroText: 'The fitness game to play with friends: pass one phone around, the wheel picks the exercise and the reps, and whoever gives up is out. No account, no sign-up.',
+        featuresTitle: 'How it works',
+        features: [
+          ['2 to 8 players', 'Type in the names, pick a colour for each player and pass the phone around.'],
+          ['The wheel decides', 'Every turn lands on a random exercise and number of reps: push-ups, squats, sit-ups, burpees and more.'],
+          ['Hold on or drop out', 'Finish the reps to stay in the game. Give up and you are out.'],
+          ['Team mode and time mode', 'Play in teams, or swap reps for seconds holding the exercise.'],
+          ['Stats', 'Turns, reps and time for every player, and a result ready to share.'],
+          ['Sound and haptics', 'Cues at the start, the end and when someone drops out, so you can play without watching the screen. In 8 languages.'],
+        ],
+        plansTitle: 'Plans',
+        plans: [
+          ['Free', 'The full game, with the odd ad before a match.', ''],
+          ['Ad-free monthly', '€0.99/month · no ads.', ''],
+          ['Ad-free forever', '€4.99 · no ads, for good.', 'One-time payment'],
+        ],
+        plansNote: 'Manage and cancel the subscription in Google Play or the App Store. Prices may vary by country.',
+        privacyTitle: 'No account, no sign-up',
+        privacyText: 'Player names and your settings are stored only on your phone. All that leaves it is what Google AdMob and RevenueCat need to show ads and handle the purchase.',
+        safetyNote: 'Survival Workout is a game, not a training programme. Warm up first, adapt the exercises to your fitness and stop if anything hurts.',
+        linkPrivacy: 'Privacy policy', linkTerms: 'Terms of use',
+        country: 'Spain',
+      },
+    };
+    const BASE = '../';
+    const LINKS = { privacy: 'survivalworkout.html', terms: 'survivalworkout-terminos.html' };
+    const store = document.getElementById('appstore');
+    if (APP_STORE_ID) { store.href = 'https://apps.apple.com/app/id' + APP_STORE_ID; store.hidden = false; }
+
+    function render(lang) {
+      const t = T[lang];
+      document.documentElement.lang = lang;
+      document.title = t.title;
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t[el.dataset.i18nHtml]; });
+      const card = (title, text, tag, plan) => {
+        const d = document.createElement('div');
+        d.className = 'card' + (plan ? ' plan' : '');
+        if (!plan) d.append(document.createElement('i'));
+        const b = document.createElement('b'); b.textContent = title;
+        const s = document.createElement('span'); s.textContent = text;
+        d.append(b, s);
+        if (plan && tag) { const g = document.createElement('div'); g.className = 'tag'; g.textContent = tag; d.append(g); }
+        return d;
+      };
+      document.getElementById('features').replaceChildren(...t.features.map(([a, b]) => card(a, b)));
+      document.getElementById('plans').replaceChildren(...t.plans.map(([a, b, c]) => card(a, b, c, true)));
+      document.querySelectorAll('[data-link]').forEach(a => { a.href = BASE + LINKS[a.dataset.link] + '?lang=' + lang; });
+      document.querySelectorAll('[data-shot]').forEach(img => { img.src = `img/${lang}_${img.dataset.shot}.jpg`; img.alt = t.heroTitle.replace(/<[^>]+>/g, ''); });
+      document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
+    }
+    const asked = new URLSearchParams(location.search).get('lang');
+    const nav = (navigator.language || 'es').slice(0, 2);
+    let lang = T[asked] ? asked : (['es', 'ca', 'eu', 'gl'].includes(nav) ? 'es' : 'en');
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => {
+      lang = b.dataset.setLang; render(lang);
+      history.replaceState(null, '', '?lang=' + lang);
+    }));
+    render(lang);
+  </script>
+</body>
+</html>
