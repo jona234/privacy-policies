@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MimoPet · El cuidado de tus mascotas</title>
+  <meta name="description" content="Comidas, medicación, vacunas, antiparasitarios, citas y peso de tus mascotas, con recordatorios. Compártelo con tu familia.">
+  <meta property="og:title" content="MimoPet · El cuidado de tus mascotas">
+  <meta property="og:description" content="Comidas, medicación, vacunas, citas y peso, con recordatorios. Compártelo con tu familia.">
+  <meta property="og:image" content="img/og.jpg">
+  <link rel="icon" type="image/png" href="img/icon.png">
+  <style>
+    @font-face { font-family: 'Fredoka'; font-weight: 500; font-display: swap; src: url(fonts/fredoka-latin-500-normal.woff2) format('woff2'); }
+    @font-face { font-family: 'Fredoka'; font-weight: 600; font-display: swap; src: url(fonts/fredoka-latin-600-normal.woff2) format('woff2'); }
+    @font-face { font-family: 'Nunito'; font-weight: 400; font-display: swap; src: url(fonts/nunito-latin-400-normal.woff2) format('woff2'); }
+    @font-face { font-family: 'Nunito'; font-weight: 600; font-display: swap; src: url(fonts/nunito-latin-600-normal.woff2) format('woff2'); }
+    @font-face { font-family: 'Nunito'; font-weight: 700; font-display: swap; src: url(fonts/nunito-latin-700-normal.woff2) format('woff2'); }
+    @font-face { font-family: 'Nunito'; font-weight: 800; font-display: swap; src: url(fonts/nunito-latin-800-normal.woff2) format('woff2'); }
+
+    :root {
+      --bg: #F2FAF9; --surface: #FFFFFF; --ink: #16302E; --ink2: #4D6463; --line: #D7EBE9;
+      --teal: #1CA9A6; --teal-text: #0E7C79; --btn: #0E7C79; --on-btn: #FFFFFF; --soft: #DDF4F2;
+      --coral: #E8664B; --coral-soft: #FFE3DB;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0F1918; --surface: #172423; --ink: #E8F3F2; --ink2: #A9BDBB; --line: #263837;
+              --teal: #4FD1CB; --teal-text: #6EDDD7; --btn: #4FD1CB; --on-btn: #0B2422; --soft: #183836;
+              --coral: #FF9A82; --coral-soft: #3A221C; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif; line-height: 1.6; }
+    a { color: var(--teal-text); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    h1, h2 { font-family: 'Fredoka', system-ui, sans-serif; font-weight: 600; line-height: 1.12; text-wrap: balance; }
+
+    header { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 600; text-decoration: none; color: var(--ink); }
+    .brand img { width: 42px; height: 42px; border-radius: 11px; background: #fff; }
+    .brand em { color: var(--teal-text); font-style: normal; }
+    .langs button { background: none; border: 1px solid var(--line); color: var(--ink2); font: 700 13px 'Nunito', sans-serif; padding: 6px 11px; border-radius: 99px; cursor: pointer; }
+    .langs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 28px 0 48px; }
+    .hero h1 { font-size: clamp(36px, 5.4vw, 58px); }
+    .hero h1 em { color: var(--teal-text); font-style: normal; }
+    .hero p { color: var(--ink2); font-size: 18px; margin: 18px 0 28px; max-width: 36em; }
+    .stores { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; font-size: 16px; padding: 14px 20px; border-radius: 16px; }
+    .btn.primary { background: var(--btn); color: var(--on-btn); }
+    .btn.ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+    .btn svg { width: 20px; height: 20px; }
+    .pill { display: inline-flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; color: var(--ink2); font-size: 14px; font-weight: 700; }
+    .pill span { background: var(--soft); color: var(--teal-text); padding: 4px 11px; border-radius: 99px; }
+    .hero-shot { justify-self: center; width: min(330px, 80vw); border-radius: 28px; box-shadow: 0 24px 60px rgba(8, 70, 68, .28); }
+
+    .shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 0 24px; }
+    .shots img { flex: 0 0 auto; width: 230px; border-radius: 20px; scroll-snap-align: start; box-shadow: 0 10px 30px rgba(8, 70, 68, .18); }
+
+    section { padding: 36px 0; }
+    section h2 { font-size: clamp(27px, 3.4vw, 38px); margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; }
+    .card .ico { font-size: 26px; line-height: 1; margin-bottom: 8px; }
+    .card b { display: block; font-size: 17px; margin-bottom: 4px; }
+    .card span { color: var(--ink2); font-size: 15px; }
+    .card.star { border-color: var(--teal); box-shadow: 0 0 0 3px var(--soft); }
+    .card.plan b { font-family: 'Fredoka', sans-serif; font-size: 23px; font-weight: 600; }
+    .tag { display: inline-block; background: var(--coral-soft); color: var(--coral); font-size: 12px; font-weight: 800; padding: 2px 9px; border-radius: 99px; margin-top: 8px; }
+    .note { color: var(--ink2); font-size: 15px; margin-top: 14px; max-width: 46em; }
+
+    footer { border-top: 1px solid var(--line); margin-top: 24px; padding: 28px 0 40px; color: var(--ink2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 8px; }
+      .hero-shot { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><img src="img/icon.png" alt=""><span>Mimo<em>Pet</em></span></a>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es">ES</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1 data-i18n-html="heroTitle"></h1>
+        <p data-i18n="heroText"></p>
+        <div class="stores">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.devlicius.mimopet">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.5v19l10-9.5L4 2.5zm11.4 10.9-2.2 2.1 2.6 2.5 4.3-2.4c.8-.5.8-1.6 0-2.1l-2.6-1.5-2.1 1.4zM5.6 1.6l9.9 9-2.2 2.1L5.6 1.6zm0 20.8 7.7-7.1 2.2 2.1-9.9 5z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <a class="btn ghost" id="appstore" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.5 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.2 1-4 2.5-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.7c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+            <span>App Store</span>
+          </a>
+        </div>
+        <div class="pill" id="pills"></div>
+      </div>
+      <img class="hero-shot" data-shot="hoy" alt="">
+    </div>
+
+    <div class="shots">
+      <img data-shot="familia" alt="">
+      <img data-shot="peso" alt="">
+      <img data-shot="historial" alt="">
+      <img data-shot="hoy" alt="">
+    </div>
+
+    <section>
+      <h2 data-i18n="featuresTitle"></h2>
+      <div class="grid" id="features"></div>
+    </section>
+
+    <section>
+      <h2 data-i18n="plansTitle"></h2>
+      <div class="grid" id="plans"></div>
+      <p class="note" data-i18n="plansNote"></p>
+    </section>
+
+    <section>
+      <h2 data-i18n="privacyTitle"></h2>
+      <p class="note" data-i18n="privacyText"></p>
+    </section>
+
+    <footer>
+      <nav>
+        <a data-link="privacy" data-i18n="linkPrivacy"></a>
+        <a data-link="terms" data-i18n="linkTerms"></a>
+        <a data-link="delete" data-i18n="linkDelete"></a>
+        <a href="mailto:devlicius.online@gmail.com">devlicius.online@gmail.com</a>
+      </nav>
+      <span>© 2026 Jonatan Ortega González · <span data-i18n="country"></span></span>
+    </footer>
+  </div>
+
+  <script>
+    // Id de MimoPet en el App Store (el número de apps.apple.com/app/idXXXX). Vacío: no se muestra el botón.
+    const APP_STORE_ID = '';
+
+    const T = {
+      es: {
+        title: 'MimoPet · El cuidado de tus mascotas',
+        heroTitle: 'El cuidado de tus mascotas, <em>sin olvidos</em>',
+        heroText: 'Comidas, medicación, vacunas, antiparasitarios, citas y peso, con recordatorios que llegan a su hora. Empiezas sin registrarte y, si quieres, lo compartes con tu familia o con quien las cuide cuando no estás.',
+        pills: ['Sin registro', 'Funciona sin conexión', '8 idiomas'],
+        featuresTitle: 'Todo lo que necesitan',
+        features: [
+          ['📋', 'Lo de hoy, de un vistazo', 'Medicinas pendientes, quién ha comido y las próximas citas, en la pantalla de inicio.'],
+          ['💊', 'Medicación sin olvidos', 'Horas fijas o cada N horas, con fin por fecha o por número de tomas. Un aviso en cada toma, aunque la app esté cerrada.'],
+          ['💉', 'Su salud, al día', 'Vacunas, collares antiparasitarios, desparasitaciones, veterinario y peluquería, con aviso los días antes que tú elijas.'],
+          ['⚖️', 'Peso y ficha', 'La gráfica de su peso y su ficha completa: raza, edad, microchip, esterilización y notas.'],
+          ['🕑', 'Historial completo', 'Cada comida, toma y visita con su fecha, filtrado por mascota, tipo o fechas.'],
+          ['👨‍👩‍👧', 'Cuidadla entre todos', 'Con los planes Pareja y Familia compartís los datos. Cuando alguien da una toma, a los demás no les suena ese aviso: ya está dado.', true],
+        ],
+        plansTitle: 'Planes',
+        plans: [
+          ['Gratis', 'La app completa en tu móvil, sin registrarte.', ''],
+          ['Individual', 'Copia en la nube para no perder nada y usarla en tus otros dispositivos.', 'Próximamente'],
+          ['Pareja', 'Lo anterior y compartir el cuidado con otra persona.', 'Próximamente'],
+          ['Familia', 'Lo anterior para hasta 5 personas.', 'Próximamente'],
+        ],
+        plansNote: 'Mensual o anual. Paga solo quien crea la familia; los demás se unen gratis con un código. Se gestiona y cancela desde Google Play o el App Store.',
+        privacyTitle: 'Tus datos, bajo tu control',
+        privacyText: 'Sin cuenta, todo se guarda solo en tu móvil y funciona sin conexión. Con un plan, los datos de tus mascotas se guardan en la nube (en la Unión Europea) y solo los ven las personas que invitas; las fotos nunca salen de tu móvil. Puedes exportar una copia y borrar tu cuenta desde la propia app.',
+        linkPrivacy: 'Política de privacidad', linkTerms: 'Términos de uso', linkDelete: 'Eliminar la cuenta',
+        country: 'España',
+      },
+      en: {
+        title: 'MimoPet · Pet care made simple',
+        heroTitle: 'Pet care, <em>never forgotten</em>',
+        heroText: 'Meals, medication, vaccines, parasite care, appointments and weight, with reminders that arrive on time. Start without signing up and, if you like, share it with your family or whoever looks after them when you’re away.',
+        pills: ['No sign-up', 'Works offline', '8 languages'],
+        featuresTitle: 'Everything they need',
+        features: [
+          ['📋', 'Today at a glance', 'Pending medicines, who has eaten and upcoming appointments, on the home screen.'],
+          ['💊', 'Medication you won’t forget', 'Fixed times or every N hours, ending on a date or after a number of doses. A reminder for every dose, even with the app closed.'],
+          ['💉', 'Their health, up to date', 'Vaccines, parasite collars, deworming, vet and grooming visits, with a reminder as many days ahead as you choose.'],
+          ['⚖️', 'Weight and profile', 'A chart of their weight and their full profile: breed, age, microchip, neutering and notes.'],
+          ['🕑', 'Full history', 'Every meal, dose and visit with its date, filtered by pet, type or dates.'],
+          ['👨‍👩‍👧', 'Care for them together', 'With the Couple and Family plans you share everything. When someone gives a dose, the others’ reminder for it stays silent: it’s already done.', true],
+        ],
+        plansTitle: 'Plans',
+        plans: [
+          ['Free', 'The full app on your phone, no sign-up needed.', ''],
+          ['Individual', 'A cloud copy so you never lose anything and can use it on your other devices.', 'Coming soon'],
+          ['Couple', 'All of the above plus sharing their care with one other person.', 'Coming soon'],
+          ['Family', 'All of the above for up to 5 people.', 'Coming soon'],
+        ],
+        plansNote: 'Monthly or yearly. Only the person who creates the family pays; everyone else joins for free with a code. Manage and cancel it in Google Play or the App Store.',
+        privacyTitle: 'Your data, your control',
+        privacyText: 'Without an account, everything stays on your phone and works offline. With a plan, your pets’ data is stored in the cloud (in the European Union) and only the people you invite can see it; photos never leave your phone. You can export a copy and delete your account from within the app.',
+        linkPrivacy: 'Privacy policy', linkTerms: 'Terms of use', linkDelete: 'Delete your account',
+        country: 'Spain',
+      },
+    };
+    const BASE = '../';
+    const store = document.getElementById('appstore');
+    if (APP_STORE_ID) store.href = 'https://apps.apple.com/app/id' + APP_STORE_ID; else store.remove();
+
+    function render(lang) {
+      const t = T[lang];
+      document.documentElement.lang = lang;
+      document.title = t.title;
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t[el.dataset.i18nHtml]; });
+      const card = (title, text, tag, opts = {}) => {
+        const d = document.createElement('div');
+        d.className = 'card' + (opts.plan ? ' plan' : '') + (opts.star ? ' star' : '');
+        if (opts.icon) { const i = document.createElement('div'); i.className = 'ico'; i.textContent = opts.icon; d.append(i); }
+        const b = document.createElement('b'); b.textContent = title;
+        const s = document.createElement('span'); s.textContent = text;
+        d.append(b, s);
+        if (tag) { const g = document.createElement('div'); g.className = 'tag'; g.textContent = tag; d.append(g); }
+        return d;
+      };
+      document.getElementById('features').replaceChildren(...t.features.map(([i, a, b, star]) => card(a, b, '', { icon: i, star })));
+      document.getElementById('plans').replaceChildren(...t.plans.map(([a, b, c]) => card(a, b, c, { plan: true })));
+      document.getElementById('pills').replaceChildren(...t.pills.map(p => { const s = document.createElement('span'); s.textContent = p; return s; }));
+      const sfx = lang === 'es' ? '' : '-en';
+      const links = { privacy: `mimopet${sfx}.html`, terms: `mimopet-terminos${sfx}.html`, delete: `mimopet-eliminar-cuenta${sfx}.html` };
+      document.querySelectorAll('[data-link]').forEach(a => { a.href = BASE + links[a.dataset.link]; });
+      document.querySelectorAll('[data-shot]').forEach(img => { img.src = `img/${lang}_${img.dataset.shot}.jpg`; img.alt = t.heroTitle.replace(/<[^>]+>/g, ''); });
+      document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
+    }
+    const asked = new URLSearchParams(location.search).get('lang');
+    const nav = (navigator.language || 'es').slice(0, 2);
+    let lang = T[asked] ? asked : (['es', 'ca', 'eu', 'gl'].includes(nav) ? 'es' : 'en');
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => {
+      lang = b.dataset.setLang; render(lang);
+      history.replaceState(null, '', '?lang=' + lang);
+    }));
+    render(lang);
+  </script>
+</body>
+</html>
